@@ -164,10 +164,15 @@ p {
     display: flex;
     align-items: center;
     position: relative;
-    background: linear-gradient(135deg, rgba(10, 10, 10, 0.6) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(10, 10, 10, 0.7) 100%), 
-                url('assets/images/10.jpg') center/cover;
-    padding-top: 80px;
+    background-color: #0a0a0a;
+    background-image: 
+        linear-gradient(135deg, rgba(10, 10, 10, 0.6) 0%, rgba(0, 0, 0, 0.4) 50%, rgba(10, 10, 10, 0.7) 100%), 
+        url('./assets/images/10.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     background-attachment: fixed;
+    padding-top: 80px;
 }
 
 .hero-content {
