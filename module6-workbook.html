@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 6 Workbook - Scaling to 6 Figures | MicroSaaS Empire Blueprint</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.8;
+            color: #0a0a0a;
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            background: #0a0a0a;
+            color: white;
+            padding: 40px;
+            margin: -40px -40px 40px -40px;
+        }
+        
+        .header h1 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #d4af37;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 28px;
+            color: #0a0a0a;
+            border-bottom: 2px solid #0a0a0a;
+            padding-bottom: 10px;
+            margin: 40px 0 20px 0;
+        }
+        
+        h3 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 20px;
+            color: #0a0a0a;
+            margin: 30px 0 15px 0;
+        }
+        
+        .exercise {
+            background: #f5f5f5;
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .worksheet {
+            background: white;
+            border: 2px solid #0a0a0a;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .worksheet h4 {
+            color: #0a0a0a;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            resize: vertical;
+            margin: 10px 0;
+        }
+        
+        input[type="text"], input[type="number"], input[type="url"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            margin: 5px 0 15px 0;
+        }
+        
+        .checklist {
+            background: #f0f8ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background: #0a0a0a;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        
+        td input {
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-family: Georgia, serif;
+        }
+        
+        .automation-plan {
+            background: #fffef5;
+            border: 2px solid #d4af37;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .portfolio-strategy {
+            background: #f5fff5;
+            border-left: 4px solid #00cc00;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .exit-planning {
+            background: #fff5f5;
+            border: 2px solid #cc0000;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .success-metrics {
+            background: #f0f9ff;
+            border: 2px solid #0066cc;
+            padding: 20px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid #0a0a0a;
+            color: #666;
+        }
+        
+        @media print {
+            .header {
+                color: #0a0a0a;
+                background: white;
+                border: 2px solid #0a0a0a;
+            }
+            
+            .header p {
+                color: #0a0a0a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MODULE 6 WORKBOOK</h1>
+        <p>SCALING TO 6 FIGURES</p>
+    </div>
+
+    <h2>Automation Systems</h2>
+    
+    <div class="automation-plan">
+        <h3>Exercise 1: Automation Roadmap</h3>
+        <p>Build systems that run without you.</p>
+        
+        <div class="worksheet">
+            <h4>Process Automation</h4>
+            
+            <table>
+                <tr>
+                    <th>Process</th>
+                    <th>Current Time/Week</th>
+                    <th>Automation Tool</th>
+                    <th>Time Saved</th>
+                </tr>
+                <tr>
+                    <td>Customer Support</td>
+                    <td><input type="text" placeholder="10 hours"></td>
+                    <td><input type="text" placeholder="Crisp chatbot"></td>
+                    <td><input type="text" placeholder="8 hours"></td>
+                </tr>
+                <tr>
+                    <td>Email Marketing</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Social Media</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Onboarding</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Analytics/Reports</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            
+            <p><strong>Total Time Saved Per Week:</strong> <input type="text" style="width: 200px;" placeholder="X hours"></p>
+            
+            <h4>Zapier/Automation Workflows</h4>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox"> New customer → Welcome email → CRM</li>
+                    <li><input type="checkbox"> Support ticket → Trello card → Team notification</li>
+                    <li><input type="checkbox"> Churn alert → Win-back email → Task created</li>
+                    <li><input type="checkbox"> Payment failed → Retry → Email sequence</li>
+                    <li><input type="checkbox"> New review → Social post → Thank you email</li>
+                    <li><input type="checkbox"> Trial ending → Reminder emails → Offer</li>
+                    <li><input type="checkbox"> High usage → Upgrade prompt → Sales alert</li>
+                </ul>
+            </div>
+            
+            <h4>Documentation System</h4>
+            <p><strong>Knowledge Base Articles to Create:</strong></p>
+            <textarea placeholder="List 10 essential help articles that will reduce support tickets"></textarea>
+            
+            <p><strong>Video Tutorials Needed:</strong></p>
+            <textarea placeholder="List 5 video tutorials to create"></textarea>
+        </div>
+    </div>
+
+    <h2>Team Building</h2>
+    
+    <div class="exercise">
+        <h3>Exercise 2: Hiring Plan</h3>
+        <p>Build your lean team strategically.</p>
+        
+        <div class="worksheet">
+            <h4>Hiring Roadmap</h4>
+            
+            <table>
+                <tr>
+                    <th>MRR Level</th>
+                    <th>Role to Hire</th>
+                    <th>Hours/Week</th>
+                    <th>Budget</th>
+                </tr>
+                <tr>
+                    <td>$1K MRR</td>
+                    <td><input type="text" placeholder="VA for support"></td>
+                    <td><input type="text" placeholder="10 hrs"></td>
+                    <td>$<input type="number" placeholder="400/mo"></td>
+                </tr>
+                <tr>
+                    <td>$3K MRR</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>$<input type="number"></td>
+                </tr>
+                <tr>
+                    <td>$5K MRR</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>$<input type="number"></td>
+                </tr>
+                <tr>
+                    <td>$10K MRR</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>$<input type="number"></td>
+                </tr>
+            </table>
+            
+            <h4>First Hire Planning</h4>
+            
+            <p><strong>Role:</strong> <input type="text" placeholder="e.g., Virtual Assistant"></p>
+            
+            <p><strong>Key Responsibilities:</strong></p>
+            <textarea placeholder="List 5-7 main tasks they'll handle"></textarea>
+            
+            <p><strong>Required Skills:</strong></p>
+            <textarea placeholder="List essential skills and experience"></textarea>
+            
+            <p><strong>Where to Find Them:</strong></p>
+            <input type="text" placeholder="e.g., Upwork, RemoteOK, etc.">
+            
+            <p><strong>Test Project:</strong></p>
+            <textarea placeholder="Describe a small paid test project ($50-100)"></textarea>
+            
+            <p><strong>Onboarding Checklist:</strong></p>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox"> Create email account</li>
+                    <li><input type="checkbox"> Set up Slack/Discord</li>
+                    <li><input type="checkbox"> Share documentation</li>
+                    <li><input type="checkbox"> Record training videos</li>
+                    <li><input type="checkbox"> Provide tool access</li>
+                    <li><input type="checkbox"> Set first week tasks</li>
+                    <li><input type="checkbox"> Schedule daily check-ins</li>
+                    <li><input type="checkbox"> Define KPIs</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="portfolio-strategy">
+        <h3>Exercise 3: Portfolio Expansion</h3>
+        <p>Plan your multi-tool empire.</p>
+        
+        <div class="worksheet">
+            <h4>Tool Portfolio Plan</h4>
+            
+            <table>
+                <tr>
+                    <th>Tool #</th>
+                    <th>Tool Idea</th>
+                    <th>Target Market</th>
+                    <th>Launch Date</th>
+                    <th>Revenue Goal</th>
+                </tr>
+                <tr>
+                    <td>Tool 1</td>
+                    <td><input type="text" placeholder="Current tool"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text" placeholder="Launched"></td>
+                    <td>$<input type="number"></td>
+                </tr>
+                <tr>
+                    <td>Tool 2</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>$<input type="number"></td>
+                </tr>
+                <tr>
+                    <td>Tool 3</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>$<input type="number"></td>
+                </tr>
+                <tr>
+                    <td>Tool 4</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>$<input type="number"></td>
+                </tr>
+                <tr>
+                    <td>Tool 5</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td>$<input type="number"></td>
+                </tr>
+            </table>
+            
+            <p><strong>Combined Portfolio MRR Goal:</strong> $<input type="number" placeholder="10000"></p>
+            
+            <h4>Synergy Opportunities</h4>
+            
+            <p><strong>Cross-Promotion Strategy:</strong></p>
+            <textarea placeholder="How will tools promote each other?"></textarea>
+            
+            <p><strong>Bundle Pricing:</strong></p>
+            <textarea placeholder="All-access pass pricing and features"></textarea>
+            
+            <p><strong>Shared Resources:</strong></p>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox"> Same hosting infrastructure</li>
+                    <li><input type="checkbox"> Single support team</li>
+                    <li><input type="checkbox"> Unified user accounts</li>
+                    <li><input type="checkbox"> Shared email list</li>
+                    <li><input type="checkbox"> Combined analytics</li>
+                    <li><input type="checkbox"> Single payment system</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <h2>Acquisition Strategy</h2>
+    
+    <div class="exercise">
+        <h3>Exercise 4: Buying vs Building</h3>
+        <p>Consider acquiring existing tools.</p>
+        
+        <div class="worksheet">
+            <h4>Acquisition Criteria</h4>
+            
+            <p><strong>What makes a good acquisition target?</strong></p>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox"> Revenue: $500-5000 MRR</li>
+                    <li><input type="checkbox"> Price: 1-3x annual revenue</li>
+                    <li><input type="checkbox"> Tech stack compatible</li>
+                    <li><input type="checkbox"> Same target audience</li>
+                    <li><input type="checkbox"> Low churn (&lt;10%)</li>
+                    <li><input type="checkbox"> Growth potential identified</li>
+                    <li><input type="checkbox"> Seller motivated</li>
+                </ul>
+            </div>
+            
+            <p><strong>Where to Find Deals:</strong></p>
+            <textarea placeholder="List marketplaces: Flippa, MicroAcquire, etc."></textarea>
+            
+            <h4>Due Diligence Checklist</h4>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox"> Revenue verified (Stripe access)</li>
+                    <li><input type="checkbox"> Traffic verified (Analytics access)</li>
+                    <li><input type="checkbox"> Code reviewed</li>
+                    <li><input type="checkbox"> Customer list reviewed</li>
+                    <li><input type="checkbox"> Churn rate analyzed</li>
+                    <li><input type="checkbox"> Support tickets reviewed</li>
+                    <li><input type="checkbox"> Domain ownership confirmed</li>
+                    <li><input type="checkbox"> Legal issues checked</li>
+                    <li><input type="checkbox"> Growth opportunities identified</li>
+                    <li><input type="checkbox"> Integration plan created</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="exit-planning">
+        <h3>Exercise 5: Exit Strategy</h3>
+        <p>Build to sell from day one.</p>
+        
+        <div class="worksheet">
+            <h4>Exit Preparation</h4>
+            
+            <p><strong>Target Exit Valuation:</strong></p>
+            <p>Annual Revenue: $<input type="number" placeholder="120000"></p>
+            <p>Multiple: <input type="number" style="width: 100px;" placeholder="3.5">x</p>
+            <p><strong>Valuation: $<input type="number" placeholder="420000"></strong></p>
+            
+            <h4>Value Drivers</h4>
+            
+            <table>
+                <tr>
+                    <th>Factor</th>
+                    <th>Current State</th>
+                    <th>Improvement Needed</th>
+                </tr>
+                <tr>
+                    <td>Growth Rate</td>
+                    <td><input type="text" placeholder="15% monthly"></td>
+                    <td><input type="text" placeholder="Maintain or increase"></td>
+                </tr>
+                <tr>
+                    <td>Churn Rate</td>
+                    <td><input type="text" placeholder="8%"></td>
+                    <td><input type="text" placeholder="Reduce to <5%"></td>
+                </tr>
+                <tr>
+                    <td>Documentation</td>
+                    <td><input type="text" placeholder="Basic"></td>
+                    <td><input type="text" placeholder="Complete SOPs"></td>
+                </tr>
+                <tr>
+                    <td>Team Independence</td>
+                    <td><input type="text" placeholder="Owner-dependent"></td>
+                    <td><input type="text" placeholder="Runs without owner"></td>
+                </tr>
+                <tr>
+                    <td>Tech Debt</td>
+                    <td><input type="text" placeholder="Some issues"></td>
+                    <td><input type="text" placeholder="Clean codebase"></td>
+                </tr>
+            </table>
+            
+            <h4>Exit Package Preparation</h4>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox"> 12+ months P&L statements</li>
+                    <li><input type="checkbox"> Traffic analytics reports</li>
+                    <li><input type="checkbox"> Customer metrics dashboard</li>
+                    <li><input type="checkbox"> Technical documentation</li>
+                    <li><input type="checkbox"> Standard operating procedures</li>
+                    <li><input type="checkbox"> Asset transfer list</li>
+                    <li><input type="checkbox"> Growth opportunity analysis</li>
+                    <li><input type="checkbox"> Competitive analysis</li>
+                    <li><input type="checkbox"> Team contracts/agreements</li>
+                </ul>
+            </div>
+            
+            <p><strong>Ideal Buyer Profile:</strong></p>
+            <textarea placeholder="Who would want to buy your business? PE firm, strategic buyer, individual?"></textarea>
+        </div>
+    </div>
+
+    <div class="success-metrics">
+        <h3>Your Path to $100K+</h3>
+        
+        <div class="worksheet">
+            <h4>Revenue Milestones</h4>
+            
+            <table>
+                <tr>
+                    <th>Milestone</th>
+                    <th>Target Date</th>
+                    <th>Tools</th>
+                    <th>MRR</th>
+                    <th>Annual</th>
+                </tr>
+                <tr>
+                    <td>Phase 1</td>
+                    <td><input type="text" placeholder="Month 3"></td>
+                    <td>1</td>
+                    <td>$1,000</td>
+                    <td>$12,000</td>
+                </tr>
+                <tr>
+                    <td>Phase 2</td>
+                    <td><input type="text" placeholder="Month 6"></td>
+                    <td>2</td>
+                    <td>$3,000</td>
+                    <td>$36,000</td>
+                </tr>
+                <tr>
+                    <td>Phase 3</td>
+                    <td><input type="text" placeholder="Month 12"></td>
+                    <td>3</td>
+                    <td>$8,000</td>
+                    <td>$96,000</td>
+                </tr>
+                <tr>
+                    <td>Phase 4</td>
+                    <td><input type="text" placeholder="Month 18"></td>
+                    <td>5</td>
+                    <td>$15,000</td>
+                    <td>$180,000</td>
+                </tr>
+                <tr>
+                    <td>Phase 5</td>
+                    <td><input type="text" placeholder="Month 24"></td>
+                    <td>8</td>
+                    <td>$25,000</td>
+                    <td>$300,000</td>
+                </tr>
+            </table>
+            
+            <h4>Your 6-Figure Action Plan</h4>
+            
+            <p><strong>Next 30 Days:</strong></p>
+            <textarea placeholder="What are your 3 most important actions?"></textarea>
+            
+            <p><strong>Next Quarter:</strong></p>
+            <textarea placeholder="What milestones will you hit?"></textarea>
+            
+            <p><strong>Next Year:</strong></p>
+            <textarea placeholder="Where will your business be in 12 months?"></textarea>
+            
+            <p><strong>Success Commitment:</strong></p>
+            <textarea placeholder="Write your personal commitment to building your micro-SaaS empire"></textarea>
+        </div>
+    </div>
+
+    <div class="checklist">
+        <h3>Final Implementation Checklist</h3>
+        <ul>
+            <li><input type="checkbox"> Tool #1 profitable</li>
+            <li><input type="checkbox"> Automation systems in place</li>
+            <li><input type="checkbox"> First hire made</li>
+            <li><input type="checkbox"> Tool #2 launched</li>
+            <li><input type="checkbox"> $5K MRR achieved</li>
+            <li><input type="checkbox"> Portfolio strategy defined</li>
+            <li><input type="checkbox"> Systems documented</li>
+            <li><input type="checkbox"> Tool #3 in development</li>
+            <li><input type="checkbox"> Team of 2-3 people</li>
+            <li><input type="checkbox"> $10K+ MRR achieved</li>
+            <li><input type="checkbox"> Exit strategy prepared</li>
+            <li><input type="checkbox"> 6-figure annual revenue!</li>
+        </ul>
+    </div>
+
+    <div class="footer">
+        <p><strong>🎉 Congratulations!</strong></p>
+        <p>You've completed the MicroSaaS Empire Blueprint</p>
+        <p>Now go build your empire!</p>
+        <p>© 2024</p>
+    </div>
+</body>
+</html>
