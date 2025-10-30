@@ -253,7 +253,5 @@ function showExitIntentPopup() {
     });
 }
 
-// Initialize exit intent on non-pricing pages
-if (!window.location.pathname.includes('pricing')) {
-    initExitIntent();
-}
+// Exit intent disabled site-wide per product decision
+// Previously initialized here, but intentionally not invoking to avoid popups
