@@ -1,0 +1,1471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSaaS Empire Blueprint - Workbook 6: Scaling to 6 Figures</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Crimson+Text:wght@400;600&family=Montserrat:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            color: #2c3e50;
+            background: #fafafa;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            background: white;
+            border: 3px solid #d4af37;
+            padding: 0.75in;
+            margin-bottom: 0.5in;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                border: 3px solid #d4af37;
+                page-break-after: always;
+            }
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #0a0a0a;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #0a0a0a;
+            font-size: 28px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #d4af37;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #0a0a0a;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .module-tag {
+            background: #0a0a0a;
+            color: #d4af37;
+            padding: 8px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 0.5in;
+            right: 0.75in;
+            color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .pro-tip {
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f0e6 100%);
+            border-left: 5px solid #d4af37;
+            padding: 15px 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .pro-tip::before {
+            content: "💡 PRO TIP";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            color: #d4af37;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        
+        .quick-win {
+            background: #0a0a0a;
+            color: white;
+            padding: 30px;
+            margin: 20px 0;
+            border: 3px solid #d4af37;
+        }
+        
+        .quick-win h3 {
+            color: #d4af37;
+        }
+        
+        .table-grid {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .table-grid th {
+            background: #0a0a0a;
+            color: #d4af37;
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .table-grid td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            height: 40px;
+        }
+        
+        .scale-metric {
+            display: inline-block;
+            padding: 20px;
+            margin: 10px;
+            border: 3px solid #d4af37;
+            text-align: center;
+            min-width: 150px;
+        }
+        
+        .milestone-box {
+            background: linear-gradient(135deg, #00cc66 0%, #00aa55 100%);
+            color: white;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        
+        .automation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 9in;
+            text-align: center;
+        }
+        
+        .cover-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #0a0a0a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .cover-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+        
+        .empire-timeline {
+            position: relative;
+            padding: 20px 0;
+            margin: 20px 0;
+        }
+        
+        .timeline-item {
+            padding: 10px 0 10px 40px;
+            position: relative;
+            border-left: 3px solid #d4af37;
+            margin-left: 20px;
+        }
+        
+        .timeline-marker {
+            position: absolute;
+            left: -10px;
+            top: 10px;
+            width: 20px;
+            height: 20px;
+            background: #d4af37;
+            border-radius: 50%;
+        }
+        
+        .celebration-box {
+            background: linear-gradient(135deg, #00cc66 0%, #00aa55 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+        
+        .final-celebration {
+            background: linear-gradient(135deg, #d4af37 0%, #b8941f 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 10px;
+            border: 3px solid #0a0a0a;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Cover Page -->
+    <div class="page">
+        <div class="cover-page">
+            <div class="module-tag" style="font-size: 18px; margin-bottom: 30px;">MODULE 6</div>
+            <h1 class="cover-title" style="border: none;">SCALING TO<br>6 FIGURES</h1>
+            <p class="cover-subtitle">Build Your $100K+ MicroSaaS Empire</p>
+            <div style="font-style: italic; font-size: 20px; color: #666; margin: 30px 0;">
+                "The difference between ordinary and extraordinary is that little extra."
+                <br><small style="color: #999;">- Jimmy Johnson</small>
+            </div>
+            <div style="margin-top: 50px;">
+                <p><strong>Student Name:</strong> _____________________________________</p>
+                <br>
+                <p><strong>Tool Name:</strong> _____________________________________</p>
+                <br>
+                <p><strong>Current MRR:</strong> $_____________________________________</p>
+                <br>
+                <p><strong>6-Figure Target Date:</strong> _____________________________________</p>
+            </div>
+        </div>
+        <div class="page-number">Page 1</div>
+    </div>
+
+    <!-- Page 2: Module Overview & Quick Win -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>OVERVIEW</div>
+        </div>
+        
+        <h2>Module Progress Checklist</h2>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 1: Automation & Systems</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 2: Building Your Team</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 3: Product Expansion Strategy</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 4: International Expansion</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 5: Portfolio Building</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 6: Exit Strategy & Acquisition</label>
+        </div>
+        
+        <div class="quick-win">
+            <h3>🚀 QUICK WIN GENERATOR</h3>
+            <p style="color: white; margin-top: 10px;">Your first scaling action:</p>
+            <p style="color: #d4af37; font-size: 18px; margin-top: 15px;">
+                <strong>This Week:</strong> Automate your most time-consuming daily task. Use Zapier, Make, or code to save 1 hour per day. That's 365 hours/year for growth!
+            </p>
+            <div style="margin-top: 20px;">
+                <input type="checkbox">
+                <label style="color: white;">First automation implemented!</label>
+            </div>
+        </div>
+        
+        <h2>Current Scale Assessment</h2>
+        <p><strong>Monthly Recurring Revenue:</strong> $__________</p>
+        <p><strong>Total customers:</strong> __________</p>
+        <p><strong>Hours worked per week:</strong> __________</p>
+        <p><strong>Biggest bottleneck:</strong> _____________________________________</p>
+        
+        <div class="page-number">Page 2</div>
+    </div>
+
+    <!-- Page 3: Automation Opportunity Audit -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>AUTOMATION</div>
+        </div>
+        
+        <h2>Automation Opportunity Audit</h2>
+        
+        <h3>Time Audit</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Task</th>
+                    <th>Hours/Week</th>
+                    <th>Can Automate?</th>
+                    <th>Tool/Solution</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Customer support</td>
+                    <td></td>
+                    <td>Yes/No</td>
+                    <td></td>
+                    <td>1-5</td>
+                </tr>
+                <tr>
+                    <td>Onboarding</td>
+                    <td></td>
+                    <td>Yes/No</td>
+                    <td></td>
+                    <td>1-5</td>
+                </tr>
+                <tr>
+                    <td>Billing/Invoicing</td>
+                    <td></td>
+                    <td>Yes/No</td>
+                    <td></td>
+                    <td>1-5</td>
+                </tr>
+                <tr>
+                    <td>Social media</td>
+                    <td></td>
+                    <td>Yes/No</td>
+                    <td></td>
+                    <td>1-5</td>
+                </tr>
+                <tr>
+                    <td>Email marketing</td>
+                    <td></td>
+                    <td>Yes/No</td>
+                    <td></td>
+                    <td>1-5</td>
+                </tr>
+                <tr>
+                    <td>Reporting</td>
+                    <td></td>
+                    <td>Yes/No</td>
+                    <td></td>
+                    <td>1-5</td>
+                </tr>
+                <tr>
+                    <td>Development</td>
+                    <td></td>
+                    <td>Yes/No</td>
+                    <td></td>
+                    <td>1-5</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Automation Stack</h3>
+        <div class="automation-grid">
+            <div>
+                <p><strong>Customer Support</strong></p>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Help center/KB</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Chatbot</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Canned responses</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Auto-ticketing</label>
+                </div>
+            </div>
+            <div>
+                <p><strong>Marketing</strong></p>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Email sequences</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Social scheduling</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Lead scoring</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Retargeting</label>
+                </div>
+            </div>
+            <div>
+                <p><strong>Operations</strong></p>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>User onboarding</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Billing/dunning</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Usage monitoring</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Backup systems</label>
+                </div>
+            </div>
+            <div>
+                <p><strong>Analytics</strong></p>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Dashboard creation</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Weekly reports</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Alert systems</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>KPI tracking</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">Page 3</div>
+    </div>
+
+    <!-- Page 4: SOP Creation Template -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>SYSTEMS</div>
+        </div>
+        
+        <h2>SOP Creation Template</h2>
+        
+        <h3>Standard Operating Procedure #1</h3>
+        <p><strong>Process Name:</strong> _____________________________________</p>
+        <p><strong>Frequency:</strong> _____________________________________</p>
+        <p><strong>Time Required:</strong> __________ minutes</p>
+        <p><strong>Tools Needed:</strong> _____________________________________</p>
+        
+        <p><strong>Step-by-Step Process:</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <p><strong>Quality Checklist:</strong></p>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>_____________________________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>_____________________________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>_____________________________________</label>
+        </div>
+        
+        <h3>Process Documentation Status</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Process</th>
+                    <th>Documented</th>
+                    <th>Video Created</th>
+                    <th>Delegated</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Customer onboarding</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Support tickets</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Content creation</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Social media</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Bug fixes</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Feature releases</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                    <td>☐</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-number">Page 4</div>
+    </div>
+
+    <!-- Page 5: Hiring Needs Assessment -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>TEAM BUILDING</div>
+        </div>
+        
+        <h2>Hiring Needs Assessment</h2>
+        
+        <h3>First Hires Priority</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Role</th>
+                    <th>Hours/Week</th>
+                    <th>Cost/Month</th>
+                    <th>ROI Expected</th>
+                    <th>Hire Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Customer Support</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Developer</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Content Writer</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Virtual Assistant</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Marketing</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Delegation Framework</h3>
+        <p><strong>Tasks I MUST do (CEO only):</strong></p>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ul>
+        
+        <p><strong>Tasks to delegate FIRST:</strong></p>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ul>
+        
+        <p><strong>Tasks to delegate LATER:</strong></p>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ul>
+        
+        <h3>Team Training Checklist</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Job description created</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Onboarding materials ready</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Training videos recorded</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Tools access provided</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>KPIs defined</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Communication channels set</label>
+        </div>
+        
+        <div class="page-number">Page 5</div>
+    </div>
+
+    <!-- Page 6: Portfolio Planning Matrix -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>PORTFOLIO</div>
+        </div>
+        
+        <h2>Portfolio Planning Matrix</h2>
+        
+        <h3>Product Expansion Opportunities</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Product Idea</th>
+                    <th>Synergy (1-10)</th>
+                    <th>Dev Time</th>
+                    <th>Revenue Potential</th>
+                    <th>Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>/10</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>/10</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>/10</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>/10</td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Acquisition Targets</h3>
+        <p><strong>Competitor to acquire:</strong> _____________________________________</p>
+        <p><strong>Estimated price:</strong> $__________</p>
+        <p><strong>Reason for acquisition:</strong> _____________________________________</p>
+        
+        <p><strong>Complementary tool to acquire:</strong> _____________________________________</p>
+        <p><strong>Estimated price:</strong> $__________</p>
+        <p><strong>Synergies:</strong> _____________________________________</p>
+        
+        <h3>Market Expansion</h3>
+        <div class="automation-grid">
+            <div>
+                <p><strong>Vertical Expansion</strong></p>
+                <p>Current: _____________________</p>
+                <p>Target 1: _____________________</p>
+                <p>Target 2: _____________________</p>
+            </div>
+            <div>
+                <p><strong>Geographic Expansion</strong></p>
+                <p>Current: _____________________</p>
+                <p>Target 1: _____________________</p>
+                <p>Target 2: _____________________</p>
+            </div>
+        </div>
+        
+        <div class="pro-tip">
+            <p>Build a portfolio of 3-5 micro-SaaS tools serving the same audience. Cross-sell between them for exponential growth!</p>
+        </div>
+        
+        <div class="page-number">Page 6</div>
+    </div>
+
+    <!-- Page 7: Acquisition Readiness Scorecard -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>EXIT STRATEGY</div>
+        </div>
+        
+        <h2>Acquisition Readiness Scorecard</h2>
+        
+        <h3>Business Value Factors</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Current Status</th>
+                    <th>Target</th>
+                    <th>Score (1-10)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Monthly Revenue</td>
+                    <td>$</td>
+                    <td>$</td>
+                    <td>/10</td>
+                </tr>
+                <tr>
+                    <td>Growth Rate</td>
+                    <td>%</td>
+                    <td>%</td>
+                    <td>/10</td>
+                </tr>
+                <tr>
+                    <td>Churn Rate</td>
+                    <td>%</td>
+                    <td>%</td>
+                    <td>/10</td>
+                </tr>
+                <tr>
+                    <td>Profit Margin</td>
+                    <td>%</td>
+                    <td>%</td>
+                    <td>/10</td>
+                </tr>
+                <tr>
+                    <td>Customer Count</td>
+                    <td></td>
+                    <td></td>
+                    <td>/10</td>
+                </tr>
+                <tr>
+                    <td>Documentation</td>
+                    <td></td>
+                    <td>Complete</td>
+                    <td>/10</td>
+                </tr>
+                <tr>
+                    <td>Team Independence</td>
+                    <td></td>
+                    <td>Full</td>
+                    <td>/10</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Total Score:</strong> _____ / 70</p>
+        <p><strong>Estimated Valuation:</strong> Annual Revenue × _____ = $__________</p>
+        
+        <h3>Exit Preparation Checklist</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Clean financials (P&L, balance sheet)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Legal documents organized</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>IP properly assigned</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Code documented and clean</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Customer contracts transferable</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Team contracts in place</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Growth story documented</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Due diligence package ready</label>
+        </div>
+        
+        <div class="page-number">Page 7</div>
+    </div>
+
+    <!-- Page 8: Exit Strategy Planner -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>EXIT PLANNING</div>
+        </div>
+        
+        <h2>Exit Strategy Planner</h2>
+        
+        <h3>Exit Options</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <p><strong>Option 1: Sell the Business</strong></p>
+                <p>Timeline: __________</p>
+                <p>Target buyer: __________</p>
+                <p>Asking price: $__________</p>
+            </div>
+            <div>
+                <p><strong>Option 2: Keep & Delegate</strong></p>
+                <p>Manager cost: $__________/mo</p>
+                <p>Passive income: $__________/mo</p>
+                <p>Time freedom: __________ hrs/week</p>
+            </div>
+        </div>
+        
+        <h3>Business Sale Preparation</h3>
+        <p><strong>Target sale date:</strong> _____________________________________</p>
+        <p><strong>Revenue multiple goal:</strong> _____X</p>
+        <p><strong>Minimum acceptable price:</strong> $__________</p>
+        <p><strong>Ideal buyer profile:</strong> _____________________________________</p>
+        
+        <h3>Value Maximization Plan</h3>
+        <p><strong>To increase value by 20%:</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <h3>Post-Exit Plan</h3>
+        <p><strong>Next project:</strong> _____________________________________</p>
+        <p><strong>Non-compete considerations:</strong> _____________________________________</p>
+        <p><strong>Earnout period:</strong> __________ months</p>
+        <p><strong>Transition support:</strong> __________ months</p>
+        
+        <div class="milestone-box">
+            <p><strong>Remember:</strong> A business that can run without you is worth 2-3X more than one that requires you!</p>
+        </div>
+        
+        <div class="page-number">Page 8</div>
+    </div>
+
+    <!-- Page 9: Revenue Scaling Roadmap -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>REVENUE SCALING</div>
+        </div>
+        
+        <h2>Revenue Scaling Roadmap</h2>
+        
+        <h3>Path to $100K ARR</h3>
+        <div class="empire-timeline">
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <p><strong>$1K MRR</strong> (Month _____)</p>
+                <p>Actions: _____________________________________</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <p><strong>$2.5K MRR</strong> (Month _____)</p>
+                <p>Actions: _____________________________________</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <p><strong>$5K MRR</strong> (Month _____)</p>
+                <p>Actions: _____________________________________</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <p><strong>$8.5K MRR</strong> (Month _____)</p>
+                <p>Actions: _____________________________________</p>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-marker"></div>
+                <p><strong>$10K+ MRR</strong> (Month _____)</p>
+                <p>Actions: _____________________________________</p>
+            </div>
+        </div>
+        
+        <h3>Scaling Levers</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Lever</th>
+                    <th>Current</th>
+                    <th>Target</th>
+                    <th>Impact on MRR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Price Increase</td>
+                    <td>$</td>
+                    <td>$</td>
+                    <td>+$</td>
+                </tr>
+                <tr>
+                    <td>Customer Count</td>
+                    <td></td>
+                    <td></td>
+                    <td>+$</td>
+                </tr>
+                <tr>
+                    <td>Reduce Churn</td>
+                    <td>%</td>
+                    <td>%</td>
+                    <td>+$</td>
+                </tr>
+                <tr>
+                    <td>Upsells</td>
+                    <td>$</td>
+                    <td>$</td>
+                    <td>+$</td>
+                </tr>
+                <tr>
+                    <td>New Products</td>
+                    <td></td>
+                    <td></td>
+                    <td>+$</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-number">Page 9</div>
+    </div>
+
+    <!-- Page 10: Empire Building Timeline -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>EMPIRE TIMELINE</div>
+        </div>
+        
+        <h2>Empire Building Timeline</h2>
+        
+        <h3>Year 1: Foundation</h3>
+        <div class="scale-metric">
+            <strong>Q1</strong>
+            <p>Launch MVP</p>
+            <p>10 customers</p>
+            <p>$500 MRR</p>
+        </div>
+        <div class="scale-metric">
+            <strong>Q2</strong>
+            <p>Product-Market Fit</p>
+            <p>50 customers</p>
+            <p>$2,000 MRR</p>
+        </div>
+        <div class="scale-metric">
+            <strong>Q3</strong>
+            <p>Growth Systems</p>
+            <p>150 customers</p>
+            <p>$5,000 MRR</p>
+        </div>
+        <div class="scale-metric">
+            <strong>Q4</strong>
+            <p>Scale & Optimize</p>
+            <p>300 customers</p>
+            <p>$10,000 MRR</p>
+        </div>
+        
+        <h3>Year 2: Expansion</h3>
+        <p><strong>Tool #2 Launch:</strong> Month _____ | Target: $_____/mo</p>
+        <p><strong>First hire:</strong> Month _____ | Role: _____________________</p>
+        <p><strong>International expansion:</strong> Month _____ | Market: _____________________</p>
+        <p><strong>Year 2 ARR Target:</strong> $__________</p>
+        
+        <h3>Year 3: Empire</h3>
+        <p><strong>Portfolio size:</strong> _____ tools</p>
+        <p><strong>Team size:</strong> _____ people</p>
+        <p><strong>Combined ARR:</strong> $__________</p>
+        <p><strong>Exit valuation:</strong> $__________</p>
+        
+        <h3>5-Year Vision</h3>
+        <div style="border: 3px solid #d4af37; padding: 20px; margin: 20px 0;">
+            <p><strong>Where I'll be in 5 years:</strong></p>
+            <div style="min-height: 80px; margin: 10px 0;">
+                _____________________________________
+                _____________________________________
+                _____________________________________
+            </div>
+        </div>
+        
+        <div class="page-number">Page 10</div>
+    </div>
+
+    <!-- Page 11: Scale Metrics Dashboard -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>METRICS</div>
+        </div>
+        
+        <h2>Scale Metrics Dashboard</h2>
+        
+        <h3>Key Performance Indicators</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Metric</th>
+                    <th>Current</th>
+                    <th>Last Month</th>
+                    <th>Goal</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>MRR</td>
+                    <td>$</td>
+                    <td>$</td>
+                    <td>$</td>
+                    <td>↑↓</td>
+                </tr>
+                <tr>
+                    <td>ARR Run Rate</td>
+                    <td>$</td>
+                    <td>$</td>
+                    <td>$100K</td>
+                    <td>↑↓</td>
+                </tr>
+                <tr>
+                    <td>Customer Count</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>↑↓</td>
+                </tr>
+                <tr>
+                    <td>ARPU</td>
+                    <td>$</td>
+                    <td>$</td>
+                    <td>$</td>
+                    <td>↑↓</td>
+                </tr>
+                <tr>
+                    <td>Churn %</td>
+                    <td>%</td>
+                    <td>%</td>
+                    <td>%</td>
+                    <td>↑↓</td>
+                </tr>
+                <tr>
+                    <td>LTV:CAC</td>
+                    <td>:1</td>
+                    <td>:1</td>
+                    <td>3:1</td>
+                    <td>↑↓</td>
+                </tr>
+                <tr>
+                    <td>Gross Margin</td>
+                    <td>%</td>
+                    <td>%</td>
+                    <td>80%</td>
+                    <td>↑↓</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Growth Metrics</h3>
+        <p><strong>Month-over-month growth:</strong> __________%</p>
+        <p><strong>Quarter-over-quarter growth:</strong> __________%</p>
+        <p><strong>Months to $10K MRR:</strong> __________</p>
+        <p><strong>Projected ARR (12 months):</strong> $__________</p>
+        
+        <h3>Operational Efficiency</h3>
+        <p><strong>Revenue per employee:</strong> $__________</p>
+        <p><strong>Support tickets per customer:</strong> __________</p>
+        <p><strong>Feature releases per month:</strong> __________</p>
+        <p><strong>Hours worked per week:</strong> __________</p>
+        
+        <div class="page-number">Page 11</div>
+    </div>
+
+    <!-- Page 12: Risk Management -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>RISK MANAGEMENT</div>
+        </div>
+        
+        <h2>Risk Management & Contingency</h2>
+        
+        <h3>Business Risks Assessment</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Risk</th>
+                    <th>Probability</th>
+                    <th>Impact</th>
+                    <th>Mitigation</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Key employee leaves</td>
+                    <td>Low/Med/High</td>
+                    <td>Low/Med/High</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Major competitor enters</td>
+                    <td>Low/Med/High</td>
+                    <td>Low/Med/High</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Technology failure</td>
+                    <td>Low/Med/High</td>
+                    <td>Low/Med/High</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Economic downturn</td>
+                    <td>Low/Med/High</td>
+                    <td>Low/Med/High</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Legal/compliance issue</td>
+                    <td>Low/Med/High</td>
+                    <td>Low/Med/High</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Contingency Plans</h3>
+        <p><strong>If growth stalls:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; margin: 10px 0;">
+            _____________________________________
+        </div>
+        
+        <p><strong>If key team member leaves:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; margin: 10px 0;">
+            _____________________________________
+        </div>
+        
+        <p><strong>If major competitor copies us:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; margin: 10px 0;">
+            _____________________________________
+        </div>
+        
+        <h3>Business Insurance</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>General liability insurance</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Errors & omissions insurance</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Cyber liability insurance</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Key person insurance</label>
+        </div>
+        
+        <div class="page-number">Page 12</div>
+    </div>
+
+    <!-- Page 13: Investment & Funding -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>FUNDING</div>
+        </div>
+        
+        <h2>Investment & Funding Strategy</h2>
+        
+        <h3>Funding Options</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <p><strong>Bootstrapping</strong></p>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Reinvest profits</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Personal savings</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Credit cards (careful!)</label>
+                </div>
+            </div>
+            <div>
+                <p><strong>External Funding</strong></p>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Revenue-based financing</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>SBA loans</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox">
+                    <label>Angel investors</label>
+                </div>
+            </div>
+        </div>
+        
+        <h3>Capital Requirements</h3>
+        <p><strong>Needed for next phase:</strong> $__________</p>
+        <p><strong>Use of funds:</strong></p>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li>Marketing/Ads: $__________</li>
+            <li>Hiring: $__________</li>
+            <li>Technology: $__________</li>
+            <li>Operations: $__________</li>
+        </ul>
+        
+        <h3>Investment Readiness</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Pitch deck created</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Financial projections (3 years)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Cap table clean</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Legal structure optimized</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Due diligence package ready</label>
+        </div>
+        
+        <div class="pro-tip">
+            <p>Most successful micro-SaaS businesses never take funding. Stay lean, stay profitable, stay in control!</p>
+        </div>
+        
+        <div class="page-number">Page 13</div>
+    </div>
+
+    <!-- Page 14: Weekly Scale Review -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>WEEKLY REVIEW</div>
+        </div>
+        
+        <h2>Weekly Scale Review</h2>
+        
+        <h3>Week _____ Metrics</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <p><strong>MRR:</strong> $__________</p>
+                <p><strong>New customers:</strong> __________</p>
+                <p><strong>Churned customers:</strong> __________</p>
+                <p><strong>Net growth:</strong> __________</p>
+            </div>
+            <div>
+                <p><strong>Tasks automated:</strong> __________</p>
+                <p><strong>Hours saved:</strong> __________</p>
+                <p><strong>Team tasks completed:</strong> __________</p>
+                <p><strong>Systems documented:</strong> __________</p>
+            </div>
+        </div>
+        
+        <h3>Scaling Activities</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Automation implemented: _____________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Process documented: _____________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Team member trained: _____________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>System optimized: _____________________</label>
+        </div>
+        
+        <h3>Bottleneck Analysis</h3>
+        <p><strong>This week's biggest bottleneck:</strong></p>
+        <div style="border: 2px solid #e74c3c; padding: 10px; margin: 10px 0;">
+            _____________________________________
+        </div>
+        
+        <p><strong>Solution implemented:</strong></p>
+        <div style="border: 2px solid #00cc66; padding: 10px; margin: 10px 0;">
+            _____________________________________
+        </div>
+        
+        <h3>Next Week Scaling Focus</h3>
+        <p><strong>Primary goal:</strong> _____________________________________</p>
+        <p><strong>System to build:</strong> _____________________________________</p>
+        <p><strong>Process to delegate:</strong> _____________________________________</p>
+        
+        <div class="page-number">Page 14</div>
+    </div>
+
+    <!-- Page 15: Course Completion & Celebration -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>COMPLETION</div>
+        </div>
+        
+        <h2>Module 6 & Course Completion</h2>
+        
+        <h3>Scaling Achievements</h3>
+        <p><strong>Starting MRR:</strong> $__________</p>
+        <p><strong>Current MRR:</strong> $__________</p>
+        <p><strong>Growth achieved:</strong> __________%</p>
+        <p><strong>Hours freed per week:</strong> __________</p>
+        <p><strong>Team members hired:</strong> __________</p>
+        <p><strong>Systems automated:</strong> __________</p>
+        
+        <h3>Journey Reflection</h3>
+        <p><strong>1. My biggest win in this journey:</strong></p>
+        <div style="border: 2px solid #00cc66; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>2. The hardest challenge I overcame:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>3. What I know now that I wish I knew at the start:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <div class="final-celebration">
+            <h2 style="color: white; border: none; font-size: 36px;">🏆 EMPIRE BUILDER CERTIFIED! 🏆</h2>
+            <p style="font-size: 20px; margin-top: 20px;">You've completed the MicroSaaS Empire Blueprint!</p>
+            <p style="font-size: 18px; margin-top: 15px;">From idea to $100K+ is no longer a dream—it's your roadmap.</p>
+            <p style="font-size: 24px; margin-top: 20px; font-weight: bold;">Welcome to the Empire! 👑</p>
+        </div>
+        
+        <h3>Your Empire Commitments</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I will reach $10K MRR by: __________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I will build a team by: __________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I will launch tool #2 by: __________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I will hit $100K ARR by: __________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I will help others build their empires</label>
+        </div>
+        
+        <div style="text-align: center; margin-top: 40px; font-size: 20px; font-weight: bold;">
+            <p>The Empire Awaits...</p>
+            <p style="color: #d4af37; font-size: 24px; margin-top: 10px;">BUILD IT! 🚀</p>
+        </div>
+        
+        <div class="page-number">Page 15</div>
+    </div>
+
+</body>
+</html>
