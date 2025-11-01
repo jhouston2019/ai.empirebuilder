@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business Empire Builder Blueprint - Module 4</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+        }
+        
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 12pt;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f5f5f5;
+        }
+        
+        /* Black Title Page */
+        .title-page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto;
+            background: #0a0a0a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            page-break-after: always;
+            position: relative;
+            border: 5px solid #d4af37;
+            padding: 2in 1in;
+        }
+        
+        .title-page .module-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            letter-spacing: 4px;
+            color: #d4af37;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .title-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 60pt;
+            font-weight: 900;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        
+        .title-page .subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 22pt;
+            font-style: italic;
+            color: #cccccc;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+        
+        .gold-line {
+            width: 150px;
+            height: 4px;
+            background: #d4af37;
+            margin: 40px auto;
+        }
+        
+        .title-page .course-name {
+            position: absolute;
+            bottom: 60px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            letter-spacing: 2px;
+            color: #999;
+            text-transform: uppercase;
+        }
+        
+        /* Regular Pages with Borders */
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            border: 3px solid #d4af37;
+            padding: 1in;
+        }
+        
+        .page-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            border-bottom: 2px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10pt;
+            color: #666;
+            background: linear-gradient(to bottom, #fafafa, #fff);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .page-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            border-top: 2px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 11pt;
+            color: #666;
+            background: linear-gradient(to top, #fafafa, #fff);
+        }
+        
+        .page-content {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28pt;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #d4af37;
+            padding-left: 20px;
+        }
+        
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            font-weight: 600;
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 16pt;
+            font-weight: 600;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 12pt;
+            line-height: 1.8;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .overview-box {
+            background: linear-gradient(135deg, #f5f5f5, #fafafa);
+            border-left: 5px solid #d4af37;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .success-box, .tip-box {
+            background: #f9f7f0;
+            border: 2px solid #d4af37;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .action-box {
+            background: #f0f4f8;
+            border-left: 5px solid #2c3e50;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .warning-box {
+            background: #fff5f5;
+            border-left: 5px solid #e74c3c;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        pre {
+            background: #2c3e50;
+            color: #f1f1f1;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+        
+        .lesson {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Title Page -->
+    <div class="title-page">
+        <div class="module-number">MODULE 4</div>
+        <h1>MONETIZATION MASTERY</h1>
+        <div class="subtitle">Turn Free Users Into Paying Customers</div>
+        <div class="gold-line"></div>
+        <div class="course-name">AI Business Empire Builder Blueprint</div>
+    </div>
+    
+    <!-- Page 1: Overview -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <div class="overview-box">
+                <h3 style="margin-top: 0;">Module Overview</h3>
+                <p>Master the art of monetizing your micro-SaaS tools with multiple revenue streams. Learn pricing psychology, implement various monetization models, and optimize for maximum revenue per user.</p>
+                <p><strong>Duration:</strong> 3 Lessons | <strong>Implementation Time:</strong> 7-10 Days</p>
+            </div>
+            
+            <h2>What You'll Learn</h2>
+            <ul>
+                <li>7 proven monetization models for web tools</li>
+                <li>Pricing psychology and optimization strategies</li>
+                <li>Implementation of subscriptions, one-time payments, and ads</li>
+                <li>Revenue stacking techniques for 3-5x higher earnings</li>
+                <li>Conversion optimization tactics</li>
+            </ul>
+            
+            <div class="lesson">
+                <h2>Lesson 4.1: Monetization Models Deep Dive</h2>
+                
+                <h3>The Revenue Stack Framework</h3>
+                <p>Successful micro-SaaS tools don't rely on a single revenue stream. They stack multiple monetization models to maximize earnings from each user segment.</p>
+            </div>
+        </div>
+        <div class="page-footer">Page 1</div>
+    </div>
+    
+    <!-- Page 2: Subscription Model -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <h4>1. SUBSCRIPTION MODEL (SaaS)</h4>
+            <p>The holy grail of online business - predictable, recurring revenue.</p>
+            
+            <div class="action-box">
+                <h4>Implementation Strategy</h4>
+                <ul>
+                    <li><strong>Free Tier:</strong> 5-10 uses per month</li>
+                    <li><strong>Starter:</strong> $9/month - 100 uses</li>
+                    <li><strong>Pro:</strong> $29/month - Unlimited uses + priority features</li>
+                    <li><strong>Business:</strong> $99/month - Team access + API</li>
+                </ul>
+            </div>
+            
+            <h4>Stripe Subscription Setup</h4>
+            <pre>
+// Stripe subscription implementation
+const stripe = Stripe('pk_live_YOUR_KEY');
+
+async function createSubscription(priceId) {
+    const response = await fetch('/api/create-subscription', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            priceId: priceId,
+            customerId: user.stripeId
+        })
+    });
+    
+    const session = await response.json();
+    
+    // Redirect to Stripe Checkout
+    const {error} = await stripe.redirectToCheckout({
+        sessionId: session.id
+    });
+}
+
+// Price IDs from Stripe Dashboard
+const prices = {
+    starter: 'price_starter_monthly',
+    pro: 'price_pro_monthly',
+    business: 'price_business_monthly'
+};
+            </pre>
+        </div>
+        <div class="page-footer">Page 2</div>
+    </div>
+    
+    <!-- Page 3: One-Time Payment Model -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <h4>2. ONE-TIME PAYMENT MODEL</h4>
+            <p>Perfect for tools that provide immediate, specific value.</p>
+            
+            <table>
+                <tr>
+                    <th>Use Case</th>
+                    <th>Price Point</th>
+                    <th>Conversion Rate</th>
+                </tr>
+                <tr>
+                    <td>Single Report/Analysis</td>
+                    <td>$19-49</td>
+                    <td>2-4%</td>
+                </tr>
+                <tr>
+                    <td>Lifetime Access</td>
+                    <td>$199-499</td>
+                    <td>0.5-1%</td>
+                </tr>
+                <tr>
+                    <td>Premium Template Pack</td>
+                    <td>$39-99</td>
+                    <td>1-3%</td>
+                </tr>
+                <tr>
+                    <td>Bulk Credits</td>
+                    <td>$9-99</td>
+                    <td>3-5%</td>
+                </tr>
+                <tr>
+                    <td>White Label License</td>
+                    <td>$299-999</td>
+                    <td>0.1-0.5%</td>
+                </tr>
+            </table>
+            
+            <h4>3. FREEMIUM WITH CREDITS</h4>
+            <p>Users get free credits daily/monthly, can purchase more as needed.</p>
+            
+            <pre>
+// Credit system implementation
+class CreditManager {
+    constructor(userId) {
+        this.userId = userId;
+        this.freeCredits = 10; // Daily free credits
+    }
+    
+    async checkCredits() {
+        const user = await db.getUser(this.userId);
+        const lastReset = user.lastCreditReset;
+        const now = new Date();
+        
+        // Reset free credits daily
+        if (now - lastReset > 86400000) {
+            user.credits = this.freeCredits;
+            user.lastCreditReset = now;
+            await db.updateUser(user);
+        }
+        
+        return user.credits;
+    }
+    
+    async useCredit() {
+        const credits = await this.checkCredits();
+        if (credits > 0) {
+            await db.decrementCredits(this.userId);
+            return true;
+        }
+        return false; // Trigger purchase flow
+    }
+}
+            </pre>
+        </div>
+        <div class="page-footer">Page 3</div>
+    </div>
+    
+    <!-- Page 4: Ad-Supported Model -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <h4>4. AD-SUPPORTED MODEL</h4>
+            <p>Monetize free users without barriers to entry.</p>
+            
+            <div class="tip-box">
+                <h4>Ad Placement Best Practices</h4>
+                <ul>
+                    <li>Above the fold: Header banner (728x90)</li>
+                    <li>Sidebar: Skyscraper (160x600)</li>
+                    <li>After results: Native ads or content recommendations</li>
+                    <li>Exit intent: Full-page interstitial (sparingly)</li>
+                </ul>
+            </div>
+            
+            <h4>Google AdSense Integration</h4>
+            <pre>
+<!-- Header Ad -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-YOUR_ID"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+            </pre>
+            
+            <h4>5. AFFILIATE REVENUE</h4>
+            <p>Recommend complementary tools and services.</p>
+            
+            <table>
+                <tr>
+                    <th>Partner Type</th>
+                    <th>Commission</th>
+                    <th>Cookie Duration</th>
+                </tr>
+                <tr>
+                    <td>Hosting (Netlify, Vercel)</td>
+                    <td>$10-50 per signup</td>
+                    <td>30-60 days</td>
+                </tr>
+                <tr>
+                    <td>Email Tools (ConvertKit)</td>
+                    <td>30% recurring</td>
+                    <td>60 days</td>
+                </tr>
+                <tr>
+                    <td>Design Tools (Canva)</td>
+                    <td>$15-36 per sale</td>
+                    <td>30 days</td>
+                </tr>
+                <tr>
+                    <td>Domain Registrars</td>
+                    <td>$5-15 per sale</td>
+                    <td>30 days</td>
+                </tr>
+                <tr>
+                    <td>Cloud Services (AWS)</td>
+                    <td>5-10% of spend</td>
+                    <td>90 days</td>
+                </tr>
+            </table>
+        </div>
+        <div class="page-footer">Page 4</div>
+    </div>
+    
+    <!-- Page 5: White Label and API -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <h4>6. WHITE LABEL / LICENSING</h4>
+            <p>Let others rebrand and sell your tool.</p>
+            
+            <div class="action-box">
+                <h4>Licensing Tiers</h4>
+                <ul>
+                    <li><strong>Basic License:</strong> $299 - Single domain, no modifications</li>
+                    <li><strong>Developer License:</strong> $999 - Unlimited domains, can modify</li>
+                    <li><strong>Agency License:</strong> $2,999 - Resell rights, white label</li>
+                    <li><strong>Enterprise License:</strong> $9,999 - Full source code, unlimited use</li>
+                </ul>
+            </div>
+            
+            <h4>7. API ACCESS</h4>
+            <p>Charge developers to integrate your tool.</p>
+            
+            <pre>
+// API rate limiting and billing
+const rateLimiter = {
+    free: { requests: 100, period: 'day' },
+    starter: { requests: 1000, period: 'day' },
+    pro: { requests: 10000, period: 'day' },
+    enterprise: { requests: 100000, period: 'day' }
+};
+
+app.use('/api', async (req, res, next) => {
+    const apiKey = req.headers['x-api-key'];
+    const user = await validateApiKey(apiKey);
+    
+    if (!user) {
+        return res.status(401).json({ error: 'Invalid API key' });
+    }
+    
+    const limit = rateLimiter[user.plan];
+    const usage = await getApiUsage(user.id);
+    
+    if (usage >= limit.requests) {
+        return res.status(429).json({ 
+            error: 'Rate limit exceeded',
+            upgrade: 'https://yourtool.com/pricing'
+        });
+    }
+    
+    await incrementApiUsage(user.id);
+    next();
+});
+            </pre>
+        </div>
+        <div class="page-footer">Page 5</div>
+    </div>
+    
+    <!-- Page 6: Lesson 4.2 -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <div class="lesson">
+                <h2>Lesson 4.2: Pricing Psychology & Optimization</h2>
+                
+                <h3>The Science of Pricing Your Tool</h3>
+                <p>Pricing isn't just about covering costs - it's about perceived value, market positioning, and psychological triggers.</p>
+                
+                <h4>THE 10X VALUE RULE</h4>
+                <p>Your tool should provide 10x the value of its price.</p>
+                
+                <div class="tip-box">
+                    <h4>Value Calculation Example</h4>
+                    <p><strong>Resume Builder Tool at $19/month:</strong></p>
+                    <ul>
+                        <li>Time saved: 5 hours = $150 value (at $30/hour)</li>
+                        <li>Professional design: $200 value (vs hiring designer)</li>
+                        <li>Increased interview rate: Priceless</li>
+                        <li>Total value: $350+ | Price: $19 | Ratio: 18.4x ✓</li>
+                    </ul>
+                </div>
+                
+                <h4>PSYCHOLOGICAL PRICING TACTICS</h4>
+                
+                <h3>1. Anchoring</h3>
+                <p>Present the most expensive option first to make others seem affordable.</p>
+            </div>
+        </div>
+        <div class="page-footer">Page 6</div>
+    </div>
+    
+    <!-- Page 7: Pricing Display -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <pre>
+// Pricing display order (WRONG)
+<div class="pricing">
+    <div class="plan">Starter - $9/mo</div>
+    <div class="plan">Pro - $29/mo</div>
+    <div class="plan">Business - $99/mo</div>
+</div>
+
+// Pricing display order (RIGHT)
+<div class="pricing">
+    <div class="plan">Business - $99/mo</div>
+    <div class="plan featured">Pro - $29/mo (Most Popular)</div>
+    <div class="plan">Starter - $9/mo</div>
+</div>
+            </pre>
+            
+            <h3>2. Charm Pricing</h3>
+            <p>End prices in 9 or 7 for perceived value.</p>
+            
+            <table>
+                <tr>
+                    <th>Instead of</th>
+                    <th>Use</th>
+                    <th>Psychology</th>
+                </tr>
+                <tr>
+                    <td>$10</td>
+                    <td>$9</td>
+                    <td>Under $10 threshold</td>
+                </tr>
+                <tr>
+                    <td>$30</td>
+                    <td>$29</td>
+                    <td>Still in the twenties</td>
+                </tr>
+                <tr>
+                    <td>$100</td>
+                    <td>$97</td>
+                    <td>Under three figures</td>
+                </tr>
+                <tr>
+                    <td>$50</td>
+                    <td>$47</td>
+                    <td>Seems significantly less</td>
+                </tr>
+                <tr>
+                    <td>$200</td>
+                    <td>$197</td>
+                    <td>Still in the hundreds</td>
+                </tr>
+            </table>
+            
+            <h3>3. Decoy Effect</h3>
+            <p>Add a slightly inferior option to make your target plan irresistible.</p>
+            
+            <div class="action-box">
+                <h4>Decoy Pricing Structure</h4>
+                <ul>
+                    <li>Basic: $19/mo - 100 uses</li>
+                    <li>Plus: $27/mo - 200 uses (DECOY)</li>
+                    <li>Pro: $29/mo - UNLIMITED uses (TARGET)</li>
+                </ul>
+                <p>Result: 73% choose Pro because it's "only $2 more" for unlimited.</p>
+            </div>
+        </div>
+        <div class="page-footer">Page 7</div>
+    </div>
+    
+    <!-- Page 8: Loss Aversion -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <h3>4. Loss Aversion</h3>
+            <p>People fear losing more than they enjoy gaining.</p>
+            
+            <pre>
+// Effective loss aversion copy
+const copyStrategies = {
+    weak: "Get 20% off today",
+    strong: "Don't miss out - 20% discount expires in 24 hours",
+    
+    weak: "Try our Pro plan",
+    strong: "7 days left in your free trial - don't lose your progress",
+    
+    weak: "Subscribe for unlimited access",
+    strong: "You're using 95% of your free credits - upgrade to never run out"
+};
+            </pre>
+            
+            <h4>PRICE TESTING FRAMEWORK</h4>
+            
+            <h3>A/B Testing Methodology</h3>
+            <pre>
+// Price testing implementation
+class PriceTest {
+    constructor() {
+        this.variants = {
+            A: { starter: 9, pro: 29, business: 99 },
+            B: { starter: 7, pro: 27, business: 97 },
+            C: { starter: 12, pro: 37, business: 127 }
+        };
+    }
+    
+    assignVariant(userId) {
+        // Consistent assignment based on user ID
+        const hash = this.hashCode(userId);
+        const variantKeys = Object.keys(this.variants);
+        const index = hash % variantKeys.length;
+        return variantKeys[index];
+    }
+    
+    getPricing(userId) {
+        const variant = this.assignVariant(userId);
+        this.trackView(userId, variant);
+        return this.variants[variant];
+    }
+    
+    trackConversion(userId, plan) {
+        const variant = this.assignVariant(userId);
+        analytics.track('Price Test Conversion', {
+            userId,
+            variant,
+            plan,
+            price: this.variants[variant][plan]
+        });
+    }
+}
+            </pre>
+        </div>
+        <div class="page-footer">Page 8</div>
+    </div>
+    
+    <!-- Page 9: Van Westendorp Analysis -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <h3>Van Westendorp Price Sensitivity Analysis</h3>
+            <p>Survey questions to find optimal pricing:</p>
+            
+            <div class="tip-box">
+                <h4>Survey Questions</h4>
+                <ol>
+                    <li>At what price would this be so cheap you'd question its quality?</li>
+                    <li>At what price would this be a bargain?</li>
+                    <li>At what price would this be getting expensive but you'd still consider it?</li>
+                    <li>At what price would this be too expensive to consider?</li>
+                </ol>
+                <p>The intersection points reveal your optimal price range.</p>
+            </div>
+            
+            <h4>CONVERSION OPTIMIZATION</h4>
+            
+            <h3>Trust Signals</h3>
+            <pre>
+// Trust elements to add near pricing
+<div class="trust-signals">
+    <div class="signal">
+        <img src="lock-icon.svg" />
+        <span>256-bit SSL Encryption</span>
+    </div>
+    <div class="signal">
+        <img src="stripe-badge.svg" />
+        <span>Secure Payments by Stripe</span>
+    </div>
+    <div class="signal">
+        <img src="guarantee.svg" />
+        <span>30-Day Money-Back Guarantee</span>
+    </div>
+    <div class="signal">
+        <span class="users-count">Join 12,847+ users</span>
+    </div>
+</div>
+            </pre>
+            
+            <h3>Urgency and Scarcity</h3>
+            
+            <div class="warning-box">
+                <h4>Use Ethically - Real Scarcity Only</h4>
+                <ul>
+                    <li>Limited-time launch pricing (genuine)</li>
+                    <li>Beta access slots (actually limited)</li>
+                    <li>Founding member pricing (one-time offer)</li>
+                    <li>Black Friday/seasonal deals (annual)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-footer">Page 9</div>
+    </div>
+    
+    <!-- Page 10: Lesson 4.3 -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <div class="lesson">
+                <h2>Lesson 4.3: Revenue Optimization & Scaling</h2>
+                
+                <h3>Maximizing Customer Lifetime Value</h3>
+                <p>The real money isn't in the first sale - it's in the lifetime relationship.</p>
+                
+                <h4>LTV CALCULATION</h4>
+                
+                <pre>
+// Calculate Customer Lifetime Value
+function calculateLTV(avgMonthlyRevenue, churnRate) {
+    // LTV = Average Revenue Per User / Churn Rate
+    const monthlyChurn = churnRate / 100;
+    const customerLifespan = 1 / monthlyChurn; // in months
+    const ltv = avgMonthlyRevenue * customerLifespan;
+    
+    return {
+        ltv: ltv,
+        lifespan: customerLifespan,
+        yearlyValue: avgMonthlyRevenue * 12
+    };
+}
+
+// Example:
+// $29/month average
+// 5% monthly churn
+// LTV = $29 / 0.05 = $580
+// Average customer stays 20 months
+            </pre>
+                
+                <h3>Upsell and Cross-sell Strategies</h3>
+                
+                <table>
+                    <tr>
+                        <th>Strategy</th>
+                        <th>When to Trigger</th>
+                        <th>Conversion Rate</th>
+                    </tr>
+                    <tr>
+                        <td>Usage-based upsell</td>
+                        <td>80% of limit reached</td>
+                        <td>15-25%</td>
+                    </tr>
+                    <tr>
+                        <td>Feature upsell</td>
+                        <td>Tried to use premium feature</td>
+                        <td>10-20%</td>
+                    </tr>
+                    <tr>
+                        <td>Annual plan discount</td>
+                        <td>After 3 months active</td>
+                        <td>20-30%</td>
+                    </tr>
+                    <tr>
+                        <td>Add-on services</td>
+                        <td>Heavy usage patterns</td>
+                        <td>5-15%</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="page-footer">Page 10</div>
+    </div>
+    
+    <!-- Page 11: Revenue Metrics -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <h3>Key Revenue Metrics to Track</h3>
+            
+            <div class="action-box">
+                <h4>Monthly Metrics Dashboard</h4>
+                <ul>
+                    <li><strong>MRR (Monthly Recurring Revenue):</strong> Total subscription revenue</li>
+                    <li><strong>ARPU (Average Revenue Per User):</strong> MRR / Active Users</li>
+                    <li><strong>Churn Rate:</strong> % of users who cancel</li>
+                    <li><strong>CAC (Customer Acquisition Cost):</strong> Marketing spend / New customers</li>
+                    <li><strong>LTV:CAC Ratio:</strong> Should be 3:1 or higher</li>
+                    <li><strong>Conversion Rate:</strong> Free to paid %</li>
+                    <li><strong>Expansion Revenue:</strong> Upgrades and add-ons</li>
+                </ul>
+            </div>
+            
+            <h3>Churn Reduction Tactics</h3>
+            
+            <div class="success-box">
+                <h4>Proven Churn Reducers</h4>
+                <ol>
+                    <li><strong>Onboarding emails:</strong> -20% churn in first month</li>
+                    <li><strong>Usage alerts:</strong> -15% churn for inactive users</li>
+                    <li><strong>Annual plans:</strong> -50% overall churn</li>
+                    <li><strong>Exit surveys:</strong> -10% churn with targeted offers</li>
+                    <li><strong>Feature education:</strong> -25% churn for power users</li>
+                    <li><strong>Payment retry logic:</strong> -30% involuntary churn</li>
+                </ol>
+            </div>
+            
+            <h3>Payment Recovery</h3>
+            
+            <pre>
+// Dunning email sequence for failed payments
+const dunningSequence = [
+    {
+        day: 0,
+        subject: "Payment failed - action required",
+        action: "Update card immediately"
+    },
+    {
+        day: 3,
+        subject: "Your account will be suspended in 4 days",
+        action: "Include direct update link"
+    },
+    {
+        day: 7,
+        subject: "Last chance - account suspending tomorrow",
+        action: "Offer support call"
+    },
+    {
+        day: 14,
+        subject: "We miss you - 50% off to come back",
+        action: "Win-back offer"
+    }
+];
+            </pre>
+        </div>
+        <div class="page-footer">Page 11</div>
+    </div>
+    
+    <!-- Page 12: Module Summary -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 4: Monetization Mastery</div>
+        <div class="page-content">
+            <h3>Module 4 Action Plan</h3>
+            
+            <div class="action-box">
+                <h4>Week 1: Foundation</h4>
+                <ul>
+                    <li>☐ Set up Stripe account</li>
+                    <li>☐ Implement basic paywall</li>
+                    <li>☐ Create 3-tier pricing structure</li>
+                    <li>☐ Add payment processing</li>
+                    <li>☐ Set up subscription management</li>
+                </ul>
+            </div>
+            
+            <div class="action-box">
+                <h4>Week 2: Optimization</h4>
+                <ul>
+                    <li>☐ A/B test pricing</li>
+                    <li>☐ Add trust signals</li>
+                    <li>☐ Implement credit system</li>
+                    <li>☐ Create upsell flows</li>
+                    <li>☐ Set up analytics tracking</li>
+                </ul>
+            </div>
+            
+            <div class="action-box">
+                <h4>Week 3: Expansion</h4>
+                <ul>
+                    <li>☐ Add affiliate program</li>
+                    <li>☐ Implement ad network</li>
+                    <li>☐ Create white label offering</li>
+                    <li>☐ Launch API access</li>
+                    <li>☐ Set up dunning emails</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; margin-top: 50px; padding: 20px; background: #f5f5f5; border-radius: 5px;">
+                <h3 style="color: #d4af37;">Ready for Module 5?</h3>
+                <p>Now that you can monetize your tool, let's drive massive traffic to it!</p>
+            </div>
+        </div>
+        <div class="page-footer">Page 12 | © 2024 AI Business Empire Builder Blueprint</div>
+    </div>
+</body>
+</html>

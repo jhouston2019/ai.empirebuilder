@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module 2 Workbook - Planning Your Empire | MicroSaaS Empire Blueprint</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Georgia, serif;
+            line-height: 1.8;
+            color: #0a0a0a;
+            background: white;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px;
+        }
+        
+        .header {
+            text-align: center;
+            background: #0a0a0a;
+            color: white;
+            padding: 40px;
+            margin: -40px -40px 40px -40px;
+        }
+        
+        .header h1 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #d4af37;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        
+        h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 28px;
+            color: #0a0a0a;
+            border-bottom: 2px solid #0a0a0a;
+            padding-bottom: 10px;
+            margin: 40px 0 20px 0;
+        }
+        
+        h3 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 20px;
+            color: #0a0a0a;
+            margin: 30px 0 15px 0;
+        }
+        
+        .exercise {
+            background: #f5f5f5;
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .worksheet {
+            background: white;
+            border: 2px solid #0a0a0a;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .worksheet h4 {
+            color: #0a0a0a;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+        
+        textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            resize: vertical;
+            margin: 10px 0;
+        }
+        
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            font-family: Georgia, serif;
+            font-size: 14px;
+            margin: 5px 0 15px 0;
+        }
+        
+        .checklist {
+            background: #f0f8ff;
+            border-left: 4px solid #0066cc;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .checklist ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 10px 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .checklist li:last-child {
+            border-bottom: none;
+        }
+        
+        .checklist input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.3);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th {
+            background: #0a0a0a;
+            color: white;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        
+        td input {
+            width: 100%;
+            border: none;
+            padding: 5px;
+            font-family: Georgia, serif;
+        }
+        
+        .validation-sprint {
+            background: #fff5f5;
+            border: 2px solid #cc0000;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .timeline {
+            background: #f5fff5;
+            border-left: 4px solid #00cc00;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding-top: 20px;
+            border-top: 2px solid #0a0a0a;
+            color: #666;
+        }
+        
+        @media print {
+            .header {
+                color: #0a0a0a;
+                background: white;
+                border: 2px solid #0a0a0a;
+            }
+            
+            .header p {
+                color: #0a0a0a;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>MODULE 2 WORKBOOK</h1>
+        <p>PLANNING YOUR EMPIRE</p>
+    </div>
+
+    <h2>Market Research Deep Dive</h2>
+    
+    <div class="exercise">
+        <h3>Exercise 1: Keyword Research & Analysis</h3>
+        <p>Use free tools (Google Keyword Planner, Ubersuggest, AnswerThePublic) to research your tool idea.</p>
+        
+        <div class="worksheet">
+            <h4>Primary Keyword Research</h4>
+            <p><strong>Your main tool keyword:</strong></p>
+            <input type="text" placeholder="e.g., 'invoice generator'">
+            
+            <table>
+                <tr>
+                    <th>Search Term</th>
+                    <th>Monthly Volume</th>
+                    <th>Competition</th>
+                    <th>CPC</th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="[tool] generator"></td>
+                    <td><input type="text" placeholder="e.g., 10K"></td>
+                    <td><input type="text" placeholder="Low/Med/High"></td>
+                    <td><input type="text" placeholder="$X.XX"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="[tool] calculator"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="free [tool]"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="online [tool]"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="how to [task]"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            
+            <p><strong>Total Addressable Search Volume:</strong></p>
+            <input type="text" placeholder="Sum of all related searches per month">
+            
+            <p><strong>Key Insights from Research:</strong></p>
+            <textarea placeholder="What did you learn about search demand and competition?"></textarea>
+        </div>
+    </div>
+
+    <div class="exercise">
+        <h3>Exercise 2: Audience Research</h3>
+        <p>Deep dive into where your users hang out online.</p>
+        
+        <div class="worksheet">
+            <h4>Community Mapping</h4>
+            
+            <p><strong>Reddit Communities:</strong></p>
+            <table>
+                <tr>
+                    <th>Subreddit</th>
+                    <th>Members</th>
+                    <th>Activity Level</th>
+                    <th>Relevant Posts/Week</th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="r/entrepreneur"></td>
+                    <td><input type="text" placeholder="1.2M"></td>
+                    <td><input type="text" placeholder="High"></td>
+                    <td><input type="text" placeholder="5-10"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            
+            <p><strong>Facebook Groups:</strong></p>
+            <textarea placeholder="List groups with member counts"></textarea>
+            
+            <p><strong>Other Communities (Discord, Slack, Forums):</strong></p>
+            <textarea placeholder="List other relevant communities"></textarea>
+            
+            <p><strong>Common Pain Points (from community research):</strong></p>
+            <textarea placeholder="What specific problems do people complain about?"></textarea>
+        </div>
+    </div>
+
+    <h2>Competitive Analysis</h2>
+    
+    <div class="exercise">
+        <h3>Exercise 3: Deep Competitor Research</h3>
+        <p>Analyze your top 3 competitors in detail.</p>
+        
+        <div class="worksheet">
+            <h4>Competitor Deep Dive</h4>
+            
+            <table>
+                <tr>
+                    <th>Aspect</th>
+                    <th>Competitor 1</th>
+                    <th>Competitor 2</th>
+                    <th>Competitor 3</th>
+                </tr>
+                <tr>
+                    <td><strong>Name/URL</strong></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><strong>Monthly Traffic</strong></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><strong>Pricing Model</strong></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><strong>Key Features</strong></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td><strong>Main Weakness</strong></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            
+            <p><strong>Your Differentiation Strategy:</strong></p>
+            <textarea placeholder="How will you be different and better? Be specific."></textarea>
+            
+            <p><strong>Your Unique Selling Proposition (USP):</strong></p>
+            <input type="text" placeholder="One sentence that sets you apart">
+        </div>
+    </div>
+
+    <h2>The 48-Hour Validation Sprint</h2>
+    
+    <div class="validation-sprint">
+        <h3>Exercise 4: Your Validation Sprint Plan</h3>
+        <p><strong>⏰ This is your most important exercise - don't skip validation!</strong></p>
+        
+        <div class="worksheet">
+            <h4>Day 1 Plan (Hours 1-24)</h4>
+            
+            <p><strong>Hours 1-4: Research</strong></p>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox"> Keyword research complete</li>
+                    <li><input type="checkbox"> 10 competitors identified</li>
+                    <li><input type="checkbox"> 50+ forum posts read</li>
+                    <li><input type="checkbox"> User language documented</li>
+                </ul>
+            </div>
+            
+            <p><strong>Hours 5-8: Landing Page</strong></p>
+            <p>Your landing page URL:</p>
+            <input type="text" placeholder="yourtool.com or carrd.co/yourtool">
+            <p>Headline:</p>
+            <input type="text" placeholder="Main value proposition">
+            <p>Subheadline:</p>
+            <input type="text" placeholder="Supporting benefit">
+            
+            <p><strong>Hours 9-12: Mock-up</strong></p>
+            <div class="checklist">
+                <ul>
+                    <li><input type="checkbox"> Tool interface designed</li>
+                    <li><input type="checkbox"> 3-5 screenshots created</li>
+                    <li><input type="checkbox"> Demo GIF made</li>
+                    <li><input type="checkbox"> Added to landing page</li>
+                </ul>
+            </div>
+            
+            <p><strong>Hours 13-16: Initial Traffic</strong></p>
+            <p>Where will you share?</p>
+            <table>
+                <tr>
+                    <th>Platform</th>
+                    <th>Specific Location</th>
+                    <th>Post Title/Hook</th>
+                </tr>
+                <tr>
+                    <td>Reddit</td>
+                    <td><input type="text" placeholder="r/entrepreneur"></td>
+                    <td><input type="text" placeholder="Your post title"></td>
+                </tr>
+                <tr>
+                    <td>Facebook</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="worksheet">
+            <h4>Day 2 Plan (Hours 25-48)</h4>
+            
+            <p><strong>Hours 25-28: Paid Traffic Test</strong></p>
+            <p>Google Ads Budget: $<input type="number" style="width: 100px;" placeholder="50"></p>
+            <p>Target Keywords:</p>
+            <textarea placeholder="List 5-10 keywords you'll bid on"></textarea>
+            
+            <p><strong>Hours 29-32: Direct Outreach</strong></p>
+            <p>Your outreach message template:</p>
+            <textarea placeholder="Write your DM/email template"></textarea>
+            <p>Who will you contact? (List 20 people/groups):</p>
+            <textarea placeholder="List specific people or groups to contact"></textarea>
+            
+            <p><strong>Hours 33-40: Results Analysis</strong></p>
+            <table>
+                <tr>
+                    <th>Metric</th>
+                    <th>Target</th>
+                    <th>Actual</th>
+                </tr>
+                <tr>
+                    <td>Landing Page Visitors</td>
+                    <td><input type="text" placeholder="100+"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Email Signups</td>
+                    <td><input type="text" placeholder="10+"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Conversion Rate</td>
+                    <td><input type="text" placeholder="5%+"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Cost Per Click</td>
+                    <td><input type="text" placeholder="<$2"></td>
+                    <td><input type="text"></td>
+                </tr>
+                <tr>
+                    <td>Positive Feedback</td>
+                    <td><input type="text" placeholder="10+"></td>
+                    <td><input type="text"></td>
+                </tr>
+            </table>
+            
+            <p><strong>Go/No-Go Decision:</strong></p>
+            <textarea placeholder="Based on results, should you build this? Why or why not?"></textarea>
+        </div>
+    </div>
+
+    <h2>MVP Feature Planning</h2>
+    
+    <div class="exercise">
+        <h3>Exercise 5: Feature Prioritization</h3>
+        <p>Define exactly what you'll build in your MVP.</p>
+        
+        <div class="worksheet">
+            <h4>MVP Feature List</h4>
+            
+            <table>
+                <tr>
+                    <th>Feature</th>
+                    <th>Priority (P0/P1/P2)</th>
+                    <th>Time to Build</th>
+                    <th>In MVP?</th>
+                </tr>
+                <tr>
+                    <td><input type="text" placeholder="Core tool function"></td>
+                    <td><input type="text" placeholder="P0"></td>
+                    <td><input type="text" placeholder="2 days"></td>
+                    <td><input type="checkbox" checked></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+                <tr>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="text"></td>
+                    <td><input type="checkbox"></td>
+                </tr>
+            </table>
+            
+            <p><strong>Total MVP Build Time:</strong> <input type="text" style="width: 200px;" placeholder="X days"></p>
+            
+            <p><strong>What's NOT in MVP (but coming later):</strong></p>
+            <textarea placeholder="List features you're intentionally leaving out of v1"></textarea>
+        </div>
+    </div>
+
+    <div class="timeline">
+        <h3>✅ Module 2 Action Timeline</h3>
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Tasks</th>
+                <th>Complete?</th>
+            </tr>
+            <tr>
+                <td>Day 1</td>
+                <td>Keyword research, competitor analysis</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>Day 2</td>
+                <td>Audience research, community mapping</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>Day 3-4</td>
+                <td>48-hour validation sprint</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>Day 5</td>
+                <td>Analyze results, make go/no-go decision</td>
+                <td><input type="checkbox"></td>
+            </tr>
+        </table>
+    </div>
+
+    <h2>Notes & Insights</h2>
+    <div class="worksheet">
+        <h4>Key Learnings from Validation</h4>
+        <textarea placeholder="What surprised you? What confirmed your assumptions? What pivot ideas emerged?" style="min-height: 200px;"></textarea>
+    </div>
+
+    <div class="footer">
+        <p><strong>Module 2 Workbook Complete!</strong></p>
+        <p>If validation passed, proceed to Module 3: Building Your Tool</p>
+        <p>If validation failed, return to Module 1 with a new idea</p>
+        <p>MicroSaaS Empire Blueprint © 2024</p>
+    </div>
+</body>
+</html>
