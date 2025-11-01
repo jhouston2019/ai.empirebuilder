@@ -28,17 +28,18 @@ document.addEventListener('DOMContentLoaded', function() {
     const faqQuestions = document.querySelectorAll('.faq-question');
     faqQuestions.forEach(question => {
         question.addEventListener('click', function() {
+            const faqItem = this.closest('.faq-item');
             const answer = this.nextElementSibling;
-            const isActive = answer.classList.contains('active');
+            const isActive = faqItem.classList.contains('active');
             
             // Close all other FAQ items
-            document.querySelectorAll('.faq-answer').forEach(item => {
+            document.querySelectorAll('.faq-item').forEach(item => {
                 item.classList.remove('active');
             });
             
             // Toggle current item
             if (!isActive) {
-                answer.classList.add('active');
+                faqItem.classList.add('active');
             }
         });
     });
