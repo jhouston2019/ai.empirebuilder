@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Site Navigation | AI Business Empire Builder</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/style.css">
+    
+    <style>
+        .admin-page {
+            min-height: 100vh;
+            padding-top: 100px;
+            background: var(--bg-black);
+        }
+        .admin-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .admin-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .admin-header h1 {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        .admin-links-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .admin-section-card {
+            background: var(--bg-dark);
+            border: 2px solid var(--border-gold);
+            border-radius: 12px;
+            padding: 2rem;
+        }
+        .admin-section-card h2 {
+            color: var(--gold-primary);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            border-bottom: 1px solid var(--border-gold);
+            padding-bottom: 0.5rem;
+        }
+        .admin-page-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .admin-page-links li {
+            margin-bottom: 0.75rem;
+        }
+        .admin-page-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 0.5rem;
+            border-radius: 6px;
+        }
+        .admin-page-links a:hover {
+            color: var(--gold-primary);
+            background: rgba(255, 215, 0, 0.1);
+            padding-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="/" class="logo">AI Business Empire Builder</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/resources.html">Resources</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Admin Page -->
+    <section class="admin-page">
+        <div class="admin-container">
+            <div class="admin-header">
+                <h1>Admin Navigation</h1>
+                <p style="color: var(--text-gray);">Quick access to all site pages</p>
+            </div>
+
+            <div class="admin-links-section">
+                <div class="admin-section-card">
+                    <h2>Main Pages</h2>
+                    <ul class="admin-page-links">
+                        <li><a href="/index.html">Home / Landing Page</a></li>
+                        <li><a href="/resources.html">Resources Center</a></li>
+                        <li><a href="/course-overview.html">Course Overview</a></li>
+                        <li><a href="/pricing.html">Pricing</a></li>
+                        <li><a href="/thankyou.html">Thank You Page</a></li>
+                    </ul>
+                </div>
+
+                <div class="admin-section-card">
+                    <h2>Course Modules</h2>
+                    <ul class="admin-page-links">
+                        <li><a href="/modules/module1-foundation.html">Module 1 - Foundation</a></li>
+                        <li><a href="/modules/module2-planning.html">Module 2 - Planning Your Empire</a></li>
+                        <li><a href="/modules/module3-building.html">Module 3 - Building Your SaaS Tool</a></li>
+                        <li><a href="/modules/module4-monetization.html">Module 4 - Monetization Mastery</a></li>
+                        <li><a href="/modules/module5-traffic.html">Module 5 - Traffic & Growth</a></li>
+                        <li><a href="/modules/module6-scaling.html">Module 6 - Scaling to 6 Figures</a></li>
+                    </ul>
+                </div>
+
+                <div class="admin-section-card">
+                    <h2>Legal Pages</h2>
+                    <ul class="admin-page-links">
+                        <li><a href="/legal/terms.html">Terms of Service</a></li>
+                        <li><a href="/legal/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/legal/refund.html">Refund Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AI Business Empire Builder</h3>
+                    <p>The complete system for building profitable AI-powered businesses.</p>
+                    <p class="footer-brand">Built by <strong>Axis Strategic Holdings</strong></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/resources.html">Resources Center</a></li>
+                        <li><a href="/course-overview.html">Course Overview</a></li>
+                        <li><a href="/pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul class="footer-links">
+                        <li><a href="/legal/terms.html">Terms of Service</a></li>
+                        <li><a href="/legal/privacy.html">Privacy Policy</a></li>
+                        <li><a href="/legal/refund.html">Refund Policy</a></li>
+                        <li><a href="mailto:support@aiempirebuilder.pro">Contact</a></li>
+                        <li><a href="/admin.html">Admin</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Axis Strategic Holdings | All Rights Reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="/assets/script.js"></script>
+</body>
+</html>
+
