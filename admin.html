@@ -16,6 +16,20 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" href="/assets/style.css">
     
+    <script>
+        // Check authentication before page loads
+        if (sessionStorage.getItem('adminAuthenticated') !== 'true') {
+            window.location.href = '/login.html';
+        }
+        
+        // Logout function
+        function logout() {
+            sessionStorage.removeItem('adminAuthenticated');
+            sessionStorage.removeItem('adminLoginTime');
+            window.location.href = '/login.html';
+        }
+    </script>
+    
     <style>
         .admin-page {
             min-height: 100vh;
@@ -102,6 +116,9 @@
             <div class="admin-header">
                 <h1>Admin Navigation</h1>
                 <p style="color: var(--text-gray);">Quick access to all site pages</p>
+                <button onclick="logout()" style="margin-top: 1rem; padding: 10px 24px; background: transparent; border: 2px solid var(--gold-primary); color: var(--gold-primary); border-radius: 8px; cursor: pointer; font-family: 'Poppins', sans-serif; font-weight: 600; transition: all 0.3s ease;">
+                    Logout
+                </button>
             </div>
 
             <div class="admin-links-section">
@@ -165,7 +182,7 @@
                         <li><a href="/legal/privacy.html">Privacy Policy</a></li>
                         <li><a href="/legal/refund.html">Refund Policy</a></li>
                         <li><a href="mailto:support@aiempirebuilder.pro">Contact</a></li>
-                        <li><a href="/admin.html">Admin</a></li>
+                        <li><a href="/login.html">Admin</a></li>
                     </ul>
                 </div>
             </div>
