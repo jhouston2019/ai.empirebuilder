@@ -553,6 +553,33 @@ p {
     color: var(--text-white);
 }
 
+.dashboard-benefits-centered {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.dashboard-benefits-centered h2 {
+    text-align: center;
+}
+
+.dashboard-benefits-centered .benefits-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.dashboard-benefits-centered .benefits-list li {
+    justify-content: center;
+    text-align: center;
+}
+
+.dashboard-benefits-centered .benefits-list li > div {
+    text-align: center;
+}
+
 .benefits-list {
     list-style: none;
 }
