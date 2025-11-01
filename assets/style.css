@@ -255,6 +255,10 @@ p {
     right: 0;
     bottom: 0;
     z-index: 0;
+    background-image: url('/assets/images/10.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero-gradient {
@@ -263,8 +267,10 @@ p {
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.05) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(255, 215, 0, 0.05) 0%, transparent 70%),
+                linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(15, 15, 15, 0.8) 100%);
     animation: pulseGlow 4s ease-in-out infinite;
+    z-index: 1;
 }
 
 @keyframes pulseGlow {
@@ -288,6 +294,7 @@ p {
     background-size: 50px 50px;
     opacity: 0.3;
     animation: gridMove 20s linear infinite;
+    z-index: 1;
 }
 
 @keyframes gridMove {
