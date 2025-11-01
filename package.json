@@ -1,0 +1,12 @@
+{
+  "name": "ai-empire-builder",
+  "version": "1.0.0",
+  "description": "AI Business Empire Builder - HTML to PDF converter",
+  "scripts": {
+    "convert-pdfs": "node convert-to-pdf.js"
+  },
+  "dependencies": {
+    "puppeteer": "^21.6.1"
+  }
+}
+
