@@ -533,60 +533,19 @@ p {
     position: relative;
 }
 
-.dashboard-placeholder {
-    background: var(--bg-dark);
-    border: 2px solid var(--border-gold);
-    border-radius: 16px;
-    padding: 2rem;
-    min-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.dashboard-content {
+.dashboard-img {
     width: 100%;
-    height: 300px;
-    background: var(--bg-charcoal);
-    border-radius: 12px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    height: auto;
+    border-radius: 16px;
+    border: 2px solid var(--border-gold);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
 }
 
-.dashboard-header {
-    height: 40px;
-    background: var(--gradient-gold);
-    border-radius: 6px;
-    opacity: 0.3;
-}
-
-.dashboard-metrics {
-    display: flex;
-    gap: 1rem;
-}
-
-.metric {
-    flex: 1;
-    height: 80px;
-    background: rgba(255, 215, 0, 0.1);
-    border: 1px solid var(--border-gold);
-    border-radius: 8px;
-}
-
-.dashboard-chart {
-    flex: 1;
-    background: rgba(255, 215, 0, 0.05);
-    border: 1px solid var(--border-gold);
-    border-radius: 8px;
-}
-
-.placeholder-text {
-    margin-top: 1rem;
-    color: var(--text-muted);
-    font-size: 0.9rem;
+.dashboard-img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 50px var(--shadow-gold);
+    border-color: var(--gold-primary);
 }
 
 .dashboard-benefits h2 {
@@ -1012,6 +971,240 @@ p {
     font-size: 0.9rem;
 }
 
+/* Resources Center Styles */
+.resources-hero {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.resources-hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    margin-bottom: 1rem;
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.resources-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.resource-module-card {
+    background: var(--bg-dark);
+    border: 2px solid var(--border-gold);
+    border-radius: 16px;
+    padding: 2.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.resource-module-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 12px 40px var(--shadow-gold);
+}
+
+.module-status {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.status-badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.status-available {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    border: 1px solid #4CAF50;
+}
+
+.status-coming-soon {
+    background: rgba(255, 215, 0, 0.1);
+    color: var(--gold-primary);
+    border: 1px solid var(--border-gold);
+}
+
+.module-number {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-primary);
+    opacity: 0.5;
+}
+
+.module-icon-large {
+    font-size: 4rem;
+    margin: 1.5rem 0;
+    text-align: center;
+    display: block;
+}
+
+.resource-module-card h3 {
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+    text-align: center;
+}
+
+.resource-module-card .module-description {
+    color: var(--text-gray);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.module-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-link {
+    color: var(--gold-primary);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    color: var(--gold-secondary);
+    text-decoration: underline;
+}
+
+.module-progress {
+    margin-top: 1.5rem;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background: var(--bg-charcoal);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--gradient-gold);
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-align: center;
+    display: block;
+}
+
+.resources-bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.bonus-resource-card {
+    background: var(--bg-dark);
+    border: 2px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.bonus-resource-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 30px var(--shadow-gold);
+}
+
+.bonus-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.bonus-resource-card h3 {
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.bonus-resource-card p {
+    color: var(--text-gray);
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.quick-links-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.quick-link-card {
+    background: var(--bg-dark);
+    border: 2px solid var(--border-gold);
+    border-radius: 12px;
+    padding: 2.5rem;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+.quick-link-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--gold-primary);
+    box-shadow: 0 10px 30px var(--shadow-gold);
+}
+
+.quick-link-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.quick-link-card h3 {
+    color: var(--gold-primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.quick-link-card p {
+    color: var(--text-gray);
+    font-size: 1rem;
+    margin: 0;
+}
+
+.nav-menu a.active {
+    color: var(--gold-primary);
+}
+
+.nav-menu a.active::after {
+    width: 100%;
+}
+
 /* Responsive Design */
 @media (max-width: 1024px) {
     .dashboard-section {
@@ -1058,7 +1251,10 @@ p {
     .modules-grid,
     .value-grid,
     .pricing-grid,
-    .testimonials-grid {
+    .testimonials-grid,
+    .resources-modules-grid,
+    .resources-bonus-grid,
+    .quick-links-grid {
         grid-template-columns: 1fr;
     }
 
