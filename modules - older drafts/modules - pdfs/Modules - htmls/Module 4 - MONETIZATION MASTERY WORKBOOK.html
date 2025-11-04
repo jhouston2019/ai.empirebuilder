@@ -1,0 +1,1547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSaaS Empire Blueprint - Workbook 4: Monetization Mastery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Crimson+Text:wght@400;600&family=Montserrat:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            color: #2c3e50;
+            background: #fafafa;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            background: white;
+            border: 3px solid #d4af37;
+            padding: 0.75in;
+            margin-bottom: 0.5in;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                border: 3px solid #d4af37;
+                page-break-after: always;
+            }
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #0a0a0a;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #0a0a0a;
+            font-size: 28px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #d4af37;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #0a0a0a;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .module-tag {
+            background: #0a0a0a;
+            color: #d4af37;
+            padding: 8px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 0.5in;
+            right: 0.75in;
+            color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .pro-tip {
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f0e6 100%);
+            border-left: 5px solid #d4af37;
+            padding: 15px 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .pro-tip::before {
+            content: "💡 PRO TIP";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            color: #d4af37;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        
+        .quick-win {
+            background: #0a0a0a;
+            color: white;
+            padding: 30px;
+            margin: 20px 0;
+            border: 3px solid #d4af37;
+        }
+        
+        .quick-win h3 {
+            color: #d4af37;
+        }
+        
+        .table-grid {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .table-grid th {
+            background: #0a0a0a;
+            color: #d4af37;
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .table-grid td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            height: 40px;
+        }
+        
+        .pricing-box {
+            border: 3px solid #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .price-display {
+            font-size: 48px;
+            font-weight: bold;
+            color: #d4af37;
+            margin: 20px 0;
+        }
+        
+        .metric-box {
+            background: #f8f8f8;
+            border: 2px solid #e0e0e0;
+            padding: 15px;
+            margin: 10px 0;
+            display: inline-block;
+            width: 48%;
+        }
+        
+        .revenue-tracker {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .revenue-month {
+            text-align: center;
+            border: 2px solid #d4af37;
+            padding: 15px;
+        }
+        
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 9in;
+            text-align: center;
+        }
+        
+        .cover-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #0a0a0a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .cover-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+        
+        .psychology-box {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border: 2px solid #f39c12;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .celebration-box {
+            background: linear-gradient(135deg, #00cc66 0%, #00aa55 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Cover Page -->
+    <div class="page">
+        <div class="cover-page">
+            <div class="module-tag" style="font-size: 18px; margin-bottom: 30px;">MODULE 4</div>
+            <h1 class="cover-title" style="border: none;">MONETIZATION<br>MASTERY</h1>
+            <p class="cover-subtitle">Turn Your Tool Into a Money Machine</p>
+            <div style="font-style: italic; font-size: 20px; color: #666; margin: 30px 0;">
+                "Price is what you pay. Value is what you get."
+                <br><small style="color: #999;">- Warren Buffett</small>
+            </div>
+            <div style="margin-top: 50px;">
+                <p><strong>Student Name:</strong> _____________________________________</p>
+                <br>
+                <p><strong>Tool Name:</strong> _____________________________________</p>
+                <br>
+                <p><strong>Revenue Goal (Year 1):</strong> $_____________________________________</p>
+                <br>
+                <p><strong>Start Date:</strong> _____________________________________</p>
+            </div>
+        </div>
+        <div class="page-number">Page 1</div>
+    </div>
+
+    <!-- Page 2: Module Overview & Quick Win -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>OVERVIEW</div>
+        </div>
+        
+        <h2>Module Progress Checklist</h2>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 1: Pricing Psychology Fundamentals</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 2: SaaS Pricing Models Deep Dive</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 3: Value Ladder Construction</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 4: A/B Testing Pricing</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 5: Conversion Optimization</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 6: Revenue Maximization Strategies</label>
+        </div>
+        
+        <div class="quick-win">
+            <h3>🚀 QUICK WIN GENERATOR</h3>
+            <p style="color: white; margin-top: 10px;">Start making money TODAY:</p>
+            <p style="color: #d4af37; font-size: 18px; margin-top: 15px;">
+                <strong>Next 2 Hours:</strong> Set up your first pricing tier at $29/month and add a "Get Started" button to your homepage. Even if it's not perfect, you can start collecting payments!
+            </p>
+            <div style="margin-top: 20px;">
+                <input type="checkbox">
+                <label style="color: white;">First price live and payment button added!</label>
+            </div>
+        </div>
+        
+        <h2>Pre-Monetization Assessment</h2>
+        <p><strong>Current pricing idea:</strong> $___________ per __________</p>
+        <p><strong>Competitors' average price:</strong> $__________</p>
+        <p><strong>Value I provide above competitors:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <div class="page-number">Page 2</div>
+    </div>
+
+    <!-- Page 3: Pricing Strategy Worksheet -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>PRICING STRATEGY</div>
+        </div>
+        
+        <h2>Pricing Strategy Worksheet</h2>
+        
+        <h3>Cost Analysis</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Cost Item</th>
+                    <th>Monthly Cost</th>
+                    <th>Per User Cost</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Hosting/Infrastructure</td>
+                    <td>$</td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Third-party APIs</td>
+                    <td>$</td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Support Tools</td>
+                    <td>$</td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Marketing Tools</td>
+                    <td>$</td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Payment Processing (2.9%)</td>
+                    <td>$</td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td><strong>Total</strong></td>
+                    <td><strong>$</strong></td>
+                    <td><strong>$</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Value-Based Pricing Calculation</h3>
+        <p><strong>Time saved per month for user:</strong> __________ hours</p>
+        <p><strong>User's hourly rate:</strong> $__________</p>
+        <p><strong>Monthly value created:</strong> $__________</p>
+        <p><strong>10% of value (fair price):</strong> $__________</p>
+        
+        <h3>Psychological Price Points</h3>
+        <div class="psychology-box">
+            <h4 style="margin-top: 0;">Charm Pricing Options</h4>
+            <p>Instead of $30 → Try $29</p>
+            <p>Instead of $50 → Try $49 or $47</p>
+            <p>Instead of $100 → Try $99 or $97</p>
+            <p><strong>My charm price:</strong> $__________</p>
+        </div>
+        
+        <h3>Pricing Tiers Structure</h3>
+        <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;">
+            <div class="pricing-box">
+                <h4>STARTER</h4>
+                <p class="price-display">$____</p>
+                <p>/month</p>
+                <ul style="text-align: left; margin-left: 20px;">
+                    <li>________________</li>
+                    <li>________________</li>
+                    <li>________________</li>
+                </ul>
+            </div>
+            <div class="pricing-box" style="border-color: #00cc66;">
+                <h4>PRO</h4>
+                <p style="color: #00cc66;">Most Popular</p>
+                <p class="price-display">$____</p>
+                <p>/month</p>
+                <ul style="text-align: left; margin-left: 20px;">
+                    <li>________________</li>
+                    <li>________________</li>
+                    <li>________________</li>
+                    <li>________________</li>
+                </ul>
+            </div>
+            <div class="pricing-box">
+                <h4>ENTERPRISE</h4>
+                <p class="price-display">$____</p>
+                <p>/month</p>
+                <ul style="text-align: left; margin-left: 20px;">
+                    <li>________________</li>
+                    <li>________________</li>
+                    <li>________________</li>
+                    <li>________________</li>
+                    <li>________________</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page-number">Page 3</div>
+    </div>
+
+    <!-- Page 4: Revenue Model Comparison -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>REVENUE MODELS</div>
+        </div>
+        
+        <h2>Revenue Model Comparison</h2>
+        
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Pros</th>
+                    <th>Cons</th>
+                    <th>Best For</th>
+                    <th>Use?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Subscription</strong></td>
+                    <td>Predictable revenue, High LTV</td>
+                    <td>Churn management</td>
+                    <td>Ongoing value tools</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td><strong>One-time</strong></td>
+                    <td>Easy sale, No churn</td>
+                    <td>Limited LTV</td>
+                    <td>Simple tools</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td><strong>Freemium</strong></td>
+                    <td>Large user base</td>
+                    <td>Low conversion</td>
+                    <td>Viral tools</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td><strong>Usage-based</strong></td>
+                    <td>Fair pricing, Scales with value</td>
+                    <td>Unpredictable revenue</td>
+                    <td>API/Processing tools</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td><strong>Hybrid</strong></td>
+                    <td>Multiple revenue streams</td>
+                    <td>Complex to manage</td>
+                    <td>Mature products</td>
+                    <td>☐</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>My Revenue Model Decision</h3>
+        <p><strong>Primary model:</strong> _____________________________________</p>
+        <p><strong>Why this model:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <h3>Upsell & Cross-sell Opportunities</h3>
+        <p><strong>Add-on #1:</strong> _____________________________________ <strong>Price:</strong> $__________</p>
+        <p><strong>Add-on #2:</strong> _____________________________________ <strong>Price:</strong> $__________</p>
+        <p><strong>Add-on #3:</strong> _____________________________________ <strong>Price:</strong> $__________</p>
+        
+        <h3>Annual Plan Strategy</h3>
+        <div style="background: #f8f8f8; padding: 20px; margin: 20px 0;">
+            <p><strong>Monthly price:</strong> $__________</p>
+            <p><strong>Annual price (×12):</strong> $__________</p>
+            <p><strong>Discount offered:</strong> __________%</p>
+            <p><strong>Annual price (with discount):</strong> $__________</p>
+            <p><strong>Months free:</strong> __________ months</p>
+        </div>
+        
+        <div class="pro-tip">
+            <p>Offering 2 months free on annual plans (16.7% discount) is the sweet spot for conversions!</p>
+        </div>
+        
+        <div class="page-number">Page 4</div>
+    </div>
+
+    <!-- Page 5: Pricing Psychology Checklist -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>PSYCHOLOGY</div>
+        </div>
+        
+        <h2>Pricing Psychology Checklist</h2>
+        
+        <h3>Cognitive Biases to Leverage</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label><strong>Anchoring:</strong> Show enterprise price first ($499) to make Pro ($99) seem cheap</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label><strong>Decoy Effect:</strong> Make middle tier obviously best value</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label><strong>Loss Aversion:</strong> "Save $X per month" vs "Pay $X more"</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label><strong>Social Proof:</strong> "Most popular" badge on preferred tier</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label><strong>Scarcity:</strong> "Only 10 spots at this price"</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label><strong>Urgency:</strong> "Price increases in X days"</label>
+        </div>
+        
+        <h3>Price Display Optimization</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Remove currency symbol ($29 vs $29.00)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Use smaller font for cents</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Show per-day cost for expensive plans ("Just $3/day")</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Compare to familiar expense ("Less than a coffee")</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Highlight savings on annual plan</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Show value created, not cost</label>
+        </div>
+        
+        <h3>Trust Signals</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Money-back guarantee badge</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Security badges (SSL, Stripe)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Customer count ("Join 500+ users")</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Testimonials near pricing</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>"No credit card required" for trials</label>
+        </div>
+        
+        <div class="page-number">Page 5</div>
+    </div>
+
+    <!-- Page 6: A/B Test Tracking Sheet -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>A/B TESTING</div>
+        </div>
+        
+        <h2>A/B Test Tracking Sheet</h2>
+        
+        <h3>Test #1: Price Point</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Variant</th>
+                    <th>Price</th>
+                    <th>Visitors</th>
+                    <th>Conversions</th>
+                    <th>Conv Rate</th>
+                    <th>Revenue</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A (Control)</td>
+                    <td>$</td>
+                    <td></td>
+                    <td></td>
+                    <td>%</td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>B (Test)</td>
+                    <td>$</td>
+                    <td></td>
+                    <td></td>
+                    <td>%</td>
+                    <td>$</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Winner:</strong> _____________ <strong>Lift:</strong> _____% <strong>Confidence:</strong> _____%</p>
+        
+        <h3>Test #2: Billing Frequency</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Variant</th>
+                    <th>Offer</th>
+                    <th>Visitors</th>
+                    <th>Conversions</th>
+                    <th>Conv Rate</th>
+                    <th>LTV</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>A (Monthly)</td>
+                    <td>$___/mo</td>
+                    <td></td>
+                    <td></td>
+                    <td>%</td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>B (Annual)</td>
+                    <td>$___/yr</td>
+                    <td></td>
+                    <td></td>
+                    <td>%</td>
+                    <td>$</td>
+                </tr>
+            </tbody>
+        </table>
+        <p><strong>Winner:</strong> _____________ <strong>Lift:</strong> _____% <strong>Confidence:</strong> _____%</p>
+        
+        <h3>Test #3: Free Trial Length</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Variant</th>
+                    <th>Trial Days</th>
+                    <th>Signups</th>
+                    <th>Conversions</th>
+                    <th>Conv Rate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>7 days</td>
+                    <td>7</td>
+                    <td></td>
+                    <td></td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td>14 days</td>
+                    <td>14</td>
+                    <td></td>
+                    <td></td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td>30 days</td>
+                    <td>30</td>
+                    <td></td>
+                    <td></td>
+                    <td>%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="pro-tip">
+            <p>Run each test for at least 2 weeks or 1000 visitors to reach statistical significance!</p>
+        </div>
+        
+        <div class="page-number">Page 6</div>
+    </div>
+
+    <!-- Page 7: Conversion Rate Calculator -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>CONVERSION</div>
+        </div>
+        
+        <h2>Conversion Rate Calculator</h2>
+        
+        <h3>Funnel Analysis</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Stage</th>
+                    <th>Visitors</th>
+                    <th>Conversion %</th>
+                    <th>Next Stage</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Homepage Visitors</td>
+                    <td>1000</td>
+                    <td>→</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Pricing Page Views</td>
+                    <td></td>
+                    <td>_____%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Trial Signups</td>
+                    <td></td>
+                    <td>_____%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Active Trial Users</td>
+                    <td></td>
+                    <td>_____%</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Paid Conversions</td>
+                    <td></td>
+                    <td>_____%</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Overall Conversion Rate:</strong> _____% (Should be 1-3% for SaaS)</p>
+        
+        <h3>Conversion Optimization Checklist</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Clear value proposition above fold</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Social proof on landing page</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Simple pricing (max 3 tiers)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Free trial or demo offered</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Objections addressed on pricing page</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>FAQ section included</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Live chat available</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Exit intent popup</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Abandoned cart emails</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Onboarding sequence optimized</label>
+        </div>
+        
+        <h3>Revenue Impact Calculator</h3>
+        <div style="background: #f8f8f8; padding: 20px; margin: 20px 0;">
+            <p>Current conversion rate: _____% × 1000 visitors = _____ customers</p>
+            <p>Improved by 1%: _____% × 1000 visitors = _____ customers</p>
+            <p><strong>Additional revenue at $___/customer = $________</strong></p>
+        </div>
+        
+        <div class="page-number">Page 7</div>
+    </div>
+
+    <!-- Page 8: LTV/CAC Analysis Template -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>UNIT ECONOMICS</div>
+        </div>
+        
+        <h2>LTV/CAC Analysis Template</h2>
+        
+        <h3>Customer Acquisition Cost (CAC)</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Channel</th>
+                    <th>Monthly Spend</th>
+                    <th>Customers Acquired</th>
+                    <th>CAC</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Google Ads</td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Facebook Ads</td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Content Marketing</td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Organic/SEO</td>
+                    <td>$0</td>
+                    <td></td>
+                    <td>$0</td>
+                </tr>
+                <tr>
+                    <td><strong>Blended CAC</strong></td>
+                    <td><strong>$</strong></td>
+                    <td><strong></strong></td>
+                    <td><strong>$</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Customer Lifetime Value (LTV)</h3>
+        <div style="background: #f8f8f8; padding: 20px; margin: 20px 0;">
+            <p><strong>Average Revenue Per User (ARPU):</strong> $__________</p>
+            <p><strong>Average Customer Lifespan:</strong> __________ months</p>
+            <p><strong>Gross Margin:</strong> __________%</p>
+            <p style="border-top: 2px solid #d4af37; padding-top: 10px; margin-top: 10px;">
+                <strong>LTV = ARPU × Lifespan × Margin = $__________</strong>
+            </p>
+        </div>
+        
+        <h3>LTV:CAC Ratio</h3>
+        <div style="text-align: center; margin: 30px 0;">
+            <div style="display: inline-block; padding: 20px; border: 3px solid #d4af37;">
+                <p style="font-size: 24px;"><strong>LTV</strong></p>
+                <p class="price-display">$_____</p>
+            </div>
+            <span style="font-size: 36px; margin: 0 20px;">÷</span>
+            <div style="display: inline-block; padding: 20px; border: 3px solid #d4af37;">
+                <p style="font-size: 24px;"><strong>CAC</strong></p>
+                <p class="price-display">$_____</p>
+            </div>
+            <span style="font-size: 36px; margin: 0 20px;">=</span>
+            <div style="display: inline-block; padding: 20px; border: 3px solid #00cc66;">
+                <p style="font-size: 24px;"><strong>RATIO</strong></p>
+                <p class="price-display">___:1</p>
+            </div>
+        </div>
+        
+        <div class="psychology-box">
+            <h4 style="margin-top: 0;">📊 LTV:CAC Benchmarks</h4>
+            <p><strong>&lt;1:1</strong> = Losing money on every customer</p>
+            <p><strong>1-2:1</strong> = Breaking even, need improvement</p>
+            <p><strong>3:1</strong> = Healthy SaaS business ✅</p>
+            <p><strong>&gt;5:1</strong> = Could spend more on growth</p>
+        </div>
+        
+        <div class="page-number">Page 8</div>
+    </div>
+
+    <!-- Page 9: Subscription Tier Planner -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>TIER PLANNING</div>
+        </div>
+        
+        <h2>Subscription Tier Planner</h2>
+        
+        <h3>Feature Distribution Matrix</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Feature</th>
+                    <th>Free</th>
+                    <th>Starter</th>
+                    <th>Pro</th>
+                    <th>Enterprise</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Core Feature 1</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Core Feature 2</td>
+                    <td>Limited</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Advanced Feature 1</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Advanced Feature 2</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                    <td>✓</td>
+                    <td>✓</td>
+                </tr>
+                <tr>
+                    <td>Priority Support</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                    <td>Email</td>
+                    <td>Phone</td>
+                </tr>
+                <tr>
+                    <td>API Access</td>
+                    <td>✗</td>
+                    <td>✗</td>
+                    <td>Limited</td>
+                    <td>Full</td>
+                </tr>
+                <tr>
+                    <td>Team Members</td>
+                    <td>1</td>
+                    <td>3</td>
+                    <td>10</td>
+                    <td>Unlimited</td>
+                </tr>
+                <tr>
+                    <td>Data Export</td>
+                    <td>✗</td>
+                    <td>CSV</td>
+                    <td>All formats</td>
+                    <td>All + API</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Usage Limits</h3>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 20px 0;">
+            <div style="text-align: center;">
+                <strong>Free</strong>
+                <p>_____ uses/mo</p>
+            </div>
+            <div style="text-align: center;">
+                <strong>Starter</strong>
+                <p>_____ uses/mo</p>
+            </div>
+            <div style="text-align: center;">
+                <strong>Pro</strong>
+                <p>_____ uses/mo</p>
+            </div>
+            <div style="text-align: center;">
+                <strong>Enterprise</strong>
+                <p>Unlimited</p>
+            </div>
+        </div>
+        
+        <h3>Upgrade Triggers</h3>
+        <p><strong>Free → Starter:</strong> _____________________________________</p>
+        <p><strong>Starter → Pro:</strong> _____________________________________</p>
+        <p><strong>Pro → Enterprise:</strong> _____________________________________</p>
+        
+        <div class="page-number">Page 9</div>
+    </div>
+
+    <!-- Page 10: Payment Integration Checklist -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>PAYMENTS</div>
+        </div>
+        
+        <h2>Payment Integration Checklist</h2>
+        
+        <h3>Payment Provider Setup</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Stripe account created and verified</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Bank account connected</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Tax settings configured</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Webhook endpoints set up</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Test mode verified</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Production keys secured</label>
+        </div>
+        
+        <h3>Subscription Management</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Products created in Stripe</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Pricing plans configured</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Trial periods set</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Coupon codes created</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Upgrade/downgrade flow works</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Cancellation flow works</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Dunning emails configured</label>
+        </div>
+        
+        <h3>Customer Experience</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Checkout page optimized</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Multiple payment methods accepted</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Invoice generation automated</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Receipt emails customized</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Customer portal enabled</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Refund policy clear</label>
+        </div>
+        
+        <h3>Security & Compliance</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>PCI compliance maintained</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>SSL certificate active</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Terms of service updated</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Privacy policy includes payments</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>GDPR compliance (if applicable)</label>
+        </div>
+        
+        <div class="page-number">Page 10</div>
+    </div>
+
+    <!-- Page 11: Revenue Projection Spreadsheet -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>PROJECTIONS</div>
+        </div>
+        
+        <h2>Revenue Projection Spreadsheet</h2>
+        
+        <h3>Month-by-Month Forecast</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Month</th>
+                    <th>New Customers</th>
+                    <th>Total Customers</th>
+                    <th>MRR</th>
+                    <th>Churn</th>
+                    <th>Net MRR</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Month 1</td>
+                    <td></td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Month 2</td>
+                    <td></td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Month 3</td>
+                    <td></td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Month 6</td>
+                    <td></td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Month 9</td>
+                    <td></td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+                <tr>
+                    <td>Month 12</td>
+                    <td></td>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>$</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Path to $10K MRR</h3>
+        <div style="background: #f8f8f8; padding: 20px; margin: 20px 0;">
+            <p><strong>At $29/month:</strong> Need 345 customers</p>
+            <p><strong>At $49/month:</strong> Need 204 customers</p>
+            <p><strong>At $99/month:</strong> Need 101 customers</p>
+            <p><strong>At $199/month:</strong> Need 50 customers</p>
+        </div>
+        
+        <h3>Growth Assumptions</h3>
+        <p><strong>Month 1 customers:</strong> __________</p>
+        <p><strong>Monthly growth rate:</strong> __________%</p>
+        <p><strong>Monthly churn rate:</strong> __________%</p>
+        <p><strong>Months to $10K MRR:</strong> __________</p>
+        
+        <div class="revenue-tracker">
+            <div class="revenue-month">
+                <strong>Q1</strong>
+                <p>$_______</p>
+            </div>
+            <div class="revenue-month">
+                <strong>Q2</strong>
+                <p>$_______</p>
+            </div>
+            <div class="revenue-month">
+                <strong>Q3</strong>
+                <p>$_______</p>
+            </div>
+            <div class="revenue-month">
+                <strong>Q4</strong>
+                <p>$_______</p>
+            </div>
+        </div>
+        
+        <div class="page-number">Page 11</div>
+    </div>
+
+    <!-- Page 12: Churn Reduction Strategy -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>RETENTION</div>
+        </div>
+        
+        <h2>Churn Reduction Strategy</h2>
+        
+        <h3>Churn Analysis</h3>
+        <p><strong>Current monthly churn rate:</strong> __________%</p>
+        <p><strong>Industry average:</strong> 5-7% for B2C, 3-5% for B2B</p>
+        <p><strong>Target churn rate:</strong> __________%</p>
+        
+        <h3>Churn Reasons Tracker</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Reason</th>
+                    <th>% of Churns</th>
+                    <th>Solution</th>
+                    <th>Implemented</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Too expensive</td>
+                    <td>%</td>
+                    <td></td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Not using enough</td>
+                    <td>%</td>
+                    <td></td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Missing features</td>
+                    <td>%</td>
+                    <td></td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Found alternative</td>
+                    <td>%</td>
+                    <td></td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Technical issues</td>
+                    <td>%</td>
+                    <td></td>
+                    <td>☐</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Retention Tactics</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Onboarding email sequence (7 days)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Product usage monitoring</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Inactivity alerts & re-engagement</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Customer success check-ins</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Feature announcement emails</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Usage milestone celebrations</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Annual plan incentives</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Win-back campaigns</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Exit survey & feedback loop</label>
+        </div>
+        
+        <div class="pro-tip">
+            <p>Reducing churn by just 1% can increase profits by 25-95% over 3 years!</p>
+        </div>
+        
+        <div class="page-number">Page 12</div>
+    </div>
+
+    <!-- Page 13: Revenue Optimization Ideas -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>OPTIMIZATION</div>
+        </div>
+        
+        <h2>Revenue Optimization Ideas</h2>
+        
+        <h3>Quick Revenue Wins</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Add a higher-priced "Premium" tier</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Implement usage-based add-ons</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Offer priority support for +$20/mo</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create industry-specific packages</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Add white-label option for agencies</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Sell training/onboarding packages</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Launch affiliate program (20% commission)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create done-for-you service tier</label>
+        </div>
+        
+        <h3>Expansion Revenue Opportunities</h3>
+        <p><strong>Upsell #1:</strong> _____________________________________</p>
+        <p>Target customers: ___________________________________</p>
+        <p>Additional revenue: $________/month</p>
+        
+        <p><strong>Upsell #2:</strong> _____________________________________</p>
+        <p>Target customers: ___________________________________</p>
+        <p>Additional revenue: $________/month</p>
+        
+        <p><strong>Upsell #3:</strong> _____________________________________</p>
+        <p>Target customers: ___________________________________</p>
+        <p>Additional revenue: $________/month</p>
+        
+        <h3>Partner Revenue Streams</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Integration partnerships</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Reseller agreements</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Powered-by licensing</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Data monetization (anonymized)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Marketplace commissions</label>
+        </div>
+        
+        <div class="page-number">Page 13</div>
+    </div>
+
+    <!-- Page 14: Weekly Revenue Review -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>WEEKLY REVIEW</div>
+        </div>
+        
+        <h2>Weekly Revenue Review</h2>
+        
+        <h3>Week _____ Metrics</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+            <div>
+                <p><strong>New trials:</strong> __________</p>
+                <p><strong>Trial → Paid:</strong> __________</p>
+                <p><strong>New MRR:</strong> $__________</p>
+                <p><strong>Churned MRR:</strong> $__________</p>
+            </div>
+            <div>
+                <p><strong>Expansion MRR:</strong> $__________</p>
+                <p><strong>Net MRR:</strong> $__________</p>
+                <p><strong>Total MRR:</strong> $__________</p>
+                <p><strong>Active customers:</strong> __________</p>
+            </div>
+        </div>
+        
+        <h3>Conversion Funnel This Week</h3>
+        <p>Visitors: __________ → Trials: __________ → Paid: __________</p>
+        <p>Visitor → Trial: _____% | Trial → Paid: _____% | Overall: _____%</p>
+        
+        <h3>A/B Test Results</h3>
+        <p><strong>Test running:</strong> _____________________________________</p>
+        <p><strong>Control performance:</strong> _____________________________________</p>
+        <p><strong>Variant performance:</strong> _____________________________________</p>
+        <p><strong>Statistical significance:</strong> _____%</p>
+        
+        <h3>Revenue Experiments</h3>
+        <p><strong>This week's experiment:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>Result:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>Next week's experiment:</strong></p>
+        <div style="border: 2px solid #d4af37; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <div class="page-number">Page 14</div>
+    </div>
+
+    <!-- Page 15: Module Completion -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 4: MONETIZATION</div>
+            <div>COMPLETION</div>
+        </div>
+        
+        <h2>Module 4 Completion & Reflection</h2>
+        
+        <h3>Monetization Metrics Summary</h3>
+        <p><strong>Pricing model chosen:</strong> _____________________________________</p>
+        <p><strong>Price point:</strong> $__________</p>
+        <p><strong>Current MRR:</strong> $__________</p>
+        <p><strong>Customer count:</strong> __________</p>
+        <p><strong>Average LTV:</strong> $__________</p>
+        <p><strong>CAC:</strong> $__________</p>
+        <p><strong>Churn rate:</strong> __________%</p>
+        
+        <h3>Key Learnings</h3>
+        <p><strong>1. Most effective pricing strategy discovered:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>2. Biggest monetization surprise:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>3. Next pricing experiment to try:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <div class="celebration-box">
+            <h2 style="color: white; border: none;">🎉 MODULE 4 COMPLETE!</h2>
+            <p style="font-size: 18px; margin-top: 20px;">You've mastered monetization!</p>
+            <p style="font-size: 16px; margin-top: 10px;">Your pricing is optimized. Your revenue model is solid.</p>
+            <p style="font-size: 20px; margin-top: 20px; font-weight: bold;">Now let's drive TRAFFIC! 🚗</p>
+        </div>
+        
+        <h3>Ready for Module 5 Checklist</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Pricing strategy finalized</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Payment system fully functional</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>First paying customer acquired</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Conversion tracking set up</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Ready to scale!</label>
+        </div>
+        
+        <div class="page-number">Page 15</div>
+    </div>
+
+</body>
+</html>

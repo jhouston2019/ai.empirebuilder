@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSaaS Empire Blueprint - Workbook 2: Planning Your Empire</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Crimson+Text:wght@400;600&family=Montserrat:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            color: #2c3e50;
+            background: #fafafa;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            background: white;
+            border: 3px solid #d4af37;
+            padding: 0.75in;
+            margin-bottom: 0.5in;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                border: 3px solid #d4af37;
+                page-break-after: always;
+            }
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #0a0a0a;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #0a0a0a;
+            font-size: 28px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #d4af37;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #0a0a0a;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .module-tag {
+            background: #0a0a0a;
+            color: #d4af37;
+            padding: 8px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 0.5in;
+            right: 0.75in;
+            color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .pro-tip {
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f0e6 100%);
+            border-left: 5px solid #d4af37;
+            padding: 15px 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .pro-tip::before {
+            content: "💡 PRO TIP";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            color: #d4af37;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        
+        .quick-win {
+            background: #0a0a0a;
+            color: white;
+            padding: 30px;
+            margin: 20px 0;
+            border: 3px solid #d4af37;
+        }
+        
+        .quick-win h3 {
+            color: #d4af37;
+        }
+        
+        .table-grid {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .table-grid th {
+            background: #0a0a0a;
+            color: #d4af37;
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .table-grid td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            height: 40px;
+        }
+        
+        .decision-box {
+            background: #f8f8f8;
+            border: 3px solid #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .worksheet-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 9in;
+            text-align: center;
+        }
+        
+        .cover-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #0a0a0a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .cover-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+        
+        .validation-box {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border: 2px solid #00cc66;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #e74c3c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .score-display {
+            font-size: 36px;
+            font-weight: bold;
+            color: #d4af37;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .priority-matrix {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 200px 200px;
+            gap: 2px;
+            margin: 20px 0;
+            border: 2px solid #d4af37;
+        }
+        
+        .matrix-quadrant {
+            border: 1px solid #e0e0e0;
+            padding: 15px;
+            position: relative;
+            background: #fafafa;
+        }
+        
+        .matrix-label {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-weight: bold;
+            color: #d4af37;
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        
+        .tam-sam-som {
+            display: flex;
+            justify-content: space-around;
+            margin: 30px 0;
+        }
+        
+        .market-circle {
+            text-align: center;
+        }
+        
+        .market-value {
+            font-size: 28px;
+            font-weight: bold;
+            color: #0a0a0a;
+            margin-top: 10px;
+        }
+        
+        .celebration-box {
+            background: linear-gradient(135deg, #00cc66 0%, #00aa55 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Cover Page -->
+    <div class="page">
+        <div class="cover-page">
+            <div class="module-tag" style="font-size: 18px; margin-bottom: 30px;">MODULE 2</div>
+            <h1 class="cover-title" style="border: none;">PLANNING YOUR<br>EMPIRE</h1>
+            <p class="cover-subtitle">Market Validation & Strategic Blueprint</p>
+            <div style="font-style: italic; font-size: 20px; color: #666; margin: 30px 0;">
+                "A goal without a plan is just a wish."
+                <br><small style="color: #999;">- Antoine de Saint-Exupéry</small>
+            </div>
+            <div style="margin-top: 50px;">
+                <p><strong>Student Name:</strong> _____________________________________</p>
+                <br>
+                <p><strong>Tool Name:</strong> _____________________________________</p>
+                <br>
+                <p><strong>Validation Start Date:</strong> _____________________________________</p>
+            </div>
+        </div>
+        <div class="page-number">Page 1</div>
+    </div>
+
+    <!-- Page 2: Module Overview & Quick Win -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>OVERVIEW</div>
+        </div>
+        
+        <h2>Module Progress Checklist</h2>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 1: Advanced Keyword Research</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 2: Competition Deep Dive</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 3: User Interview Mastery</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 4: Market Size Calculation</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 5: 48-Hour Validation Sprint Execution</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 6: Go/No-Go Decision Framework</label>
+        </div>
+        
+        <div class="quick-win">
+            <h3>🚀 QUICK WIN GENERATOR</h3>
+            <p style="color: white; margin-top: 10px;">Your immediate validation action:</p>
+            <p style="color: #d4af37; font-size: 18px; margin-top: 15px;">
+                <strong>Next 2 Hours:</strong> Find and join 3 online communities where your target customers actively discuss their problems. Post one helpful comment in each.
+            </p>
+            <div style="margin-top: 20px;">
+                <input type="checkbox">
+                <label style="color: white;">Communities joined and engaged</label>
+            </div>
+        </div>
+        
+        <h2>Pre-Validation Assessment</h2>
+        <p><strong>My confidence in market demand (1-10):</strong> __________</p>
+        <p><strong>Number of competitors identified:</strong> __________</p>
+        <p><strong>Potential customers I can reach today:</strong> __________</p>
+        <p><strong>My biggest validation concern:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <div class="page-number">Page 2</div>
+    </div>
+
+    <!-- Page 3: Keyword Research Tracker -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>KEYWORD RESEARCH</div>
+        </div>
+        
+        <h2>Keyword Research Tracker</h2>
+        
+        <h3>Primary Keywords</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Keyword</th>
+                    <th>Monthly Volume</th>
+                    <th>Competition</th>
+                    <th>CPC</th>
+                    <th>Intent Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+        
+        <h3>Long-tail Keywords</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Keyword Phrase</th>
+                    <th>Monthly Volume</th>
+                    <th>Competition</th>
+                    <th>Ranking Difficulty</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td></tr>
+                <tr><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+        
+        <h3>Content Opportunity Analysis</h3>
+        <p><strong>Keywords with high volume + low competition:</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <p><strong>Total addressable search volume:</strong> __________ searches/month</p>
+        <p><strong>Estimated CTR at position 1:</strong> __________%</p>
+        <p><strong>Potential monthly traffic:</strong> __________ visitors</p>
+        
+        <div class="page-number">Page 3</div>
+    </div>
+
+    <!-- Page 4: Competition Assessment Matrix -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>COMPETITION ANALYSIS</div>
+        </div>
+        
+        <h2>Competition Assessment Matrix</h2>
+        
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Competitor</th>
+                    <th>Traffic/Mo</th>
+                    <th>Pricing</th>
+                    <th>Strengths</th>
+                    <th>Weaknesses</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Competitive Positioning</h3>
+        <p><strong>My unique angle will be:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <p><strong>Features competitors DON'T have that users want:</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <h3>Pricing Strategy</h3>
+        <p><strong>Average competitor price:</strong> $__________</p>
+        <p><strong>Lowest competitor price:</strong> $__________</p>
+        <p><strong>Highest competitor price:</strong> $__________</p>
+        <p><strong>My planned pricing:</strong> $__________</p>
+        <p><strong>Justification for my price point:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <div class="pro-tip">
+            <p>Price 20% below the market leader initially. You can always increase prices, but it's harder to decrease them!</p>
+        </div>
+        
+        <div class="page-number">Page 4</div>
+    </div>
+
+    <!-- Page 5: User Interview Script & Notes -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>USER RESEARCH</div>
+        </div>
+        
+        <h2>User Interview Script & Notes</h2>
+        
+        <h3>Interview Questions</h3>
+        <p><strong>Opening:</strong></p>
+        <div style="background: #f8f8f8; padding: 15px; margin: 10px 0;">
+            "I'm exploring solutions for [problem]. I'd love to learn about your experience with [problem area]. There are no right or wrong answers."
+        </div>
+        
+        <p><strong>Discovery Questions:</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>Tell me about the last time you experienced [problem]?</li>
+            <li>What's the most frustrating part about [current solution]?</li>
+            <li>How much time/money do you waste on this weekly?</li>
+            <li>What have you tried to solve this?</li>
+            <li>If you had a magic wand, how would you solve this?</li>
+            <li>What would need to change for this to be a "must-have"?</li>
+            <li>How much would you pay to solve this completely?</li>
+        </ol>
+        
+        <h3>Interview #1 Notes</h3>
+        <p><strong>Interviewee:</strong> _____________________________________</p>
+        <p><strong>Date:</strong> __________</p>
+        <p><strong>Key Pain Points:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        <p><strong>Current Solution:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        <p><strong>Willing to Pay:</strong> $__________</p>
+        <p><strong>Key Quote:</strong></p>
+        <div style="border: 2px solid #d4af37; padding: 10px; margin: 10px 0; font-style: italic;"></div>
+        
+        <h3>Pattern Recognition</h3>
+        <p><strong>Common complaints (3+ mentions):</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <div class="page-number">Page 5</div>
+    </div>
+
+    <!-- Page 6: TAM/SAM/SOM Calculator -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>MARKET SIZING</div>
+        </div>
+        
+        <h2>TAM / SAM / SOM Calculator</h2>
+        
+        <div class="tam-sam-som">
+            <div class="market-circle">
+                <div style="width: 150px; height: 150px; border: 3px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                    <span style="font-size: 24px; font-weight: bold;">TAM</span>
+                </div>
+                <p><strong>Total Addressable Market</strong></p>
+                <p class="market-value">$__________</p>
+            </div>
+            <div class="market-circle">
+                <div style="width: 150px; height: 150px; border: 3px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                    <span style="font-size: 24px; font-weight: bold;">SAM</span>
+                </div>
+                <p><strong>Serviceable Available Market</strong></p>
+                <p class="market-value">$__________</p>
+            </div>
+            <div class="market-circle">
+                <div style="width: 150px; height: 150px; border: 3px solid #d4af37; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto;">
+                    <span style="font-size: 24px; font-weight: bold;">SOM</span>
+                </div>
+                <p><strong>Serviceable Obtainable Market</strong></p>
+                <p class="market-value">$__________</p>
+            </div>
+        </div>
+        
+        <h3>Calculation Worksheet</h3>
+        
+        <p><strong>TAM Calculation:</strong></p>
+        <div style="background: #f8f8f8; padding: 15px; margin: 10px 0;">
+            Total potential customers: __________ ×
+            Average annual spend: $__________ = 
+            <strong>TAM: $__________</strong>
+        </div>
+        
+        <p><strong>SAM Calculation:</strong></p>
+        <div style="background: #f8f8f8; padding: 15px; margin: 10px 0;">
+            Customers I can reach: __________ ×
+            My price point: $__________ ×
+            12 months = 
+            <strong>SAM: $__________</strong>
+        </div>
+        
+        <p><strong>SOM Calculation (Year 1 Goal):</strong></p>
+        <div style="background: #f8f8f8; padding: 15px; margin: 10px 0;">
+            Realistic customer target: __________ ×
+            My price point: $__________ ×
+            12 months = 
+            <strong>SOM: $__________</strong>
+        </div>
+        
+        <div class="validation-box">
+            <h4 style="margin-top: 0;">✅ Validation Check</h4>
+            <p>If SOM ≥ $100,000, you have a viable business!</p>
+            <p>If SOM < $100,000, consider:</p>
+            <ul style="margin-left: 20px;">
+                <li>Increasing price point</li>
+                <li>Expanding target market</li>
+                <li>Adding upsells/add-ons</li>
+            </ul>
+        </div>
+        
+        <div class="page-number">Page 6</div>
+    </div>
+
+    <!-- Page 7: 48-Hour Validation Sprint Schedule -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>VALIDATION SPRINT</div>
+        </div>
+        
+        <h2>48-Hour Validation Sprint Schedule</h2>
+        
+        <h3>Pre-Sprint Checklist</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Clear calendar for 48 hours</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>$50 budget for ads ready</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>3 communities identified</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Landing page tool account created</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Email tool connected</label>
+        </div>
+        
+        <h3>Hour-by-Hour Schedule</h3>
+        
+        <p><strong>FRIDAY (Hour 0-24)</strong></p>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Task</th>
+                    <th>Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>6:00 PM</td>
+                    <td>Buy domain, set up hosting</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>7:00 PM</td>
+                    <td>Create logo and brand assets</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>8:00 PM</td>
+                    <td>Write landing page copy</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>10:00 PM</td>
+                    <td>Build landing page</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>11:30 PM</td>
+                    <td>Set up analytics & email capture</td>
+                    <td>☐</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>SATURDAY (Hour 24-36)</strong></p>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Task</th>
+                    <th>Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>9:00 AM</td>
+                    <td>Create demo video/GIF</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>11:00 AM</td>
+                    <td>Post in communities</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>12:00 PM</td>
+                    <td>Launch Facebook/Google ads</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>2:00 PM</td>
+                    <td>Direct message potential users</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>4:00 PM</td>
+                    <td>Monitor and respond to feedback</td>
+                    <td>☐</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-number">Page 7</div>
+    </div>
+
+    <!-- Page 8: Landing Page Copy Template -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>LANDING PAGE</div>
+        </div>
+        
+        <h2>Landing Page Copy Template</h2>
+        
+        <h3>Headline (10 words max)</h3>
+        <div style="border: 3px solid #d4af37; padding: 20px; text-align: center; font-size: 24px; margin: 20px 0;">
+            _____________________________________
+        </div>
+        
+        <h3>Subheadline (Expand on the promise)</h3>
+        <div style="border: 2px solid #e0e0e0; padding: 15px; text-align: center; margin: 20px 0;">
+            _____________________________________
+            _____________________________________
+        </div>
+        
+        <h3>3 Key Benefits</h3>
+        <div style="background: #f8f8f8; padding: 20px; margin: 20px 0;">
+            <p><strong>Benefit 1:</strong> _____________________________________</p>
+            <p style="margin-left: 20px;">Supporting detail: _____________________________________</p>
+            <br>
+            <p><strong>Benefit 2:</strong> _____________________________________</p>
+            <p style="margin-left: 20px;">Supporting detail: _____________________________________</p>
+            <br>
+            <p><strong>Benefit 3:</strong> _____________________________________</p>
+            <p style="margin-left: 20px;">Supporting detail: _____________________________________</p>
+        </div>
+        
+        <h3>Social Proof</h3>
+        <p><strong>Testimonial 1:</strong></p>
+        <div style="border-left: 3px solid #d4af37; padding-left: 15px; margin: 10px 0;">
+            "_____________________________________"
+            <br>- Name, Title
+        </div>
+        
+        <p><strong>Testimonial 2:</strong></p>
+        <div style="border-left: 3px solid #d4af37; padding-left: 15px; margin: 10px 0;">
+            "_____________________________________"
+            <br>- Name, Title
+        </div>
+        
+        <h3>Call to Action</h3>
+        <div style="background: #d4af37; color: white; padding: 15px; text-align: center; font-size: 20px; margin: 20px 0;">
+            Button Text: _____________________________________
+        </div>
+        
+        <p><strong>Urgency/Scarcity Element:</strong></p>
+        <div style="border: 2px solid #e74c3c; padding: 10px; margin: 10px 0;">
+            _____________________________________
+        </div>
+        
+        <div class="page-number">Page 8</div>
+    </div>
+
+    <!-- Page 9: Validation Results Tracker -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>RESULTS TRACKING</div>
+        </div>
+        
+        <h2>Validation Results Tracker</h2>
+        
+        <h3>Traffic Sources Performance</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Source</th>
+                    <th>Visitors</th>
+                    <th>Signups</th>
+                    <th>Conversion %</th>
+                    <th>Cost</th>
+                    <th>Cost/Signup</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Facebook Groups</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>$0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Reddit</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>$0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Twitter</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>$0</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Facebook Ads</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Google Ads</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Direct Outreach</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>$0</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h3>Key Metrics Summary</h3>
+        <div class="worksheet-grid">
+            <div>
+                <p><strong>Total Visitors:</strong> __________</p>
+                <p><strong>Total Signups:</strong> __________</p>
+                <p><strong>Overall Conversion:</strong> __________%</p>
+            </div>
+            <div>
+                <p><strong>Total Spend:</strong> $__________</p>
+                <p><strong>Cost per Signup:</strong> $__________</p>
+                <p><strong>Best Channel:</strong> __________</p>
+            </div>
+        </div>
+        
+        <h3>Qualitative Feedback</h3>
+        <p><strong>Most common question:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 40px; margin: 10px 0;"></div>
+        
+        <p><strong>Most common objection:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 40px; margin: 10px 0;"></div>
+        
+        <p><strong>Feature requests:</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <div class="page-number">Page 9</div>
+    </div>
+
+    <!-- Page 10: Go/No-Go Decision Framework -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>DECISION TIME</div>
+        </div>
+        
+        <h2>Go/No-Go Decision Framework</h2>
+        
+        <h3>Validation Criteria Scorecard</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Target</th>
+                    <th>Actual</th>
+                    <th>Pass?</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Landing Page Conversion</td>
+                    <td>&gt; 10%</td>
+                    <td>_____%</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Email Signups</td>
+                    <td>&gt; 30</td>
+                    <td>_____</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Willing to Pay (from interviews)</td>
+                    <td>&gt; 5 people</td>
+                    <td>_____</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Cost per Acquisition</td>
+                    <td>&lt; $10</td>
+                    <td>$_____</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Market Size (SOM)</td>
+                    <td>&gt; $100K</td>
+                    <td>$_____</td>
+                    <td>☐</td>
+                </tr>
+                <tr>
+                    <td>Competition Beatable</td>
+                    <td>Clear advantage</td>
+                    <td>Yes/No</td>
+                    <td>☐</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="decision-box">
+            <h3 style="text-align: center;">FINAL DECISION</h3>
+            <div style="display: flex; justify-content: space-around; margin: 20px 0;">
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border: 3px solid #00cc66; background: #e8f5e9; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 48px;">✅</span>
+                    </div>
+                    <h4>GO!</h4>
+                    <p>4+ criteria passed</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border: 3px solid #e74c3c; background: #fff3cd; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 48px;">⏸</span>
+                    </div>
+                    <h4>PIVOT</h4>
+                    <p>2-3 criteria passed</p>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 150px; height: 150px; border: 3px solid #999; background: #f8f8f8; display: flex; align-items: center; justify-content: center;">
+                        <span style="font-size: 48px;">❌</span>
+                    </div>
+                    <h4>STOP</h4>
+                    <p>&lt;2 criteria passed</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page-number">Page 10</div>
+    </div>
+
+    <!-- Page 11: Feature Prioritization Matrix -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>FEATURE PLANNING</div>
+        </div>
+        
+        <h2>Feature Prioritization Matrix</h2>
+        
+        <div class="priority-matrix">
+            <div class="matrix-quadrant">
+                <span class="matrix-label">Quick Wins (High Impact, Low Effort)</span>
+                <div style="margin-top: 30px;">
+                    <p>1. _____________________________</p>
+                    <p>2. _____________________________</p>
+                    <p>3. _____________________________</p>
+                    <p>4. _____________________________</p>
+                </div>
+            </div>
+            <div class="matrix-quadrant">
+                <span class="matrix-label">Major Projects (High Impact, High Effort)</span>
+                <div style="margin-top: 30px;">
+                    <p>1. _____________________________</p>
+                    <p>2. _____________________________</p>
+                    <p>3. _____________________________</p>
+                    <p>4. _____________________________</p>
+                </div>
+            </div>
+            <div class="matrix-quadrant">
+                <span class="matrix-label">Fill-ins (Low Impact, Low Effort)</span>
+                <div style="margin-top: 30px;">
+                    <p>1. _____________________________</p>
+                    <p>2. _____________________________</p>
+                    <p>3. _____________________________</p>
+                    <p>4. _____________________________</p>
+                </div>
+            </div>
+            <div class="matrix-quadrant">
+                <span class="matrix-label">Time Wasters (Low Impact, High Effort)</span>
+                <div style="margin-top: 30px;">
+                    <p>1. _____________________________</p>
+                    <p>2. _____________________________</p>
+                    <p>3. _____________________________</p>
+                    <p>4. _____________________________</p>
+                </div>
+            </div>
+        </div>
+        
+        <h3>MVP Feature List (Launch With These)</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>_____________________________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>_____________________________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>_____________________________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>_____________________________________</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>_____________________________________</label>
+        </div>
+        
+        <h3>Version 2.0 Features (Add Post-Launch)</h3>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <div class="page-number">Page 11</div>
+    </div>
+
+    <!-- Page 12: Resource Planning -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>RESOURCES</div>
+        </div>
+        
+        <h2>Resource Planning & Budget</h2>
+        
+        <h3>Development Resources</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Resource</th>
+                    <th>Cost/Month</th>
+                    <th>Essential?</th>
+                    <th>When Needed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Domain Name</td>
+                    <td>$1</td>
+                    <td>Yes</td>
+                    <td>Now</td>
+                </tr>
+                <tr>
+                    <td>Hosting</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Email Service</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Payment Processing</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Analytics</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Customer Support</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Marketing Tools</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Total Monthly Cost:</strong> $__________</p>
+        <p><strong>Runway Needed (3 months):</strong> $__________</p>
+        
+        <h3>Time Investment</h3>
+        <p><strong>Hours per week available:</strong> __________</p>
+        <p><strong>MVP development time:</strong> __________ weeks</p>
+        <p><strong>Launch preparation time:</strong> __________ weeks</p>
+        
+        <h3>Skills Gap Analysis</h3>
+        <div class="worksheet-grid">
+            <div>
+                <p><strong>Skills I Have:</strong></p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>_____________________</li>
+                    <li>_____________________</li>
+                    <li>_____________________</li>
+                </ul>
+            </div>
+            <div>
+                <p><strong>Skills I Need:</strong></p>
+                <ul style="margin-left: 20px; line-height: 2;">
+                    <li>_____________________</li>
+                    <li>_____________________</li>
+                    <li>_____________________</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="page-number">Page 12</div>
+    </div>
+
+    <!-- Page 13: Action Plan -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>ACTION PLAN</div>
+        </div>
+        
+        <h2>Next 30 Days Action Plan</h2>
+        
+        <h3>Week 1: Foundation & Setup</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Complete all user interviews (minimum 10)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Finalize feature list based on feedback</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up development environment</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Purchase domain and hosting</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create brand assets</label>
+        </div>
+        
+        <h3>Week 2: Build Core MVP</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Build authentication system</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create main functionality</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Design basic UI</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up database</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Initial testing</label>
+        </div>
+        
+        <h3>Week 3: Polish & Prepare</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>User testing with 5 beta testers</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Fix critical bugs</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create onboarding flow</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up payment processing</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Write documentation</label>
+        </div>
+        
+        <h3>Week 4: Launch Preparation</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create marketing website</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Prepare launch content</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up analytics</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create launch sequence</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Schedule launch posts</label>
+        </div>
+        
+        <div class="page-number">Page 13</div>
+    </div>
+
+    <!-- Page 14: Weekly Review -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>WEEKLY REVIEW</div>
+        </div>
+        
+        <h2>Planning Phase Weekly Review</h2>
+        
+        <h3>Week 1 Review</h3>
+        <p><strong>Date:</strong> _____________________________________</p>
+        
+        <p><strong>Validation activities completed:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>Key insights discovered:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>Pivots or changes made:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <h3>Metrics Tracking</h3>
+        <div class="worksheet-grid">
+            <div>
+                <p><strong>Interviews completed:</strong> __________</p>
+                <p><strong>Landing page visitors:</strong> __________</p>
+                <p><strong>Email signups:</strong> __________</p>
+            </div>
+            <div>
+                <p><strong>Communities joined:</strong> __________</p>
+                <p><strong>Competitors analyzed:</strong> __________</p>
+                <p><strong>Features validated:</strong> __________</p>
+            </div>
+        </div>
+        
+        <h3>Confidence Level Check</h3>
+        <p><strong>My confidence in the idea (1-10):</strong></p>
+        <div style="display: flex; gap: 10px; margin: 15px 0;">
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">1</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">2</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">3</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">4</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">5</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">6</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">7</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">8</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">9</div>
+            <div style="width: 40px; height: 40px; border: 2px solid #d4af37; text-align: center; line-height: 36px;">10</div>
+        </div>
+        
+        <p><strong>Next week's top priority:</strong></p>
+        <div style="border: 3px solid #d4af37; padding: 15px; margin: 10px 0;"></div>
+        
+        <div class="page-number">Page 14</div>
+    </div>
+
+    <!-- Page 15: Module Completion -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 2: PLANNING</div>
+            <div>COMPLETION</div>
+        </div>
+        
+        <h2>Module 2 Reflection & Completion</h2>
+        
+        <h3>Key Takeaways</h3>
+        <p><strong>1. The most surprising thing I learned about my market:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <p><strong>2. The validation method that worked best:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <p><strong>3. My biggest remaining concern:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <p><strong>4. One thing I would do differently:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <div class="celebration-box">
+            <h2 style="color: white; border: none;">🎉 MODULE 2 COMPLETE!</h2>
+            <p style="font-size: 18px; margin-top: 20px;">You've validated your idea and created a solid plan.</p>
+            <p style="font-size: 16px; margin-top: 10px;">Your market research is complete. Your features are prioritized.</p>
+            <p style="font-size: 20px; margin-top: 20px; font-weight: bold;">Time to BUILD! 🚀</p>
+        </div>
+        
+        <h3>Ready for Module 3 Checklist</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Market validation complete</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Feature list finalized</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Go decision confirmed</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Resources identified</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>30-day plan ready</label>
+        </div>
+        
+        <div class="pro-tip">
+            <p>Before starting Module 3, take a day off to recharge. Building requires focused energy!</p>
+        </div>
+        
+        <div class="page-number">Page 15</div>
+    </div>
+
+</body>
+</html>

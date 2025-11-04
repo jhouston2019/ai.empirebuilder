@@ -1,0 +1,1364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MicroSaaS Empire Blueprint - Workbook 6: Scaling to 6 Figures</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Crimson+Text:wght@400;600&family=Montserrat:wght@400;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            color: #2c3e50;
+            background: #fafafa;
+            line-height: 1.6;
+            font-size: 16px;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            background: white;
+            border: 3px solid #d4af37;
+            padding: 0.75in;
+            margin-bottom: 0.5in;
+            position: relative;
+            page-break-after: always;
+        }
+        
+        @media print {
+            .page {
+                margin: 0;
+                border: 3px solid #d4af37;
+                page-break-after: always;
+            }
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            color: #0a0a0a;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            color: #0a0a0a;
+            font-size: 28px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            border-left: 5px solid #d4af37;
+            padding-left: 15px;
+        }
+        
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: #0a0a0a;
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .module-tag {
+            background: #0a0a0a;
+            color: #d4af37;
+            padding: 8px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .page-number {
+            position: absolute;
+            bottom: 0.5in;
+            right: 0.75in;
+            color: #0a0a0a;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px;
+        }
+        
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        
+        .checkbox-item input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .pro-tip {
+            background: linear-gradient(135deg, #faf8f3 0%, #f5f0e6 100%);
+            border-left: 5px solid #d4af37;
+            padding: 15px 20px;
+            margin: 20px 0;
+            position: relative;
+        }
+        
+        .pro-tip::before {
+            content: "💡 PRO TIP";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: white;
+            padding: 0 10px;
+            color: #d4af37;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+            font-size: 12px;
+        }
+        
+        .quick-win {
+            background: #0a0a0a;
+            color: white;
+            padding: 30px;
+            margin: 20px 0;
+            border: 3px solid #d4af37;
+        }
+        
+        .quick-win h3 {
+            color: #d4af37;
+        }
+        
+        .table-grid {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        .table-grid th {
+            background: #0a0a0a;
+            color: #d4af37;
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        
+        .table-grid td {
+            border: 1px solid #e0e0e0;
+            padding: 10px;
+            min-height: 40px;
+        }
+        
+        .decision-box {
+            background: #f8f8f8;
+            border: 3px solid #d4af37;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .worksheet-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .cover-page {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 9in;
+            text-align: center;
+        }
+        
+        .cover-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            color: #0a0a0a;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+        
+        .cover-subtitle {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            color: #d4af37;
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 2px solid #e74c3c;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        
+        .score-display {
+            font-size: 36px;
+            font-weight: bold;
+            color: #d4af37;
+            text-align: center;
+            margin: 20px 0;
+        }
+        
+        .celebration-box {
+            background: linear-gradient(135deg, #00cc66 0%, #00aa55 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            margin: 30px 0;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Page 1: Cover Page -->
+    <div class="page">
+        <div class="cover-page">
+            <div class="module-tag" style="font-size: 18px; margin-bottom: 30px;">MODULE 6</div>
+            <h1 class="cover-title" style="border: none;">SCALING TO<br>6 FIGURES</h1>
+            <p class="cover-subtitle">Automation, Team Building & Portfolio Strategy</p>
+            <div style="font-style: italic; font-size: 20px; color: #666; margin: 30px 0;">
+                "The only way to do great work is to love what you do.<br>And the only way to scale is to systematize what you love."
+                <br><small style="color: #999;">- Adapted from Steve Jobs</small>
+            </div>
+            <div style="margin-top: 50px;">
+                <p><strong>Student Name:</strong> _____________________________________</p>
+                <br>
+                <p><strong>Current MRR:</strong> $_____________________________________</p>
+                <br>
+                <p><strong>6-Figure Goal Date:</strong> _____________________________________</p>
+            </div>
+        </div>
+        <div class="page-number">Page 1</div>
+    </div>
+
+    <!-- Page 2: Module Overview & Quick Win -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>OVERVIEW</div>
+        </div>
+        
+        <h2>Module Progress Checklist</h2>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 6.1: Automation & Systems</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 6.2: Team Building & Delegation</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Lesson 6.3: Portfolio & Exit Strategy</label>
+        </div>
+        
+        <div class="quick-win">
+            <h3>🚀 QUICK WIN GENERATOR</h3>
+            <p style="color: white; margin-top: 10px;">Your immediate scaling action:</p>
+            <p style="color: #d4af37; font-size: 18px; margin-top: 15px;">
+                <strong>Next 24 Hours:</strong> Track every task you do for ONE full day. Write down each task that takes more than 15 minutes. This is the foundation of your automation strategy.
+            </p>
+            <div style="margin-top: 20px;">
+                <input type="checkbox">
+                <label style="color: white;">One-day time audit completed</label>
+            </div>
+        </div>
+        
+        <h2>Pre-Scaling Assessment</h2>
+        <p><strong>Current Monthly Recurring Revenue (MRR):</strong> $__________</p>
+        <p><strong>Total Active Customers:</strong> __________</p>
+        <p><strong>Hours worked per week:</strong> __________</p>
+        <p><strong>Current profit margin:</strong> __________%</p>
+        <p><strong>My biggest time drain:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <div class="pro-tip">
+            If you're spending more than 15 hours/week on a tool generating $5K/month, this module will transform your business. The goal: <5 hours/week per tool.
+        </div>
+        
+        <div class="page-number">Page 2</div>
+    </div>
+
+    <!-- Page 3: LESSON 6.1 - Automation Audit -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.1: AUTOMATION</div>
+            <div>TIME AUDIT</div>
+        </div>
+        
+        <h2>The AUTOMATE Framework</h2>
+        
+        <p><strong>Complete this exercise after tracking your time for one full week.</strong></p>
+        
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Task/Activity</th>
+                    <th>Hours/Week</th>
+                    <th>Repeatable?</th>
+                    <th>Automation Priority</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Customer support</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>User onboarding</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>Billing/invoicing</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>Social media posting</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>Email marketing</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>Analytics/reporting</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>Bug fixes</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>Content creation</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>_______________</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+                <tr><td>_______________</td><td></td><td>☐ Yes ☐ No</td><td>☐ High ☐ Med ☐ Low</td></tr>
+            </tbody>
+        </table>
+        
+        <h3>ROI Calculator</h3>
+        <p><strong>Total hours spent per week:</strong> __________</p>
+        <p><strong>Your hourly value:</strong> $__________ (MRR ÷ hours worked)</p>
+        <p><strong>Automatable hours:</strong> __________</p>
+        <p><strong>Potential annual savings:</strong> $__________ (automatable hours × hourly value × 52)</p>
+        
+        <div class="warning-box">
+            <strong>⚠️ Action Required:</strong> If potential savings > $10,000/year, automation should be your #1 priority this quarter.
+        </div>
+        
+        <div class="page-number">Page 3</div>
+    </div>
+
+    <!-- Page 4: Automation Action Plan -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.1: AUTOMATION</div>
+            <div>ACTION PLAN</div>
+        </div>
+        
+        <h2>30-Day Automation Implementation Plan</h2>
+        
+        <h3>Week 1: Customer Support Automation</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up AI chatbot (use lesson code examples)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create FAQ knowledge base</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Build email auto-responder templates</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Configure tiered support routing</label>
+        </div>
+        
+        <p><strong>Tool I'm using:</strong> _____________________________________</p>
+        <p><strong>Expected time saved:</strong> __________ hours/week</p>
+        
+        <h3>Week 2: Marketing Automation</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up social media scheduler (Buffer/Hootsuite)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create 30 days of content in advance</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Build email drip sequences</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Configure automated analytics reports</label>
+        </div>
+        
+        <p><strong>Tool I'm using:</strong> _____________________________________</p>
+        <p><strong>Expected time saved:</strong> __________ hours/week</p>
+        
+        <h3>Week 3: Product Development Automation</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up CI/CD pipeline</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Configure automated testing</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Implement error monitoring (Sentry)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Create automated backup system</label>
+        </div>
+        
+        <p><strong>Expected time saved:</strong> __________ hours/week</p>
+        
+        <h3>Week 4: Financial Automation</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Automate invoicing and billing</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up automated expense tracking</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Configure monthly financial reports</label>
+        </div>
+        
+        <p><strong>Total time saved per week:</strong> __________ hours</p>
+        <p><strong>Annual value of saved time:</strong> $__________</p>
+        
+        <div class="page-number">Page 4</div>
+    </div>
+
+    <!-- Page 5: Monitoring Systems Setup -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.1: AUTOMATION</div>
+            <div>MONITORING</div>
+        </div>
+        
+        <h2>Essential Monitoring & Alert Systems</h2>
+        
+        <h3>Critical Metrics Dashboard</h3>
+        <p><strong>Which metrics will you monitor daily?</strong></p>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Revenue/MRR</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Active users</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Churn rate</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Server uptime</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Support ticket volume</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Error rates</label>
+        </div>
+        
+        <p><strong>Dashboard tool I'm using:</strong> _____________________________________</p>
+        
+        <h3>Alert Configuration</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Alert Type</th>
+                    <th>Trigger Threshold</th>
+                    <th>Notification Method</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Server down</td>
+                    <td>Immediate</td>
+                    <td>☐ SMS ☐ Email ☐ Slack</td>
+                </tr>
+                <tr>
+                    <td>Revenue drop</td>
+                    <td>> _____%</td>
+                    <td>☐ SMS ☐ Email ☐ Slack</td>
+                </tr>
+                <tr>
+                    <td>Error spike</td>
+                    <td>> _____ errors/hour</td>
+                    <td>☐ SMS ☐ Email ☐ Slack</td>
+                </tr>
+                <tr>
+                    <td>Churn increase</td>
+                    <td>> _____%</td>
+                    <td>☐ SMS ☐ Email ☐ Slack</td>
+                </tr>
+                <tr>
+                    <td>Support backlog</td>
+                    <td>> _____ tickets</td>
+                    <td>☐ SMS ☐ Email ☐ Slack</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="pro-tip">
+            Set up alerts so you only get notified when something is genuinely wrong. Too many alerts = alert fatigue = missed critical issues.
+        </div>
+        
+        <h3>Weekly Review Checklist</h3>
+        <p><strong>Every Monday at 9 AM, review:</strong></p>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Previous week's revenue vs. target</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Customer feedback and support tickets</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>System uptime and performance</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Marketing metrics (traffic, conversions)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Automation failures or bottlenecks</label>
+        </div>
+        
+        <div class="page-number">Page 5</div>
+    </div>
+
+    <!-- Page 6: LESSON 6.2 - Hiring Trigger Assessment -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.2: TEAM BUILDING</div>
+            <div>HIRING TRIGGERS</div>
+        </div>
+        
+        <h2>When to Hire Your First Team Member</h2>
+        
+        <h3>Hiring Trigger Assessment</h3>
+        <p><strong>Check all that apply to your current situation:</strong></p>
+        
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I'm working 50+ hours/week consistently</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Customer support takes 10+ hours/week</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I'm missing growth opportunities due to lack of time</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>My MRR is $5,000+ and stable for 3+ months</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I have at least 3 months of expenses saved</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I can afford to spend 20% of revenue on help</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>There are tasks I hate doing that drain my energy</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I'm turning down customers or opportunities</label>
+        </div>
+        
+        <div class="score-display">
+            Checked: _____ / 8
+        </div>
+        
+        <div class="decision-box">
+            <h3 style="text-align: center;">HIRING DECISION</h3>
+            <p><strong>6-8 checked:</strong> You should hire NOW. You're ready and it's costing you money to wait.</p>
+            <p><strong>4-5 checked:</strong> Start preparing. Begin documenting processes and saving budget.</p>
+            <p><strong>0-3 checked:</strong> Not yet. Focus on automation and reaching $5K MRR first.</p>
+        </div>
+        
+        <h3>Delegation Hierarchy: What to Delegate First</h3>
+        <p><strong>Rank these from 1-8 based on what you should delegate first:</strong></p>
+        
+        <div style="margin-left: 20px;">
+            <p>_____ Customer support (repetitive, time-consuming)</p>
+            <p>_____ Content creation (blog posts, social media)</p>
+            <p>_____ Administrative tasks (invoicing, scheduling)</p>
+            <p>_____ Product development (coding, design)</p>
+            <p>_____ Marketing execution (ads, SEO, outreach)</p>
+            <p>_____ Analytics and reporting</p>
+            <p>_____ User onboarding and training</p>
+            <p>_____ Strategy and business development</p>
+        </div>
+        
+        <div class="pro-tip">
+            Delegate TASK-based work first (customer support, content). Keep THINKING work (strategy, product direction) for yourself initially.
+        </div>
+        
+        <div class="page-number">Page 6</div>
+    </div>
+
+    <!-- Page 7: SOP Creation Template -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.2: TEAM BUILDING</div>
+            <div>SOP CREATION</div>
+        </div>
+        
+        <h2>Standard Operating Procedure Template</h2>
+        
+        <h3>SOP #1: _____________________________________</h3>
+        
+        <p><strong>Purpose:</strong> What is this process for?</p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 40px; margin: 10px 0;"></div>
+        
+        <p><strong>Frequency:</strong> How often is this done?</p>
+        <p>☐ Daily  ☐ Weekly  ☐ Monthly  ☐ As needed</p>
+        
+        <p><strong>Estimated Time:</strong> __________ minutes</p>
+        
+        <p><strong>Tools Required:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 40px; margin: 10px 0;"></div>
+        
+        <p><strong>Step-by-Step Process:</strong></p>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th style="width: 10%;">Step</th>
+                    <th>Action</th>
+                    <th style="width: 30%;">Quality Check</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>3.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>4.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6.</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Common Mistakes to Avoid:</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <p><strong>When to Escalate:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 40px; margin: 10px 0;"></div>
+        
+        <div class="warning-box">
+            <strong>💡 SOP Pro Tip:</strong> Record a Loom video of you doing this task. It's faster than writing and easier for team members to follow.
+        </div>
+        
+        <div class="page-number">Page 7</div>
+    </div>
+
+    <!-- Page 8: Hiring & Onboarding Plan -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.2: TEAM BUILDING</div>
+            <div>HIRING PLAN</div>
+        </div>
+        
+        <h2>First Hire Planning Worksheet</h2>
+        
+        <h3>Role Definition</h3>
+        <p><strong>Role Title:</strong> _____________________________________</p>
+        <p><strong>Primary Responsibility:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 40px; margin: 10px 0;"></div>
+        
+        <p><strong>Key Tasks (list top 5):</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <p><strong>Required Skills:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <p><strong>Work Schedule:</strong></p>
+        <p>☐ Full-time (40 hrs/week)  ☐ Part-time (_____ hrs/week)  ☐ Project-based</p>
+        
+        <p><strong>Budget:</strong> $__________ per month</p>
+        
+        <h3>Where to Find Candidates</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Upwork/Fiverr (freelancers)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>LinkedIn job posts</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Industry-specific job boards</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Twitter/X networking</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Referrals from network</label>
+        </div>
+        
+        <h3>Interview Questions</h3>
+        <p><strong>My top 3 interview questions:</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <h3>Trial Project</h3>
+        <p><strong>Paid trial task:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        <p><strong>Trial payment:</strong> $__________</p>
+        <p><strong>Success criteria:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 40px; margin: 10px 0;"></div>
+        
+        <div class="page-number">Page 8</div>
+    </div>
+
+    <!-- Page 9: 30-Day Onboarding Plan -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.2: TEAM BUILDING</div>
+            <div>ONBOARDING</div>
+        </div>
+        
+        <h2>30-Day Onboarding Plan</h2>
+        
+        <h3>Week 1: Orientation & Tools</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Welcome call and intro to company/mission</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up all necessary tool access</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Share key documentation and SOPs</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Assign first small task to build confidence</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Schedule daily check-ins</label>
+        </div>
+        
+        <h3>Week 2: Skill Building</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Shadow me on key tasks</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Complete training modules/videos</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Take on first real task with supervision</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Review and provide feedback</label>
+        </div>
+        
+        <h3>Week 3: Independent Work</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Assign full responsibility for specific tasks</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Reduce check-in frequency to every other day</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Introduce to customers/users if relevant</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Mid-point review and feedback session</label>
+        </div>
+        
+        <h3>Week 4: Full Integration</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Full ownership of assigned tasks</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Weekly check-ins only</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>30-day performance review</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set goals for next 60 days</label>
+        </div>
+        
+        <div class="pro-tip">
+            Over-communicate in the first 30 days. It's easier to scale back communication than to fix mistakes from under-communication.
+        </div>
+        
+        <h3>Success Metrics</h3>
+        <p><strong>How will I measure success in the first 30 days?</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <div class="page-number">Page 9</div>
+    </div>
+
+    <!-- Page 10: LESSON 6.3 - Portfolio Strategy -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.3: PORTFOLIO</div>
+            <div>STRATEGY</div>
+        </div>
+        
+        <h2>Multi-Tool Portfolio Planning</h2>
+        
+        <h3>Current Portfolio Assessment</h3>
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Tool Name</th>
+                    <th>MRR</th>
+                    <th>Hrs/Week</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>☐ Core ☐ Growth ☐ Experiment</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>☐ Core ☐ Growth ☐ Experiment</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>☐ Core ☐ Growth ☐ Experiment</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>$</td>
+                    <td></td>
+                    <td>☐ Core ☐ Growth ☐ Experiment</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Total Portfolio MRR:</strong> $__________</p>
+        <p><strong>Total Hours Invested:</strong> __________ hrs/week</p>
+        <p><strong>Average revenue per hour:</strong> $__________</p>
+        
+        <h3>The 80/20 Portfolio Rule</h3>
+        <p><strong>Core Tools (80% of time, 80% of revenue):</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <p><strong>Experimental Tools (20% of time, growth opportunities):</strong></p>
+        <ol style="margin-left: 20px; line-height: 2;">
+            <li>_____________________________________</li>
+            <li>_____________________________________</li>
+        </ol>
+        
+        <h3>Next Tool Planning</h3>
+        <p><strong>Next tool idea:</strong> _____________________________________</p>
+        <p><strong>Target market:</strong> _____________________________________</p>
+        <p><strong>Expected MRR within 6 months:</strong> $__________</p>
+        <p><strong>Launch timeline:</strong> _____________________________________</p>
+        
+        <div class="warning-box">
+            <strong>⚠️ Portfolio Rule:</strong> Don't launch tool #2 until tool #1 is at $5K MRR and running on <10 hours/week. Master one before adding another.
+        </div>
+        
+        <div class="page-number">Page 10</div>
+    </div>
+
+    <!-- Page 11: Tool Launch Cadence -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.3: PORTFOLIO</div>
+            <div>LAUNCH PLAN</div>
+        </div>
+        
+        <h2>12-Month Portfolio Expansion Plan</h2>
+        
+        <h3>Tool #1 (Current Focus)</h3>
+        <p><strong>Name:</strong> _____________________________________</p>
+        <p><strong>Current MRR:</strong> $__________</p>
+        <p><strong>Target MRR:</strong> $__________</p>
+        <p><strong>Key metric to improve:</strong> _____________________________________</p>
+        
+        <h3>Tool #2 (Next 3-6 Months)</h3>
+        <p><strong>Name/Idea:</strong> _____________________________________</p>
+        <p><strong>Launch date:</strong> _____________________________________</p>
+        <p><strong>Why this tool?</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        <p><strong>Shared resources with Tool #1:</strong></p>
+        <ul style="margin-left: 20px; line-height: 2;">
+            <li>☐ Same target audience</li>
+            <li>☐ Same tech stack</li>
+            <li>☐ Same marketing channels</li>
+            <li>☐ Complementary features</li>
+        </ul>
+        
+        <h3>Tool #3 (6-12 Months)</h3>
+        <p><strong>Name/Idea:</strong> _____________________________________</p>
+        <p><strong>Launch date:</strong> _____________________________________</p>
+        <p><strong>Strategic reason:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 60px; margin: 10px 0;"></div>
+        
+        <h3>Launch Readiness Checklist</h3>
+        <p><strong>Before launching Tool #2, ensure:</strong></p>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Tool #1 is at $5,000+ MRR</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Tool #1 requires <10 hours/week</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>All Tool #1 systems are documented</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I have hired help or automated 50%+ of tasks</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>I have 3+ months runway saved</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Tool #2 is validated (landing page, early signups)</label>
+        </div>
+        
+        <div class="pro-tip">
+            The best time to launch tool #2 is when tool #1 feels "boring" because it's systematized. If tool #1 still feels chaotic, you're not ready.
+        </div>
+        
+        <div class="page-number">Page 11</div>
+    </div>
+
+    <!-- Page 12: Exit Preparation Checklist -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.3: EXIT STRATEGY</div>
+            <div>PREPARATION</div>
+        </div>
+        
+        <h2>Building a Sellable Asset</h2>
+        
+        <h3>Sellability Assessment</h3>
+        <p><strong>Rate your tool on each factor (1-10):</strong></p>
+        
+        <table class="table-grid">
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Score (1-10)</th>
+                    <th>Notes/Improvements Needed</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Consistent revenue (3+ months)</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Low churn (<5%/month)</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Profitable margins (>50%)</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Growth trend</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Documented systems</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Can run without me</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Clean financials</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>Defendable competitive position</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <p><strong>Total Score:</strong> __________ / 80</p>
+        
+        <div class="decision-box">
+            <h3>Sellability Rating</h3>
+            <p><strong>65-80:</strong> Highly sellable. Start preparing for exit now.</p>
+            <p><strong>45-64:</strong> Sellable with improvements. Focus on weak areas.</p>
+            <p><strong>Below 45:</strong> Not ready yet. Build more stability first.</p>
+        </div>
+        
+        <h3>Exit Timeline Planning</h3>
+        <p><strong>Ideal exit timeframe:</strong></p>
+        <p>☐ Within 1 year  ☐ 1-2 years  ☐ 2-3 years  ☐ 3+ years  ☐ Not planning to exit</p>
+        
+        <p><strong>Target sale price:</strong> $__________</p>
+        <p><strong>Valuation multiple target:</strong> __________ × annual profit</p>
+        
+        <div class="pro-tip">
+            Micro-SaaS typically sells for 3-5x annual profit. A tool making $60K profit/year = $180K-$300K sale price.
+        </div>
+        
+        <div class="page-number">Page 12</div>
+    </div>
+
+    <!-- Page 13: Exit Documentation Checklist -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">LESSON 6.3: EXIT STRATEGY</div>
+            <div>DOCUMENTATION</div>
+        </div>
+        
+        <h2>Exit Preparation Documentation</h2>
+        
+        <h3>Required Documents</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>3 years of financial statements</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Monthly P&L for last 12 months</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Customer list with MRR breakdown</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Churn analysis and metrics</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Traffic and marketing data</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>All SOPs and operational docs</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Technical documentation</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Customer support processes</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Marketing strategies and results</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Legal docs (contracts, terms, privacy)</label>
+        </div>
+        
+        <h3>Key Metrics to Highlight</h3>
+        <p><strong>Monthly Recurring Revenue:</strong> $__________</p>
+        <p><strong>Annual Recurring Revenue:</strong> $__________</p>
+        <p><strong>Annual Profit:</strong> $__________</p>
+        <p><strong>Profit Margin:</strong> __________%</p>
+        <p><strong>Total Customers:</strong> __________</p>
+        <p><strong>Monthly Churn Rate:</strong> __________%</p>
+        <p><strong>Average Customer Lifetime Value:</strong> $__________</p>
+        <p><strong>Customer Acquisition Cost:</strong> $__________</p>
+        <p><strong>Monthly Traffic:</strong> __________</p>
+        <p><strong>Email List Size:</strong> __________</p>
+        
+        <h3>Buyer Marketplace Research</h3>
+        <p><strong>Where I'll list my tool:</strong></p>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Flippa (for smaller deals <$100K)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Acquire.com (for vetted buyers)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>MicroAcquire (for startups)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Empire Flippers (for established businesses)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Direct outreach to strategic buyers</label>
+        </div>
+        
+        <div class="page-number">Page 13</div>
+    </div>
+
+    <!-- Page 14: 90-Day Scaling Goals -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>90-DAY PLAN</div>
+        </div>
+        
+        <h2>Your 90-Day Scaling Action Plan</h2>
+        
+        <h3>Month 1: Automation Foundation</h3>
+        <p><strong>Primary Goal:</strong></p>
+        <div style="border: 3px solid #d4af37; padding: 15px; margin: 10px 0;">
+            _____________________________________________________________________
+        </div>
+        
+        <p><strong>Key Actions:</strong></p>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Complete time audit</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Implement 3 key automations</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set up monitoring systems</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Reduce weekly hours by 25%</label>
+        </div>
+        
+        <p><strong>Success Metric:</strong> Hours/week reduced from _____ to _____</p>
+        
+        <h3>Month 2: Team & Systems</h3>
+        <p><strong>Primary Goal:</strong></p>
+        <div style="border: 3px solid #d4af37; padding: 15px; margin: 10px 0;">
+            _____________________________________________________________________
+        </div>
+        
+        <p><strong>Key Actions:</strong></p>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Document 5 key SOPs</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Hire first team member OR</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Prepare for hiring (if MRR not at $5K yet)</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Delegate or automate one major responsibility</label>
+        </div>
+        
+        <p><strong>Success Metric:</strong> Tasks delegated: _____ | Time saved: _____ hrs/week</p>
+        
+        <h3>Month 3: Growth & Portfolio</h3>
+        <p><strong>Primary Goal:</strong></p>
+        <div style="border: 3px solid #d4af37; padding: 15px; margin: 10px 0;">
+            _____________________________________________________________________
+        </div>
+        
+        <p><strong>Key Actions:</strong></p>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Increase MRR by 20%+</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Validate idea for tool #2</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Complete exit preparation checklist</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Working <5 hours/week on tool #1</label>
+        </div>
+        
+        <p><strong>Success Metric:</strong> MRR increased from $_____ to $_____</p>
+        
+        <h3>90-Day Targets</h3>
+        <p><strong>Starting MRR:</strong> $__________</p>
+        <p><strong>Target MRR:</strong> $__________</p>
+        <p><strong>Starting hours/week:</strong> __________</p>
+        <p><strong>Target hours/week:</strong> __________</p>
+        <p><strong>Revenue per hour NOW:</strong> $__________</p>
+        <p><strong>Revenue per hour TARGET:</strong> $__________</p>
+        
+        <div class="page-number">Page 14</div>
+    </div>
+
+    <!-- Page 15: Module Completion & Reflection -->
+    <div class="page">
+        <div class="header">
+            <div class="module-tag">MODULE 6: SCALING</div>
+            <div>COMPLETION</div>
+        </div>
+        
+        <h2>Module 6 Reflection & Completion</h2>
+        
+        <h3>Key Takeaways</h3>
+        <p><strong>1. The most valuable automation I implemented:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <p><strong>2. My biggest insight about delegation:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <p><strong>3. My portfolio strategy decision:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <p><strong>4. What I'll do differently going forward:</strong></p>
+        <div style="border: 2px solid #e0e0e0; padding: 10px; min-height: 80px; margin: 10px 0;"></div>
+        
+        <div class="celebration-box">
+            <h2 style="color: white; border: none;">🎉 MODULE 6 COMPLETE!</h2>
+            <p style="font-size: 18px; margin-top: 20px;">You've learned the systems and strategies that separate six-figure founders from everyone else.</p>
+            <p style="font-size: 16px; margin-top: 10px;">You know how to automate, delegate, build a portfolio, and exit.</p>
+            <p style="font-size: 20px; margin-top: 20px; font-weight: bold;">The path to 6 figures is clear. Now execute. 🚀</p>
+        </div>
+        
+        <h3>6-Figure Commitment</h3>
+        <p><strong>My commitment to reaching 6 figures:</strong></p>
+        <div style="border: 3px solid #d4af37; padding: 15px; margin: 10px 0; min-height: 100px;"></div>
+        
+        <p><strong>Target date to reach $100K ARR:</strong> _____________________________________</p>
+        
+        <p><strong>My accountability partner:</strong> _____________________________________</p>
+        
+        <h3>Next Steps</h3>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Review and implement 90-day action plan</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Schedule weekly reviews every Monday</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Join micro-SaaS community for support</label>
+        </div>
+        <div class="checkbox-item">
+            <input type="checkbox">
+            <label>Set calendar reminder for 90-day review</label>
+        </div>
+        
+        <div class="pro-tip">
+            The difference between dreamers and achievers? Execution. Review this workbook every 30 days and adjust your plan based on what you learn.
+        </div>
+        
+        <p style="text-align: center; font-size: 20px; margin-top: 40px; font-weight: bold;">
+            Welcome to the 6-Figure Club. 💰
+        </p>
+        
+        <div class="page-number">Page 15</div>
+    </div>
+
+</body>
+</html>
