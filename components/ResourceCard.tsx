@@ -41,14 +41,14 @@ export default function ResourceCard({ title, type, moduleNumber, href, descript
           href={encodedHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full"
+          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full cursor-pointer"
         >
           Open {type === 'module' ? 'Module' : 'Workbook'} →
         </a>
       ) : (
         <Link
           href={href}
-          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full"
+          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full cursor-pointer"
         >
           Open {type === 'module' ? 'Module' : 'Workbook'} →
         </Link>
