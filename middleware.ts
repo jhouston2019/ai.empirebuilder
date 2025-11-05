@@ -11,6 +11,11 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
+  // Allow static HTML files to be served directly (they're in public folder)
+  if (path.startsWith('/modules/') && path.endsWith('.html')) {
+    return NextResponse.next()
+  }
+
   // Check if this is a protected route
   const isProtectedRoute = 
     path.startsWith('/modules') || 
@@ -85,6 +90,7 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
+    // Exclude static files (HTML, images, etc.) - they're handled by the early return in middleware
     '/modules/:path*',
     '/resource-center/:path*',
     '/dashboard/:path*',
