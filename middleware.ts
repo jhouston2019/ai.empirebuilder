@@ -11,9 +11,15 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
+  // Skip static files - they should be served directly from public folder
+  // If path has a file extension (like .html), it's a static file
+  if (path.includes('.') && path.split('.').pop()?.match(/^(html|css|js|png|jpg|jpeg|gif|svg|ico|pdf)$/i)) {
+    return NextResponse.next()
+  }
+
   // Check if this is a protected route
   const isProtectedRoute = 
-    path.startsWith('/modules') || 
+    (path.startsWith('/modules') && !path.includes('.')) || // Only Next.js routes, not static files
     path.startsWith('/resource-center') || 
     path.startsWith('/dashboard') ||
     path.startsWith('/upgrade')
