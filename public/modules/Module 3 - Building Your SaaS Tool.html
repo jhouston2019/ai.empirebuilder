@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Business Empire Builder Blueprint - Module 3: Building Your SaaS Tool (ENRICHED)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Crimson+Text:wght@400;600;700&family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+        
+        @media print {
+            .page {
+                page-break-after: always;
+            }
+        }
+        
+        body {
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 12pt;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #f5f5f5;
+        }
+        
+        .title-page {
+            width: 8.5in;
+            height: 11in;
+            margin: 0 auto;
+            background: #0a0a0a;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            page-break-after: always;
+            position: relative;
+            border: 5px solid #d4af37;
+            padding: 2in 1in;
+        }
+        
+        .title-page .module-number {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            letter-spacing: 4px;
+            color: #d4af37;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .title-page h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 60pt;
+            font-weight: 900;
+            margin-bottom: 10px;
+            letter-spacing: -2px;
+            text-transform: uppercase;
+            line-height: 1.1;
+        }
+        
+        .title-page .subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 22pt;
+            font-style: italic;
+            color: #cccccc;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+        
+        .gold-line {
+            width: 150px;
+            height: 4px;
+            background: #d4af37;
+            margin: 40px auto;
+        }
+        
+        .title-page .course-name {
+            position: absolute;
+            bottom: 60px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 14pt;
+            letter-spacing: 2px;
+            color: #999;
+            text-transform: uppercase;
+        }
+        
+        .page {
+            width: 8.5in;
+            min-height: 11in;
+            margin: 0 auto;
+            background: white;
+            position: relative;
+            page-break-after: always;
+            border: 3px solid #d4af37;
+            padding: 1in;
+        }
+        
+        .page-header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            border-bottom: 2px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 10pt;
+            color: #666;
+            background: linear-gradient(to bottom, #fafafa, #fff);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .page-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 50px;
+            border-top: 2px solid #d4af37;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Crimson Text', serif;
+            font-size: 11pt;
+            color: #666;
+            background: linear-gradient(to top, #fafafa, #fff);
+        }
+        
+        .page-content {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+        
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            border-bottom: 3px solid #d4af37;
+            padding-bottom: 15px;
+        }
+        
+        h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28pt;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 5px solid #d4af37;
+            padding-left: 20px;
+        }
+        
+        h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 18pt;
+            font-weight: 600;
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        h4 {
+            font-family: 'Crimson Text', serif;
+            font-size: 16pt;
+            font-weight: 600;
+            color: #555;
+            margin-top: 25px;
+            margin-bottom: 12px;
+            font-style: italic;
+        }
+        
+        p {
+            text-align: justify;
+            margin-bottom: 15px;
+            font-size: 12pt;
+            line-height: 1.8;
+        }
+        
+        ul, ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+            line-height: 1.8;
+        }
+        
+        .overview-box {
+            background: linear-gradient(135deg, #f5f5f5, #fafafa);
+            border-left: 5px solid #d4af37;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .case-study {
+            background: linear-gradient(135deg, #e8f5e9, #f1f8f4);
+            border: 2px solid #00cc66;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .ai-enhanced {
+            background: linear-gradient(135deg, #e3f2fd, #f0f7ff);
+            border: 2px solid #2196F3;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        .path-box {
+            background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+            border: 3px solid #ff9800;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+        }
+        
+        .technical-deep-dive {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+            border: 3px solid #34495e;
+        }
+        
+        .code-block {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            font-family: 'Courier New', monospace;
+            font-size: 10pt;
+            margin: 20px 0;
+            border-radius: 5px;
+            overflow-x: auto;
+            line-height: 1.6;
+        }
+        
+        .code-comment {
+            color: #6A9955;
+        }
+        
+        .code-string {
+            color: #ce9178;
+        }
+        
+        .code-keyword {
+            color: #569cd6;
+        }
+        
+        .code-function {
+            color: #dcdcaa;
+        }
+        
+        .warning-box {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        .success-box {
+            background: #d4edda;
+            border: 3px solid #28a745;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        .tip-box {
+            background: linear-gradient(135deg, #e8eaf6, #c5cae9);
+            border-left: 5px solid #5c6bc0;
+            padding: 20px;
+            margin: 25px 0;
+        }
+        
+        .action-box {
+            background: linear-gradient(135deg, #fff9c4, #fff59d);
+            border: 2px solid #fbc02d;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        th {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        
+        .framework-section {
+            background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+            border: 2px solid #9c27b0;
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 5px;
+        }
+        
+        .indented {
+            margin-left: 40px;
+            padding-left: 20px;
+            border-left: 3px solid #d4af37;
+        }
+    </style>
+</head>
+<body>
+    <!-- TITLE PAGE -->
+    <div class="title-page">
+        <div class="module-number">MODULE THREE</div>
+        <h1>BUILDING<br>YOUR TOOL</h1>
+        <div class="subtitle">From Concept to Code: Your MVP in 7 Days</div>
+        <div class="gold-line"></div>
+        <p style="font-size: 14pt; line-height: 1.6; max-width: 500px; color: #ccc;">
+            The moment of truth. You've validated your idea. You've planned your features. Now it's time to build something real. This module transforms you from planner to builder, from dreamer to creator.
+        </p>
+        <div class="course-name">AI Business Empire Builder Blueprint</div>
+    </div>
+
+    <!-- PAGE 1: MODULE INTRODUCTION -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h1>Welcome to the Builder's Journey</h1>
+            
+            <div class="overview-box">
+                <h4>The Critical Crossroads</h4>
+                <p>This is where most aspiring entrepreneurs fail. Not because they lack ideas—you've already proven yours has merit in Module 2. Not because they lack planning—your validation sprint gave you a clear roadmap. They fail here, at the building stage, because of three fatal mistakes:</p>
+                <ol>
+                    <li><strong>Analysis Paralysis:</strong> Spending months researching the "perfect" tech stack instead of shipping</li>
+                    <li><strong>Feature Creep:</strong> Adding "just one more thing" until the MVP becomes a bloated monster</li>
+                    <li><strong>Perfectionism:</strong> Polishing pixels while competitors capture your market</li>
+                </ol>
+            </div>
+            
+            <p>Module 3 is designed to eliminate these failure modes completely. We're going to build your Minimum Viable Product in <strong>7 days or less</strong>. Not 7 months. Not 7 weeks. <em>7 days.</em></p>
+            
+            <p>How? By following a proven framework that's already helped thousands of founders ship their first SaaS tool. You're not going to build the next Salesforce. You're going to build a focused, functional tool that solves one problem extremely well—and generates your first dollar of revenue.</p>
+            
+            <h3>What This Module Delivers</h3>
+            
+            <p>By the end of Module 3, you will have:</p>
+            <ul>
+                <li>A <strong>functional web application</strong> that solves your validated problem</li>
+                <li>A <strong>deployed product</strong> accessible via your own domain name</li>
+                <li>A <strong>database backend</strong> that stores user data securely</li>
+                <li>A <strong>payment integration</strong> ready to accept your first customer (covered in Module 4, prepared here)</li>
+                <li>A <strong>testing checklist</strong> ensuring your tool works across devices and browsers</li>
+                <li>A <strong>launch plan</strong> with specific hour-by-hour tactics for maximum visibility</li>
+            </ul>
+            
+            <h3>The AI-Enhanced Advantage</h3>
+            
+            <div class="ai-enhanced">
+                <h4>🤖 Why AI Changes Everything</h4>
+                <p>This isn't your 2020 micro-SaaS playbook. The AI revolution has fundamentally transformed what's possible for solo founders and small teams. Tools that would have required machine learning PhDs and six-figure AWS bills can now be built in an afternoon using API calls.</p>
+                
+                <p><strong>Example:</strong> A traditional "Resume Analyzer" might parse PDFs and match keywords—useful but basic. An <strong>AI-Enhanced Resume Analyzer</strong> can:</p>
+                <ul>
+                    <li>Provide specific improvement suggestions for each bullet point</li>
+                    <li>Rewrite sections to be more achievement-focused</li>
+                    <li>Tailor content to specific job descriptions</li>
+                    <li>Score resumes against ATS (Applicant Tracking Systems)</li>
+                    <li>Generate cover letters automatically</li>
+                </ul>
+                
+                <p>Same problem space. 10x more value. Built in the same timeframe.</p>
+            </div>
+            
+            <p>Throughout this module, whenever we discuss a tool category, we'll show you both the traditional implementation and the AI-enhanced version. You'll learn when AI adds genuine value (frequently) and when it's unnecessary complexity (occasionally).</p>
+        </div>
+        <div class="page-footer">Page 1 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- PAGE 2: THE BUILDER'S DILEMMA -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h2>The Builder's Dilemma: Two Paths Diverge</h2>
+            
+            <p>Before we dive into building, you face a crucial decision. There are two fundamentally different approaches to building your micro-SaaS tool, and the path you choose will determine everything from your timeline to your long-term scalability.</p>
+            
+            <h3>Path A: The No-Code Founder</h3>
+            
+            <div class="path-box">
+                <h4>👨‍💼 Best For: Business-First Builders</h4>
+                <p><strong>Who This Is For:</strong> You're a marketer, designer, consultant, or domain expert. You understand your customers deeply but don't have a programming background. You want to validate and monetize quickly without learning to code.</p>
+                
+                <p><strong>Primary Tools:</strong></p>
+                <ul>
+                    <li><strong>Bubble.io:</strong> Visual programming for complex web apps</li>
+                    <li><strong>Softr:</strong> Turn Airtable databases into customer-facing apps</li>
+                    <li><strong>Webflow:</strong> Design-first website builder with CMS capabilities</li>
+                    <li><strong>Airtable + Zapier:</strong> Database + automation for simpler tools</li>
+                </ul>
+                
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Ship in days, not months</li>
+                    <li>Visual interfaces match your mental model</li>
+                    <li>Built-in hosting and deployment</li>
+                    <li>Less that can break</li>
+                    <li>Focus 100% on business problems, not technical problems</li>
+                </ul>
+                
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>Monthly platform costs ($29-99+)</li>
+                    <li>Less customization for complex features</li>
+                    <li>Dependent on platform's roadmap</li>
+                    <li>Harder to integrate AI APIs (but possible)</li>
+                    <li>May need to rebuild if you scale significantly</li>
+                </ul>
+                
+                <p><strong>Realistic Timeline:</strong> 3-5 days from start to launch</p>
+            </div>
+            
+            <h3>Path B: The Low-Code Builder</h3>
+            
+            <div class="path-box">
+                <h4>👨‍💻 Best For: Technical Tinkerers</h4>
+                <p><strong>Who This Is For:</strong> You have basic HTML/CSS knowledge or are willing to learn. You're comfortable following tutorials and debugging error messages. You want complete control and minimal ongoing costs.</p>
+                
+                <p><strong>Primary Tools:</strong></p>
+                <ul>
+                    <li><strong>HTML/CSS/JavaScript:</strong> The foundation of the web</li>
+                    <li><strong>Supabase:</strong> Backend-as-a-service (database + auth + storage)</li>
+                    <li><strong>Vercel/Netlify:</strong> Free hosting with instant deployment</li>
+                    <li><strong>OpenAI API/Anthropic API:</strong> AI capabilities via simple API calls</li>
+                </ul>
+                
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Near-zero monthly costs (free tiers go far)</li>
+                    <li>Complete customization freedom</li>
+                    <li>Easy AI integration via APIs</li>
+                    <li>Valuable technical skills you'll use forever</li>
+                    <li>Own your entire stack</li>
+                </ul>
+                
+                <p><strong>Limitations:</strong></p>
+                <ul>
+                    <li>Steeper learning curve upfront</li>
+                    <li>More pieces to connect</li>
+                    <li>You're responsible for all debugging</li>
+                    <li>Requires basic coding knowledge</li>
+                </ul>
+                
+                <p><strong>Realistic Timeline:</strong> 5-7 days from start to launch (first time)</p>
+            </div>
+        </div>
+        <div class="page-footer">Page 2 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- PAGE 3: PATH DECISION FRAMEWORK -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h3>Choosing Your Path: A Decision Framework</h3>
+            
+            <p>Answer these questions honestly:</p>
+            
+            <div class="framework-section">
+                <h4>Path Selection Quiz</h4>
+                <ol>
+                    <li><strong>Have you ever written HTML or any programming code?</strong>
+                        <br>Yes → +1 point for Path B | No → +1 point for Path A</li>
+                    
+                    <li><strong>Do you enjoy troubleshooting technical problems?</strong>
+                        <br>Yes → +2 points for Path B | No → +2 points for Path A</li>
+                    
+                    <li><strong>Is your tool relatively simple</strong> (form → processing → result)?
+                        <br>Yes → +1 point for either | No/Complex workflows → +2 points for Path A</li>
+                    
+                    <li><strong>Are you willing to invest 10-20 hours learning coding basics?</strong>
+                        <br>Yes → +2 points for Path B | No → +2 points for Path A</li>
+                    
+                    <li><strong>Is $30-100/month in platform costs acceptable?</strong>
+                        <br>Yes → +1 point for Path A | No/Want to minimize costs → +2 points for Path B</li>
+                    
+                    <li><strong>Will your tool heavily use AI features?</strong>
+                        <br>Yes → +2 points for Path B | No → Neutral</li>
+                </ol>
+                
+                <p><strong>Results:</strong></p>
+                <ul>
+                    <li>If Path A scored higher: Start with Lesson 3.1A (No-Code Track)</li>
+                    <li>If Path B scored higher: Start with Lesson 3.1B (Low-Code Track)</li>
+                    <li>If tied: Start with Path A for speed, graduate to Path B for your second tool</li>
+                </ul>
+            </div>
+            
+            <div class="tip-box">
+                <h4>💡 The Hybrid Approach</h4>
+                <p>Many successful founders start with Path A to validate and generate initial revenue, then rebuild with Path B once they have paying customers and proven demand. There's no shame in this—it's strategic. Your first version doesn't need to be your forever version.</p>
+            </div>
+            
+            <h3>Module Structure: Choose Your Adventure</h3>
+            
+            <p>This module is structured to support both paths:</p>
+            
+            <ul>
+                <li><strong>Lesson 3.1A:</strong> No-Code MVP (Bubble.io focus)</li>
+                <li><strong>Lesson 3.1B:</strong> Low-Code MVP (HTML/JS/Supabase focus) ← <em>Detailed in this document</em></li>
+                <li><strong>Lesson 3.2:</strong> Adding Essential Features (applies to both)</li>
+                <li><strong>Lesson 3.3:</strong> Testing & Launch (applies to both)</li>
+            </ul>
+            
+            <p>The remainder of this comprehensive module will focus on <strong>Path B: The Low-Code Builder</strong> approach, as it offers the most flexibility for AI integration and long-term scalability. If you're following Path A, the companion "No-Code Builder's Guide" provides equivalent step-by-step instructions using Bubble.io and related platforms.</p>
+            
+            <div class="warning-box">
+                <h4>⚠️ Important: No-Code Builders</h4>
+                <p>If you selected Path A, you should switch to the "Module 3A: No-Code Builder's Edition" document. The technical instructions that follow assume basic coding knowledge. Don't worry—both paths reach the same destination, and you can always switch later.</p>
+            </div>
+        </div>
+        <div class="page-footer">Page 3 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- PAGE 4: LESSON 3.1B INTRODUCTION -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h1>Lesson 3.1B: Building Your Low-Code MVP</h1>
+            
+            <h3>The Foundation: Understanding Your Tech Stack</h3>
+            
+            <p>Before writing a single line of code, let's understand what we're building with and why. Your tech stack is the combination of technologies that work together to make your tool function. Think of it like a recipe—each ingredient serves a specific purpose.</p>
+            
+            <div class="overview-box">
+                <h4>Your Micro-SaaS Tech Stack</h4>
+                <p>We're using what's called a "JAMstack" architecture—JavaScript, APIs, and Markup. It's:</p>
+                <ul>
+                    <li><strong>Fast:</strong> Static files load instantly</li>
+                    <li><strong>Secure:</strong> No server means fewer attack vectors</li>
+                    <li><strong>Scalable:</strong> Can handle traffic spikes effortlessly</li>
+                    <li><strong>Cheap:</strong> Most services have generous free tiers</li>
+                </ul>
+            </div>
+            
+            <h3>Component 1: The Frontend (What Users See)</h3>
+            
+            <p><strong>Technologies: HTML, CSS, JavaScript</strong></p>
+            
+            <p>This is your user interface—everything your customers see and interact with. We're keeping it intentionally simple:</p>
+            
+            <ul>
+                <li><strong>HTML</strong> provides the structure (forms, buttons, text)</li>
+                <li><strong>CSS</strong> provides the styling (colors, layouts, fonts)</li>
+                <li><strong>JavaScript</strong> provides the interactivity (button clicks, form validation, API calls)</li>
+            </ul>
+            
+            <div class="indented">
+                <h4>Why This Stack?</h4>
+                <p><strong>Why not React/Vue/Angular?</strong> These modern frameworks are powerful but add unnecessary complexity for MVP micro-SaaS tools. You can always upgrade later. For now, vanilla JavaScript gives you everything you need with zero build process.</p>
+                
+                <p><strong>Why not WordPress?</strong> WordPress is great for content sites, not web applications. You'd spend more time fighting the CMS than building your tool.</p>
+                
+                <p><strong>Why not a backend language like Python/PHP?</strong> Because we're using serverless architecture. The backend is handled by Supabase (more on this next), so you don't need to manage servers.</p>
+            </div>
+            
+            <h3>Component 2: The Backend (Where Data Lives)</h3>
+            
+            <p><strong>Technology: Supabase</strong></p>
+            
+            <p>Supabase is an open-source Firebase alternative. In non-technical terms, it's a "Backend-as-a-Service" (BaaS) that gives you:</p>
+            
+            <ul>
+                <li><strong>Database:</strong> PostgreSQL database to store all your data</li>
+                <li><strong>Authentication:</strong> User signups, logins, password resets—all handled</li>
+                <li><strong>Storage:</strong> File uploads (images, PDFs, etc.)</li>
+                <li><strong>API:</strong> Automatically generated endpoints to read/write data</li>
+            </ul>
+            
+            <div class="indented">
+                <h4>Why Supabase?</h4>
+                <ul>
+                    <li><strong>Generous Free Tier:</strong> 500MB database, 1GB storage, 50,000 monthly active users</li>
+                    <li><strong>SQL Power:</strong> Real database, not just a JSON store</li>
+                    <li><strong>Real-time Features:</strong> Built-in WebSocket support for live updates</li>
+                    <li><strong>Open Source:</strong> If you outgrow it, you can self-host</li>
+                    <li><strong>Excellent Documentation:</strong> Clear examples for common use cases</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-footer">Page 4 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- PAGE 5: TECH STACK CONTINUED -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h3>Component 3: The Hosting (Where Your Site Lives)</h3>
+            
+            <p><strong>Technology: Vercel or Netlify</strong></p>
+            
+            <p>These platforms host your frontend files (HTML, CSS, JS) and make them accessible via your domain. They're specifically designed for static sites and offer:</p>
+            
+            <ul>
+                <li><strong>Free SSL certificates</strong> (the https:// padlock)</li>
+                <li><strong>Global CDN</strong> (your site loads fast worldwide)</li>
+                <li><strong>Instant deployment</strong> (push code, it goes live in seconds)</li>
+                <li><strong>Automatic backups</strong> (version history for all changes)</li>
+            </ul>
+            
+            <div class="indented">
+                <h4>Vercel vs. Netlify: Which to Choose?</h4>
+                <p>Honest answer: both are excellent. For this course, we'll use <strong>Vercel</strong> because:</p>
+                <ul>
+                    <li>Slightly more generous free tier</li>
+                    <li>Better serverless function support (useful for advanced features)</li>
+                    <li>Created by the Next.js team (if you ever want to upgrade)</li>
+                </ul>
+                <p>But if you prefer Netlify's interface or have existing projects there, it works identically.</p>
+            </div>
+            
+            <h3>Component 4: The AI Layer (Optional But Powerful)</h3>
+            
+            <p><strong>Technology: OpenAI API or Anthropic Claude API</strong></p>
+            
+            <p>If your tool benefits from AI capabilities, you'll integrate one of these APIs. An API is simply a way for your application to send requests to another service and receive responses.</p>
+            
+            <div class="ai-enhanced">
+                <h4>When to Add AI</h4>
+                <p><strong>Add AI if your tool involves:</strong></p>
+                <ul>
+                    <li>Text generation (emails, social posts, product descriptions)</li>
+                    <li>Content analysis (resume scoring, grammar checking, sentiment analysis)</li>
+                    <li>Summarization (TL;DR generation, meeting notes, article digests)</li>
+                    <li>Translation or rewriting</li>
+                    <li>Question answering based on documents</li>
+                    <li>Creative work (story ideas, business names, taglines)</li>
+                </ul>
+                
+                <p><strong>Skip AI if your tool:</strong></p>
+                <ul>
+                    <li>Performs calculations or data transformations (unit converters, calculators)</li>
+                    <li>Generates from templates (invoice generators, QR codes)</li>
+                    <li>Manipulates images/media without understanding content</li>
+                    <li>Simply displays or organizes information</li>
+                </ul>
+            </div>
+            
+            <h3>Putting It All Together: How the Stack Works</h3>
+            
+            <p>Here's the flow when a user interacts with your tool:</p>
+            
+            <ol>
+                <li><strong>User visits your domain</strong> → Vercel serves the HTML/CSS/JS files</li>
+                <li><strong>User clicks a button or submits a form</strong> → JavaScript captures this action</li>
+                <li><strong>JavaScript makes an API call</strong> → Either to Supabase (for data) or OpenAI (for AI)</li>
+                <li><strong>The service processes the request</strong> → Database query runs or AI generates response</li>
+                <li><strong>Response returns to JavaScript</strong> → Your code receives the data</li>
+                <li><strong>JavaScript updates the page</strong> → User sees the result</li>
+            </ol>
+            
+            <div class="tip-box">
+                <h4>💡 The Beauty of This Architecture</h4>
+                <p>Notice what's missing? You're not managing servers. You're not worrying about scaling infrastructure. You're not configuring databases. Each service handles its own domain, and you simply connect them together. This is why micro-SaaS has become so accessible—the hard parts are now managed services.</p>
+            </div>
+        </div>
+        <div class="page-footer">Page 5 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- PAGE 6: PRACTICAL BUILD EXAMPLE -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h2>Your First Build: A Complete Walkthrough</h2>
+            
+            <p>Theory is important, but let's get practical. We're going to build a simple but functional tool from scratch. This example demonstrates every concept you'll need for your own tool.</p>
+            
+            <h3>Example Tool: Secure Password Generator</h3>
+            
+            <p>This tool generates strong, random passwords based on user preferences. It's simple enough to understand quickly but complex enough to teach all the core concepts.</p>
+            
+            <h4>What This Example Teaches You:</h4>
+            <ul>
+                <li>How to structure an HTML page</li>
+                <li>How to handle user input (checkboxes, sliders)</li>
+                <li>How to write JavaScript logic</li>
+                <li>How to update the page dynamically</li>
+                <li>How to add copy-to-clipboard functionality</li>
+                <li>How to style with CSS</li>
+            </ul>
+            
+            <h3>Step 1: The HTML Structure</h3>
+            
+            <p>HTML provides the skeleton—the elements users interact with. Let's break down each section:</p>
+            
+            <div class="code-block">
+<span class="code-comment">&lt;!-- The HTML Structure --&gt;</span>
+<span class="code-keyword">&lt;!DOCTYPE</span> html<span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;html</span> lang=<span class="code-string">"en"</span><span class="code-keyword">&gt;</span>
+<span class="code-keyword">&lt;head&gt;</span>
+    <span class="code-comment">&lt;!-- Metadata: tells browsers how to display the page --&gt;</span>
+    <span class="code-keyword">&lt;meta</span> charset=<span class="code-string">"UTF-8"</span><span class="code-keyword">&gt;</span>
+    <span class="code-keyword">&lt;meta</span> name=<span class="code-string">"viewport"</span> content=<span class="code-string">"width=device-width, initial-scale=1.0"</span><span class="code-keyword">&gt;</span>
+    
+    <span class="code-comment">&lt;!-- Page title appears in browser tab --&gt;</span>
+    <span class="code-keyword">&lt;title&gt;</span>Secure Password Generator<span class="code-keyword">&lt;/title&gt;</span>
+<span class="code-keyword">&lt;/head&gt;</span>
+
+<span class="code-keyword">&lt;body&gt;</span>
+    <span class="code-comment">&lt;!-- Main container holds all visible content --&gt;</span>
+    <span class="code-keyword">&lt;div</span> class=<span class="code-string">"container"</span><span class="code-keyword">&gt;</span>
+        
+        <span class="code-comment">&lt;!-- Header section --&gt;</span>
+        <span class="code-keyword">&lt;h1&gt;</span>Password Generator<span class="code-keyword">&lt;/h1&gt;</span>
+        <span class="code-keyword">&lt;p&gt;</span>Create strong, random passwords instantly<span class="code-keyword">&lt;/p&gt;</span>
+        
+        <span class="code-comment">&lt;!-- Display area for generated password --&gt;</span>
+        <span class="code-keyword">&lt;div</span> class=<span class="code-string">"password-display"</span><span class="code-keyword">&gt;</span>
+            <span class="code-keyword">&lt;input</span> type=<span class="code-string">"text"</span> 
+                   id=<span class="code-string">"password"</span> 
+                   readonly 
+                   placeholder=<span class="code-string">"Your password will appear here"</span><span class="code-keyword">&gt;</span>
+            
+            <span class="code-comment">&lt;!-- Copy button (we'll add functionality with JavaScript) --&gt;</span>
+            <span class="code-keyword">&lt;button</span> id=<span class="code-string">"copyBtn"</span> onclick=<span class="code-string">"copyPassword()"</span><span class="code-keyword">&gt;</span>
+                Copy
+            <span class="code-keyword">&lt;/button&gt;</span>
+        <span class="code-keyword">&lt;/div&gt;</span>
+        
+        <span class="code-comment">&lt;!-- Options for password customization --&gt;</span>
+        <span class="code-keyword">&lt;div</span> class=<span class="code-string">"options"</span><span class="code-keyword">&gt;</span>
+            
+            <span class="code-comment">&lt;!-- Length slider --&gt;</span>
+            <span class="code-keyword">&lt;label&gt;</span>
+                Password Length: <span class="code-keyword">&lt;span</span> id=<span class="code-string">"lengthValue"</span><span class="code-keyword">&gt;</span>16<span class="code-keyword">&lt;/span&gt;</span>
+                <span class="code-keyword">&lt;input</span> type=<span class="code-string">"range"</span> 
+                       id=<span class="code-string">"length"</span> 
+                       min=<span class="code-string">"8"</span> 
+                       max=<span class="code-string">"64"</span> 
+                       value=<span class="code-string">"16"</span>
+                       oninput=<span class="code-string">"updateLength()"</span><span class="code-keyword">&gt;</span>
+            <span class="code-keyword">&lt;/label&gt;</span>
+            
+            <span class="code-comment">&lt;!-- Checkboxes for character types --&gt;</span>
+            <span class="code-keyword">&lt;label&gt;</span>
+                <span class="code-keyword">&lt;input</span> type=<span class="code-string">"checkbox"</span> id=<span class="code-string">"uppercase"</span> checked<span class="code-keyword">&gt;</span>
+                Include Uppercase (A-Z)
+            <span class="code-keyword">&lt;/label&gt;</span>
+            
+            <span class="code-keyword">&lt;label&gt;</span>
+                <span class="code-keyword">&lt;input</span> type=<span class="code-string">"checkbox"</span> id=<span class="code-string">"lowercase"</span> checked<span class="code-keyword">&gt;</span>
+                Include Lowercase (a-z)
+            <span class="code-keyword">&lt;/label&gt;</span>
+            
+            <span class="code-keyword">&lt;label&gt;</span>
+                <span class="code-keyword">&lt;input</span> type=<span class="code-string">"checkbox"</span> id=<span class="code-string">"numbers"</span> checked<span class="code-keyword">&gt;</span>
+                Include Numbers (0-9)
+            <span class="code-keyword">&lt;/label&gt;</span>
+            
+            <span class="code-keyword">&lt;label&gt;</span>
+                <span class="code-keyword">&lt;input</span> type=<span class="code-string">"checkbox"</span> id=<span class="code-string">"symbols"</span> checked<span class="code-keyword">&gt;</span>
+                Include Symbols (!@#$%^&*)
+            <span class="code-keyword">&lt;/label&gt;</span>
+        <span class="code-keyword">&lt;/div&gt;</span>
+        
+        <span class="code-comment">&lt;!-- Generate button --&gt;</span>
+        <span class="code-keyword">&lt;button</span> onclick=<span class="code-string">"generatePassword()"</span> class=<span class="code-string">"generate-btn"</span><span class="code-keyword">&gt;</span>
+            Generate Password
+        <span class="code-keyword">&lt;/button&gt;</span>
+    <span class="code-keyword">&lt;/div&gt;</span>
+    
+    <span class="code-comment">&lt;!-- JavaScript file link (we'll create this next) --&gt;</span>
+    <span class="code-keyword">&lt;script</span> src=<span class="code-string">"script.js"</span><span class="code-keyword">&gt;&lt;/script&gt;</span>
+<span class="code-keyword">&lt;/body&gt;</span>
+<span class="code-keyword">&lt;/html&gt;</span>
+            </div>
+            
+            <div class="indented">
+                <h4>Understanding the HTML</h4>
+                <p><strong>Key Concepts:</strong></p>
+                <ul>
+                    <li><strong>IDs vs Classes:</strong> IDs (like <code>id="password"</code>) are unique identifiers for specific elements. Classes (like <code>class="container"</code>) can be reused for styling multiple elements.</li>
+                    
+                    <li><strong>Input Types:</strong> The <code>type</code> attribute determines how an input behaves. <code>type="range"</code> creates a slider, <code>type="checkbox"</code> creates a checkbox.</li>
+                    
+                    <li><strong>onclick Attribute:</strong> When you click an element with <code>onclick="functionName()"</code>, it runs the JavaScript function with that name.</li>
+                    
+                    <li><strong>readonly Attribute:</strong> Prevents users from typing in the password field (they can only copy the generated password).</li>
+                </ul>
+            </div>
+        </div>
+        <div class="page-footer">Page 6 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- PAGE 7: JAVASCRIPT LOGIC EXPLAINED -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h3>Step 2: The JavaScript Logic (The Brain)</h3>
+            
+            <p>JavaScript is where the magic happens. It reads user preferences, generates the password, and updates the display. Let's build this function by function.</p>
+            
+            <div class="code-block">
+<span class="code-comment">// script.js - The complete password generator logic</span>
+
+<span class="code-comment">/**
+ * CHARACTER SETS
+ * These strings contain all possible characters for each category
+ * We'll randomly select from these based on user preferences
+ */</span>
+<span class="code-keyword">const</span> UPPERCASE = <span class="code-string">"ABCDEFGHIJKLMNOPQRSTUVWXYZ"</span>;
+<span class="code-keyword">const</span> LOWERCASE = <span class="code-string">"abcdefghijklmnopqrstuvwxyz"</span>;
+<span class="code-keyword">const</span> NUMBERS = <span class="code-string">"0123456789"</span>;
+<span class="code-keyword">const</span> SYMBOLS = <span class="code-string">"!@#$%^&*()_+-=[]{}|;:,.<>?"</span>;
+
+<span class="code-comment">/**
+ * MAIN FUNCTION: generatePassword()
+ * This is called when user clicks "Generate Password" button
+ * It reads all user preferences and creates a password accordingly
+ */</span>
+<span class="code-keyword">function</span> <span class="code-function">generatePassword</span>() {
+    <span class="code-comment">// Step 1: Read user preferences from HTML elements</span>
+    <span class="code-keyword">const</span> length = document.getElementById(<span class="code-string">"length"</span>).value;
+    <span class="code-keyword">const</span> useUppercase = document.getElementById(<span class="code-string">"uppercase"</span>).checked;
+    <span class="code-keyword">const</span> useLowercase = document.getElementById(<span class="code-string">"lowercase"</span>).checked;
+    <span class="code-keyword">const</span> useNumbers = document.getElementById(<span class="code-string">"numbers"</span>).checked;
+    <span class="code-keyword">const</span> useSymbols = document.getElementById(<span class="code-string">"symbols"</span>).checked;
+    
+    <span class="code-comment">// Step 2: Build available character set based on selections</span>
+    <span class="code-keyword">let</span> availableChars = <span class="code-string">""</span>;  <span class="code-comment">// Start with empty string</span>
+    
+    <span class="code-comment">// If checkbox is checked, add those characters to pool</span>
+    <span class="code-keyword">if</span> (useUppercase) availableChars += UPPERCASE;
+    <span class="code-keyword">if</span> (useLowercase) availableChars += LOWERCASE;
+    <span class="code-keyword">if</span> (useNumbers) availableChars += NUMBERS;
+    <span class="code-keyword">if</span> (useSymbols) availableChars += SYMBOLS;
+    
+    <span class="code-comment">// Step 3: Validation - make sure at least one type is selected</span>
+    <span class="code-keyword">if</span> (availableChars.length === <span class="code-string">0</span>) {
+        alert(<span class="code-string">"Please select at least one character type!"</span>);
+        <span class="code-keyword">return</span>;  <span class="code-comment">// Exit function early</span>
+    }
+    
+    <span class="code-comment">// Step 4: Generate the password character by character</span>
+    <span class="code-keyword">let</span> password = <span class="code-string">""</span>;
+    
+    <span class="code-comment">// Loop 'length' times (e.g., if length=16, loop 16 times)</span>
+    <span class="code-keyword">for</span> (<span class="code-keyword">let</span> i = <span class="code-string">0</span>; i < length; i++) {
+        <span class="code-comment">// Pick a random character from availableChars</span>
+        <span class="code-keyword">const</span> randomIndex = Math.floor(Math.random() * availableChars.length);
+        password += availableChars[randomIndex];
+    }
+    
+    <span class="code-comment">// Step 5: Display the password in the input field</span>
+    document.getElementById(<span class="code-string">"password"</span>).value = password;
+}
+
+<span class="code-comment">/**
+ * HELPER FUNCTION: updateLength()
+ * Updates the displayed length value when user moves slider
+ */</span>
+<span class="code-keyword">function</span> <span class="code-function">updateLength</span>() {
+    <span class="code-comment">// Get current slider value</span>
+    <span class="code-keyword">const</span> length = document.getElementById(<span class="code-string">"length"</span>).value;
+    
+    <span class="code-comment">// Update the displayed number next to slider</span>
+    document.getElementById(<span class="code-string">"lengthValue"</span>).textContent = length;
+}
+
+<span class="code-comment">/**
+ * HELPER FUNCTION: copyPassword()
+ * Copies the generated password to user's clipboard
+ */</span>
+<span class="code-keyword">function</span> <span class="code-function">copyPassword</span>() {
+    <span class="code-comment">// Get the password input element</span>
+    <span class="code-keyword">const</span> passwordField = document.getElementById(<span class="code-string">"password"</span>);
+    
+    <span class="code-comment">// Check if there's actually a password to copy</span>
+    <span class="code-keyword">if</span> (passwordField.value === <span class="code-string">""</span>) {
+        alert(<span class="code-string">"Generate a password first!"</span>);
+        <span class="code-keyword">return</span>;
+    }
+    
+    <span class="code-comment">// Select the password text</span>
+    passwordField.select();
+    
+    <span class="code-comment">// Copy to clipboard using browser API</span>
+    document.execCommand(<span class="code-string">"copy"</span>);
+    
+    <span class="code-comment">// Give user feedback</span>
+    alert(<span class="code-string">"Password copied to clipboard!"</span>);
+}
+
+<span class="code-comment">// Generate a password immediately when page loads</span>
+<span class="code-keyword">window</span>.onload = <span class="code-keyword">function</span>() {
+    generatePassword();
+};
+            </div>
+        </div>
+        <div class="page-footer">Page 7 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- PAGE 8: CODE EXPLANATION DEEP DIVE -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h3>Deep Dive: How the Code Actually Works</h3>
+            
+            <div class="technical-deep-dive">
+                <h4>🔍 For the Builder: Line-by-Line Explanation</h4>
+                
+                <h4 style="color: #ecf0f1;">The Character Selection Logic</h4>
+                <p>Let's break down the most critical part—how we build the character pool:</p>
+                
+                <div class="code-block" style="background: #1a1a1a;">
+<span class="code-keyword">let</span> availableChars = <span class="code-string">""</span>;
+<span class="code-keyword">if</span> (useUppercase) availableChars += UPPERCASE;
+                </div>
+                
+                <p><strong>What's happening here?</strong></p>
+                <ol>
+                    <li>We start with an empty string: <code>availableChars = ""</code></li>
+                    <li>The <code>+=</code> operator means "add to the end"</li>
+                    <li>So if <code>useUppercase</code> is true, we add all 26 uppercase letters</li>
+                    <li>If user checks all 4 boxes, <code>availableChars</code> becomes a string with 95+ characters</li>
+                </ol>
+                
+                <p><strong>Example:</strong> If user selects only uppercase and numbers:</p>
+                <ul>
+                    <li><code>availableChars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"</code> (36 characters)</li>
+                </ul>
+                
+                <h4 style="color: #ecf0f1;">The Random Selection Algorithm</h4>
+                
+                <div class="code-block" style="background: #1a1a1a;">
+<span class="code-keyword">const</span> randomIndex = Math.floor(Math.random() * availableChars.length);
+password += availableChars[randomIndex];
+                </div>
+                
+                <p><strong>Breaking this down:</strong></p>
+                <ol>
+                    <li><code>Math.random()</code> generates a decimal between 0 and 1 (e.g., 0.743)</li>
+                    <li>We multiply by <code>availableChars.length</code> (e.g., 0.743 × 36 = 26.748)</li>
+                    <li><code>Math.floor()</code> rounds down to nearest integer (26.748 → 26)</li>
+                    <li><code>availableChars[26]</code> gets the character at position 26</li>
+                    <li>We add that character to the password string</li>
+                </ol>
+                
+                <p><strong>Why this is cryptographically sound:</strong> <code>Math.random()</code> isn't perfect for security, but it's sufficient for most password generators. For maximum security (e.g., generating encryption keys), you'd use <code>crypto.getRandomValues()</code> instead.</p>
+                
+                <h4 style="color: #ecf0f1;">The Document Object Model (DOM) Connection</h4>
+                
+                <div class="code-block" style="background: #1a1a1a;">
+document.getElementById(<span class="code-string">"password"</span>).value = password;
+                </div>
+                
+                <p><strong>What this does:</strong></p>
+                <ol>
+                    <li><code>document</code> represents the entire HTML page</li>
+                    <li><code>getElementById("password")</code> finds the element with <code>id="password"</code></li>
+                    <li><code>.value</code> accesses the text inside that input field</li>
+                    <li><code>= password</code> sets it to our generated password string</li>
+                </ol>
+                
+                <p>This is how JavaScript communicates with HTML. The browser updates the page in real-time when you change an element's properties.</p>
+            </div>
+            
+            <h3>Customizing This Template</h3>
+            
+            <p>Now that you understand how it works, here's how to adapt this pattern for different tools:</p>
+            
+            <div class="action-box">
+                <h4>For a different generator tool (e.g., Invoice Number Generator):</h4>
+                <ol>
+                    <li><strong>Replace character sets</strong> with your generation logic (e.g., "INV-" + year + "-" + sequential number)</li>
+                    <li><strong>Keep the input/checkbox structure</strong> for user customization options</li>
+                    <li><strong>Maintain the display field</strong> for showing results</li>
+                    <li><strong>Keep the copy button</strong> for user convenience</li>
+                </ol>
+            </div>
+        </div>
+        <div class="page-footer">Page 8 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- PAGE 9: AI INTEGRATION EXAMPLE -->
+    <div class="page">
+        <div class="page-header">AI Business Empire Builder Blueprint - Module 3: Building Your Tool</div>
+        <div class="page-content">
+            <h2>Adding AI Superpowers: OpenAI Integration</h2>
+            
+            <p>Now let's level up. We'll transform our simple password generator into an "AI-Powered Password Strength Analyzer & Suggester." This demonstrates exactly how to integrate AI into any tool.</p>
+            
+            <h3>The AI-Enhanced Version</h3>
+            
+            <p>Our upgraded tool will:</p>
+            <ol>
+                <li>Generate a password (as before)</li>
+                <li>Analyze its strength using AI</li>
+                <li>Provide specific suggestions for improvement</li>
+                <li>Explain why the password is secure (or isn't)</li>
+            </ol>
+            
+            <div class="ai-enhanced">
+                <h4>Why This Adds Value</h4>
+                <p>A basic password generator is a commodity—there are hundreds. But an AI-powered analyzer that explains "This password is strong because it uses uncommon symbol patterns and avoids dictionary words" is differentiated. Users learn while they use your tool.</p>
+            </div>
+            
+            <h3>Step 1: Getting Your OpenAI API Key</h3>
+            
+            <ol>
+                <li>Go to <code>platform.openai.com</code></li>
+                <li>Create an account (free to start)</li>
+                <li>Navigate to API Keys section</li>
+                <li>Click "Create new secret key"</li>
+                <li>Copy the key (it starts with <code>sk-...</code>)</li>
+                <li><strong>Never commit this key to public code repositories</strong></li>
+            </ol>
+            
+            <div class="warning-box">
+                <h4>⚠️ API Key Security</h4>
+                <p>Your API key is like a password. If exposed publicly, bad actors can rack up charges on your account. For development, store it in an environment variable. For production, use a serverless function that keeps the key server-side (we'll cover this).</p>
+            </div>
+            
+            <h3>Step 2: The AI Analysis Function</h3>
+            
+            <div class="code-block">
+<span class="code-comment">/**
+ * AI-POWERED PASSWORD ANALYSIS
+ * Sends password to OpenAI for strength evaluation
+ * Returns detailed explanation and suggestions
+ */</span>
+<span class="code-keyword">async function</span> <span class="code-function">analyzePasswordWithAI</span>(password) {
+    <span class="code-comment">// Your OpenAI API key (in production, this would be server-side)</span>
+    <span class="code-keyword">const</span> API_KEY = <span class="code-string">"sk-your-api-key-here"</span>;
+    
+    <span class="code-comment">// The API endpoint for chat completions</span>
+    <span class="code-keyword">const</span> API_URL = <span class="code-string">"https://api.openai.com/v1/chat/completions"</span>;
+    
+    <span class="code-comment">// Show loading state to user</span>
+    document.getElementById(<span class="code-string">"analysis"</span>).innerHTML = <span class="code-string">"Analyzing... 🤖"</span>;
+    
+    <span class="code-keyword">try</span> {
+        <span class="code-comment">// Make the API request</span>
+        <span class="code-keyword">const</span> response = <span class="code-keyword">await</span> fetch(API_URL, {
+            method: <span class="code-string">"POST"</span>,
+            headers: {
+                <span class="code-string">"Content-Type"</span>: <span class="code-string">"application/json"</span>,
+                <span class="code-string">"Authorization"</span>: <span class="code-string">`Bearer ${API_KEY}`</span>
+            },
+            body: JSON.stringify({
+                model: <span class="code-string">"gpt-3.5-turbo"</span>,  <span class="code-comment">// The AI model to use</span>
+                messages: [
+                    {
+                        role: <span class="code-string">"system"</span>,
+                        content: <span class="code-string">"You are a cybersecurity expert analyzing password strength. Provide clear, concise feedback."</span>
+                    },
+                    {
+                        role: <span class="code-string">"user"</span>,
+                        content: <span class="code-string">`Analyze this password: "${password}". Provide: 1) Strength rating (Weak/Moderate/Strong/Very Strong), 2) Specific strengths, 3) Specific improvements if any, 4) Estimated crack time. Keep response under 100 words.`</span>
+                    }
+                ],
+                max_tokens: <span class="code-string">150</span>,  <span class="code-comment">// Limit response length for cost control</span>
+                temperature: <span class="code-string">0.7</span>  <span class="code-comment">// Creativity level (0=factual, 1=creative)</span>
+            })
+        });
+        
+        <span class="code-comment">// Parse the response</span>
+        <span class="code-keyword">const</span> data = <span class="code-keyword">await</span> response.json();
+        
+        <span class="code-comment">// Extract the AI's analysis from the response</span>
+        <span class="code-keyword">const</span> analysis = data.choices[<span class="code-string">0</span>].message.content;
+        
+        <span class="code-comment">// Display the analysis to user</span>
+        document.getElementById(<span class="code-string">"analysis"</span>).innerHTML = <span class="code-string">`
+            &lt;h4&gt;AI Analysis&lt;/h4&gt;
+            &lt;p&gt;${analysis}&lt;/p&gt;
+        `</span>;
+        
+    } <span class="code-keyword">catch</span> (error) {
+        <span class="code-comment">// Handle any errors gracefully</span>
+        console.error(<span class="code-string">"Error analyzing password:"</span>, error);
+        document.getElementById(<span class="code-string">"analysis"</span>).innerHTML = 
+            <span class="code-string">"Analysis unavailable. Please try again."</span>;
+    }
+}
+            </div>
+        </div>
+        <div class="page-footer">Page 9 | © 2024 Axis Strategic Holdings LLC</div>
+    </div>
+
+    <!-- Continue with more pages... -->
+    <!-- I'll add the database integration, testing, and launch sections -->
+
+</body>
+</html>

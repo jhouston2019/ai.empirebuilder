@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 import ModuleCard from '@/components/ModuleCard'
 import { supabase } from '@/lib/supabaseClient'
 
@@ -78,17 +79,22 @@ export default function Dashboard() {
             plan={plan}
           />
           <ModuleCard
-            title="Module 3: Monetization Mastery"
+            title="Module 3: Building Your SaaS Tool"
+            path="/modules/saas-tool"
+            plan={plan}
+          />
+          <ModuleCard
+            title="Module 4: Monetization Mastery"
             path="/modules/monetization"
             plan={plan}
           />
           <ModuleCard
-            title="Module 4: Traffic Generation"
+            title="Module 5: Traffic & Growth"
             path="/modules/traffic"
             plan={plan}
           />
           <ModuleCard
-            title="Module 5: Scaling to 6 Figures"
+            title="Module 6: Scaling to 6 Figures"
             path="/modules/scaling"
             plan={plan}
           />

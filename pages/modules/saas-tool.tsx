@@ -4,7 +4,7 @@ import Link from 'next/link'
 import ModuleViewer from '@/components/ModuleViewer'
 import { supabase } from '@/lib/supabaseClient'
 
-export default function TrafficModule() {
+export default function SaaSToolModule() {
   const router = useRouter()
   const [plan, setPlan] = useState<string>('')
   const [loading, setLoading] = useState(true)
@@ -58,11 +58,11 @@ export default function TrafficModule() {
               ← Dashboard
             </Link>
             <span className="text-neutral-400">|</span>
-            <h1 className="text-xl font-bold text-yellow-400">Module 5: Traffic & Growth</h1>
+            <h1 className="text-xl font-bold text-yellow-400">Module 3: Building Your SaaS Tool</h1>
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="/modules/Module 5 Workbook - Traffic & Growth.html"
+              href="/modules/Module 3 Workbook - Building Your SaaS Tool.html"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition"
@@ -73,7 +73,8 @@ export default function TrafficModule() {
           </div>
         </div>
       </div>
-      <ModuleViewer modulePath="/modules/Module 5 - Traffic & Growth.html" title="Module 5: Traffic & Growth" />
+      <ModuleViewer modulePath="/modules/Module 3 - Building Your SaaS Tool.html" title="Module 3: Building Your SaaS Tool" />
     </div>
   )
 }
+
