@@ -12,6 +12,9 @@ export default function ResourceCard({ title, type, moduleNumber, href, descript
   const icon = type === 'module' ? '📚' : '📝'
   const badgeColor = type === 'module' ? 'bg-purple-600' : 'bg-yellow-600'
   
+  // URL encode the href for proper handling of spaces
+  const encodedHref = encodeURI(href)
+  
   return (
     <div className="p-6 bg-neutral-900 rounded-xl border border-neutral-700 hover:border-purple-500 transition">
       <div className="flex items-start justify-between mb-4">
@@ -33,19 +36,19 @@ export default function ResourceCard({ title, type, moduleNumber, href, descript
         <p className="text-neutral-400 text-sm mb-4">{description}</p>
       )}
       
-      {href.startsWith('/modules/') && href.endsWith('.html') ? (
+      {href.endsWith('.html') ? (
         <a
-          href={href}
+          href={encodedHref}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition"
+          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full"
         >
           Open {type === 'module' ? 'Module' : 'Workbook'} →
         </a>
       ) : (
         <Link
           href={href}
-          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition"
+          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full"
         >
           Open {type === 'module' ? 'Module' : 'Workbook'} →
         </Link>
