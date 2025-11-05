@@ -9,6 +9,9 @@ export default function ModuleViewer({ modulePath, title }: ModuleViewerProps) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
+  // URL encode the path to handle spaces and special characters
+  const encodedPath = encodeURI(modulePath)
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false)
@@ -38,7 +41,7 @@ export default function ModuleViewer({ modulePath, title }: ModuleViewerProps) {
         <div className="flex flex-col items-center justify-center h-96 bg-black p-8">
           <p className="text-red-400 mb-4">{error}</p>
           <a
-            href={modulePath}
+            href={encodedPath}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-purple-600 px-4 py-2 rounded-md hover:bg-purple-700 transition"
@@ -48,7 +51,7 @@ export default function ModuleViewer({ modulePath, title }: ModuleViewerProps) {
         </div>
       )}
       <iframe
-        src={modulePath}
+        src={encodedPath}
         className="w-full h-screen border-0"
         title={title}
         style={{ minHeight: '800px', display: error ? 'none' : 'block' }}

@@ -51,7 +51,7 @@ export default function PlanningModule() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="/modules/Module 2 Workbook - Planning Your Empire.html"
+              href={encodeURI("/modules/Module 2 Workbook - Planning Your Empire.html")}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition"

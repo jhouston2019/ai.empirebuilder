@@ -51,7 +51,7 @@ export default function FoundationModule() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href="/modules/Module 1 Workbook - Foundation.html"
+              href={encodeURI("/modules/Module 1 Workbook - Foundation.html")}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition"
