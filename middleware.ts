@@ -90,8 +90,14 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    // Exclude static files (HTML, images, etc.) - they're handled by the early return in middleware
-    '/modules/:path*',
+    // Only match Next.js page routes, NOT static files
+    // Static files in public folder (like .html) are served directly and bypass middleware
+    '/modules/foundation',
+    '/modules/planning',
+    '/modules/saas-tool',
+    '/modules/monetization',
+    '/modules/traffic',
+    '/modules/scaling',
     '/resource-center/:path*',
     '/dashboard/:path*',
     '/upgrade/:path*',
