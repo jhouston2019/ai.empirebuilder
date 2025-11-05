@@ -62,7 +62,7 @@ export default function TrafficModule() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href={encodeURI("/modules/Module 5 Workbook - Traffic & Growth.html")}
+              href={encodeURI("/modules/Module 5 - Workbook - Traffic & Growth.html")}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition"
