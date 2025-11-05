@@ -54,42 +54,42 @@ export default function ResourceCenter() {
       number: 1,
       title: 'Foundation',
       moduleHref: '/modules/foundation',
-      workbookHref: '/modules/Module 1 Workbook - Foundation.html',
+      workbookHref: '/modules/Module 1 - Workbook - Foundation.html',
       description: 'The Micro-SaaS Revolution. Master the opportunity, market landscape, and the PROFIT framework.'
     },
     {
       number: 2,
       title: 'Planning Your Empire',
       moduleHref: '/modules/planning',
-      workbookHref: '/modules/Module 2 Workbook - Planning Your Empire.html',
+      workbookHref: '/modules/Module 2 - Workbook - Planning Your Empire.html',
       description: 'Strategic tool selection and validation. Market research, competition analysis, and 48-hour validation sprints.'
     },
     {
       number: 3,
       title: 'Building Your SaaS Tool',
       moduleHref: '/modules/saas-tool',
-      workbookHref: '/modules/Module 3 Workbook - Building Your SaaS Tool.html',
+      workbookHref: '/modules/Module 3 - Workbook - Building Your SaaS Tool.html',
       description: 'From idea to working product in 7 days. Technical foundation, MVP development, testing, and launch.'
     },
     {
       number: 4,
       title: 'Monetization Mastery',
       moduleHref: '/modules/monetization',
-      workbookHref: '/modules/Module 4 Workbook - Monetization Mastery.html',
+      workbookHref: '/modules/Module 4 - Workbook - Monetization Mastery.html',
       description: 'Turn your tools into revenue machines. Seven revenue models, pricing psychology, and optimization strategies.'
     },
     {
       number: 5,
       title: 'Traffic & Growth',
       moduleHref: '/modules/traffic',
-      workbookHref: '/modules/Module 5 Workbook - Traffic & Growth.html',
+      workbookHref: '/modules/Module 5 - Workbook - Traffic & Growth.html',
       description: 'Drive 10,000+ targeted visitors per month. SEO mastery, social media growth, and paid traffic strategies.'
     },
     {
       number: 6,
       title: 'Scaling to Six Figures',
       moduleHref: '/modules/scaling',
-      workbookHref: '/modules/Module 6 Workbook - Scaling to Six Figures.html',
+      workbookHref: '/modules/Module 6 - Workbook - Scaling to Six Figures.html',
       description: 'Scale your business to 6 figures and beyond. Advanced strategies, automation, and growth systems.'
     }
   ]
