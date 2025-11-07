@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Payment Successful | AI Business Empire Builder</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/style.css">
+    
+    <style>
+        .success-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+            background: var(--bg-black);
+            color: var(--text-white);
+        }
+        .success-icon {
+            font-size: 4rem;
+            color: var(--gold-primary);
+            margin-bottom: 1rem;
+        }
+        .success-message {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .redirect-message {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: var(--bg-dark);
+            border-radius: 8px;
+            border: 1px solid var(--border-gold);
+        }
+        .spinner {
+            border: 3px solid var(--bg-dark);
+            border-top: 3px solid var(--gold-primary);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="success-container">
+        <div class="success-icon">✅</div>
+        <h1 style="color: var(--gold-primary); margin-bottom: 1rem;">Payment Successful</h1>
+        <div class="success-message">
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">
+                Thank you for joining the <strong style="color: var(--gold-primary);">AI Business Empire Builder System</strong>.
+            </p>
+            <p style="color: var(--text-gray); margin-bottom: 2rem;">
+                Your payment has been processed successfully. You will receive a confirmation email shortly with your access details.
+            </p>
+            <div class="redirect-message" id="redirectMessage">
+                <p>Preparing your dashboard...</p>
+                <div class="spinner"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        const plan = params.get("plan");
+        const email = params.get("email");
+
+        const redirectMessage = document.getElementById("redirectMessage");
+
+        if (plan === "starter") {
+            redirectMessage.innerHTML = `
+                <p style="color: var(--gold-primary); font-weight: 600;">Redirecting to your <strong>Starter Dashboard</strong>...</p>
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;">You'll have access to Foundation and Planning modules.</p>
+                <div class="spinner"></div>
+            `;
+            setTimeout(() => {
+                window.location.href = "/starter.html";
+            }, 3000);
+        } else {
+            redirectMessage.innerHTML = `
+                <p style="color: var(--gold-primary); font-weight: 600;">Redirecting to your <strong>Full Builder Dashboard</strong>...</p>
+                <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;">You'll have access to all 6 modules and bonus resources.</p>
+                <div class="spinner"></div>
+            `;
+            setTimeout(() => {
+                window.location.href = "/resources.html";
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
+

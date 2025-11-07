@@ -1,0 +1,11 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify serverless functions for AI Business Empire Builder",
+  "main": "index.js",
+  "dependencies": {
+    "stripe": "^14.0.0",
+    "@sendgrid/mail": "^8.1.0"
+  }
+}
+

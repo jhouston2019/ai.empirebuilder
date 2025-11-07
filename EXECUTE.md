@@ -93,3 +93,6 @@ npm run dev
 - "Help me set up Stripe" - I'll guide you through it
 - "Show me what's missing" - I'll check what needs to be done
 
+
+
+

@@ -37,3 +37,6 @@ But only this exists: `Module 6 - Workbook - Scaling to Six Figures.html`
 2. Ensure all filenames match what the code expects
 3. Test that all modules load correctly
 
+
+
+

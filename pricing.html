@@ -75,7 +75,29 @@
                         <li>Exit Strategy Guide</li>
                     </ul>
                     
-                    <a href="/signup.html" class="btn btn-primary btn-large" style="width: 100%; margin-top: 2rem;">Get Instant Access</a>
+                    <div class="pricing-buttons" style="margin-top: 2rem;">
+                        <input 
+                            type="email" 
+                            id="userEmail" 
+                            placeholder="Enter your email" 
+                            required 
+                            style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--border-gold); background: var(--bg-dark); color: var(--text-white); border-radius: 4px; font-size: 1rem;"
+                        >
+                        <button 
+                            class="btn btn-primary btn-large" 
+                            onclick="checkout('starter')"
+                            style="width: 100%; margin-bottom: 10px;"
+                        >
+                            Enroll in Starter – $97
+                        </button>
+                        <button 
+                            class="btn btn-primary btn-large btn-gold-glow" 
+                            onclick="checkout('builder')"
+                            style="width: 100%;"
+                        >
+                            Enroll in Builder – $297
+                        </button>
+                    </div>
                     
                     <p style="font-size: 0.9rem; color: #666; margin-top: 1rem; text-align: center;">
                         Secure checkout powered by Stripe • Instant access after payment
@@ -307,5 +329,57 @@
     <script src="/assets/script.js"></script>
     <script src="/assets/js/smooth-scroll.js"></script>
     <script src="/assets/js/countdown.js"></script>
+    <script>
+        async function checkout(plan) {
+            const email = document.getElementById("userEmail").value.trim();
+            if (!email) {
+                alert("Please enter your email before proceeding.");
+                return;
+            }
+
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Disable buttons during processing
+            const buttons = document.querySelectorAll('.pricing-buttons button');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.textContent = 'Processing...';
+            });
+
+            try {
+                const response = await fetch("/.netlify/functions/create-checkout-session", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ plan, email }),
+                });
+
+                const data = await response.json();
+                
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert("Error: " + (data.error || "Failed to create checkout session"));
+                    // Re-enable buttons
+                    buttons.forEach(btn => {
+                        btn.disabled = false;
+                        btn.textContent = plan === 'starter' ? 'Enroll in Starter – $97' : 'Enroll in Builder – $297';
+                    });
+                }
+            } catch (error) {
+                console.error("Checkout error:", error);
+                alert("An error occurred. Please try again.");
+                // Re-enable buttons
+                buttons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.textContent = plan === 'starter' ? 'Enroll in Starter – $97' : 'Enroll in Builder – $297';
+                });
+            }
+        }
+    </script>
 </body>
 </html>
