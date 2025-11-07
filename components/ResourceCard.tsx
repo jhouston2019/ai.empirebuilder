@@ -5,15 +5,17 @@ interface ResourceCardProps {
   type: 'module' | 'workbook'
   moduleNumber: number
   href: string
+  pdfHref?: string
   description?: string
 }
 
-export default function ResourceCard({ title, type, moduleNumber, href, description }: ResourceCardProps) {
+export default function ResourceCard({ title, type, moduleNumber, href, pdfHref, description }: ResourceCardProps) {
   const icon = type === 'module' ? '📚' : '📝'
   const badgeColor = type === 'module' ? 'bg-purple-600' : 'bg-yellow-600'
   
   // URL encode the href for proper handling of spaces
   const encodedHref = encodeURI(href)
+  const encodedPdfHref = pdfHref ? encodeURI(pdfHref) : null
   
   return (
     <div className="p-6 bg-neutral-900 rounded-xl border border-neutral-700 hover:border-purple-500 transition">
@@ -36,23 +38,38 @@ export default function ResourceCard({ title, type, moduleNumber, href, descript
         <p className="text-neutral-400 text-sm mb-4">{description}</p>
       )}
       
-      {href.endsWith('.html') ? (
-        <a
-          href={encodedHref}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full cursor-pointer"
-        >
-          Open {type === 'module' ? 'Module' : 'Workbook'} →
-        </a>
-      ) : (
-        <Link
-          href={href}
-          className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full cursor-pointer"
-        >
-          Open {type === 'module' ? 'Module' : 'Workbook'} →
-        </Link>
-      )}
+      <div className="space-y-2">
+        {href.endsWith('.html') ? (
+          <a
+            href={encodedHref}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full cursor-pointer"
+          >
+            Open {type === 'module' ? 'Module' : 'Workbook'} →
+          </a>
+        ) : (
+          <Link
+            href={href}
+            className="inline-block bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition text-center w-full cursor-pointer"
+          >
+            Open {type === 'module' ? 'Module' : 'Workbook'} →
+          </Link>
+        )}
+        
+        {encodedPdfHref && (
+          <a
+            href={encodedPdfHref}
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block bg-red-600 px-4 py-2 rounded-md text-sm hover:bg-red-700 transition text-center w-full cursor-pointer flex items-center justify-center gap-2"
+          >
+            <span>📥</span>
+            Download PDF
+          </a>
+        )}
+      </div>
     </div>
   )
 }
