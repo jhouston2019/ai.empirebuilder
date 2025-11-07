@@ -15,7 +15,9 @@ export default function ResourceCard({ title, type, moduleNumber, href, pdfHref,
   
   // URL encode the href for proper handling of spaces
   const encodedHref = encodeURI(href)
-  const encodedPdfHref = pdfHref ? encodeURI(pdfHref) : null
+  // Ensure PDF href is properly encoded and ends with .pdf
+  const encodedPdfHref = pdfHref && pdfHref.endsWith('.pdf') ? encodeURI(pdfHref) : null
+  const pdfFileName = pdfHref ? pdfHref.split('/').pop() : null
   
   return (
     <div className="p-6 bg-neutral-900 rounded-xl border border-neutral-700 hover:border-purple-500 transition">
@@ -57,12 +59,11 @@ export default function ResourceCard({ title, type, moduleNumber, href, pdfHref,
           </Link>
         )}
         
-        {encodedPdfHref && (
+        {encodedPdfHref && pdfFileName && (
           <a
             href={encodedPdfHref}
-            download
-            target="_blank"
-            rel="noopener noreferrer"
+            download={pdfFileName}
+            type="application/pdf"
             className="inline-block bg-red-600 px-4 py-2 rounded-md text-sm hover:bg-red-700 transition text-center w-full cursor-pointer flex items-center justify-center gap-2"
           >
             <span>📥</span>
