@@ -64,7 +64,20 @@
                         <li>✓ Basic Templates</li>
                         <li>✓ Email Support</li>
                     </ul>
-                    <a href="https://buy.stripe.com/starter_tier" class="btn btn-pricing" onclick="localStorage.setItem('selectedTier', 'starter');">Enroll Now</a>
+                    <input 
+                        type="email" 
+                        id="userEmailStarter" 
+                        placeholder="Enter your email" 
+                        required 
+                        style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--border-gold); background: var(--bg-dark); color: var(--text-white); border-radius: 4px; font-size: 1rem;"
+                    >
+                    <button 
+                        class="btn btn-pricing" 
+                        onclick="checkout('starter', 'userEmailStarter'); localStorage.setItem('selectedTier', 'starter');"
+                        style="width: 100%;"
+                    >
+                        Enroll Now
+                    </button>
                     <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">
                         After purchase, you'll be redirected to your resources
                     </p>
@@ -88,7 +101,20 @@
                         <li>✓ Priority Support</li>
                         <li>✓ Private Community Access</li>
                     </ul>
-                    <a href="https://buy.stripe.com/builder_tier" class="btn btn-pricing btn-gold-glow" onclick="localStorage.setItem('selectedTier', 'builder');">Enroll Now</a>
+                    <input 
+                        type="email" 
+                        id="userEmailBuilder" 
+                        placeholder="Enter your email" 
+                        required 
+                        style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--border-gold); background: var(--bg-dark); color: var(--text-white); border-radius: 4px; font-size: 1rem;"
+                    >
+                    <button 
+                        class="btn btn-pricing btn-gold-glow" 
+                        onclick="checkout('builder', 'userEmailBuilder'); localStorage.setItem('selectedTier', 'builder');"
+                        style="width: 100%;"
+                    >
+                        Enroll Now
+                    </button>
                     <p style="font-size: 0.9rem; color: var(--text-muted); margin-top: 1rem; text-align: center;">
                         After purchase, you'll be redirected to your resources
                     </p>
@@ -164,6 +190,62 @@
     <!-- Scripts -->
     <script src="/assets/script.js"></script>
     <script src="/assets/js/smooth-scroll.js"></script>
+    <script>
+        async function checkout(plan, emailInputId) {
+            const emailInput = document.getElementById(emailInputId);
+            const email = emailInput ? emailInput.value.trim() : '';
+            
+            if (!email) {
+                alert("Please enter your email before proceeding.");
+                return;
+            }
+
+            // Basic email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            // Disable buttons during processing
+            const buttons = document.querySelectorAll('.pricing-card button');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                const originalText = btn.textContent;
+                btn.textContent = 'Processing...';
+                btn.dataset.originalText = originalText;
+            });
+
+            try {
+                const response = await fetch("/.netlify/functions/create-checkout-session", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ plan, email }),
+                });
+
+                const data = await response.json();
+                
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    alert("Error: " + (data.error || "Failed to create checkout session"));
+                    // Re-enable buttons
+                    buttons.forEach(btn => {
+                        btn.disabled = false;
+                        btn.textContent = btn.dataset.originalText || 'Enroll Now';
+                    });
+                }
+            } catch (error) {
+                console.error("Checkout error:", error);
+                alert("An error occurred. Please try again.");
+                // Re-enable buttons
+                buttons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.textContent = btn.dataset.originalText || 'Enroll Now';
+                });
+            }
+        }
+    </script>
 </body>
 </html>
 
