@@ -223,21 +223,22 @@
                     body: JSON.stringify({ plan, email }),
                 });
 
+                // Check if response is OK
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({ error: `HTTP ${response.status}: ${response.statusText}` }));
+                    throw new Error(errorData.error || `Server error: ${response.status}`);
+                }
+
                 const data = await response.json();
                 
                 if (data.url) {
                     window.location.href = data.url;
                 } else {
-                    alert("Error: " + (data.error || "Failed to create checkout session"));
-                    // Re-enable buttons
-                    buttons.forEach(btn => {
-                        btn.disabled = false;
-                        btn.textContent = btn.dataset.originalText || 'Enroll Now';
-                    });
+                    throw new Error(data.error || "Failed to create checkout session");
                 }
             } catch (error) {
                 console.error("Checkout error:", error);
-                alert("An error occurred. Please try again.");
+                alert("Error: " + (error.message || "An error occurred. Please try again. If this persists, check the browser console for details."));
                 // Re-enable buttons
                 buttons.forEach(btn => {
                     btn.disabled = false;
