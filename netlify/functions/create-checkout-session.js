@@ -25,8 +25,8 @@ exports.handler = async (event) => {
 
     const priceId =
       plan === "starter"
-        ? process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_STARTER
-        : process.env.NEXT_PUBLIC_STRIPE_PRICE_ID_BUILDER;
+        ? process.env.STRIPE_PRICE_RESPONSE_STARTER
+        : process.env.STRIPE_PRICE_RESPONSE_BUILDER;
 
     if (!priceId) {
       return {

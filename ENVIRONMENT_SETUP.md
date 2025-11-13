@@ -7,8 +7,9 @@ Add these environment variables in your Netlify dashboard:
 ### Stripe Configuration
 ```
 STRIPE_SECRET_KEY=sk_live_***************
-NEXT_PUBLIC_STRIPE_PRICE_ID_STARTER=price_***************
-NEXT_PUBLIC_STRIPE_PRICE_ID_BUILDER=price_***************
+STRIPE_PRICE_RESPONSE_STARTER=price_***************
+STRIPE_PRICE_RESPONSE_BUILDER=price_***************
+STRIPE_PUBLISHABLE_KEY=pk_live_***************
 STRIPE_WEBHOOK_SECRET=whsec_***************
 ```
 
