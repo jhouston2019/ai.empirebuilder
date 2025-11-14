@@ -160,9 +160,21 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    // Match all routes EXCEPT static files and /login
-    // Static files (with extensions) and /login are handled at the top of middleware
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:html|css|js|png|jpg|jpeg|gif|svg|ico|pdf)$).*)',
+    // Only match protected routes that need authentication
+    // /login and static files are handled at the top of middleware and bypass this
+    '/modules/foundation',
+    '/modules/planning',
+    '/modules/saas-tool',
+    '/modules/monetization',
+    '/modules/traffic',
+    '/modules/scaling',
+    '/resource-center',
+    '/resource-center/:path*',
+    '/dashboard',
+    '/dashboard/:path*',
+    '/upgrade',
+    '/upgrade/:path*',
+    '/api/modules/:path*',
   ],
 }
 
