@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Login | AI Business Empire Builder</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/images/favicon.png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/assets/style.css">
+    
+    <!-- Supabase Client Library -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <style>
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient-black);
+            padding: 2rem;
+        }
+        .login-container {
+            max-width: 450px;
+            width: 100%;
+            background: var(--bg-dark);
+            border: 2px solid var(--border-gold);
+            border-radius: 16px;
+            padding: 3rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .login-header h1 {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+        .login-header p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+        .login-form {
+            margin-top: 2rem;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            color: var(--text-white);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            font-size: 0.95rem;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            background: var(--bg-charcoal);
+            border: 2px solid var(--border-gold);
+            border-radius: 8px;
+            color: var(--text-white);
+            font-size: 1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--gold-primary);
+            box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.1);
+        }
+        .form-group input::placeholder {
+            color: var(--text-muted);
+        }
+        .error-message {
+            color: #ff4444;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+            padding: 0.75rem;
+            background: rgba(255, 68, 68, 0.1);
+            border: 1px solid #ff4444;
+            border-radius: 6px;
+        }
+        .error-message.show {
+            display: block;
+        }
+        .login-button {
+            width: 100%;
+            padding: 14px;
+            background: var(--gradient-gold);
+            color: var(--bg-black);
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px var(--shadow-gold);
+        }
+        .login-button:active {
+            transform: translateY(0);
+        }
+        .login-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .back-link {
+            text-align: center;
+            margin-top: 2rem;
+        }
+        .back-link a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        .back-link a:hover {
+            color: var(--gold-primary);
+        }
+    </style>
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-container">
+            <div class="login-header">
+                <h1>🎓 Student Login</h1>
+                <p style="color: var(--text-gray);">Enter your email and password to access your course resources</p>
+                <p style="font-size: 0.85rem; margin-top: 1rem; color: #999;">For administrators, please use <a href="/admin-login.html" style="color: var(--gold-primary); text-decoration: underline;">Admin Login</a></p>
+            </div>
+            
+            <form class="login-form" id="studentLoginForm">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email">
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required autocomplete="current-password">
+                </div>
+                
+                <div class="error-message" id="loginError"></div>
+                
+                <button type="submit" class="login-button" id="loginButton">Login</button>
+            </form>
+            
+            <div class="back-link">
+                <a href="/">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Supabase configuration
+        const SUPABASE_URL = 'https://abyyziqmghhiznpcinvu.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFieXl6aXFtZ2hoaXpucGNpbnZ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjMxNDcwNTAsImV4cCI6MjA3ODcyMzA1MH0.SHujeNNzCp6J8ZrQrLlfPsMRHc60FPbxQ9LPDoek_J8';
+        
+        // Validate credentials are set
+        if (!SUPABASE_URL || !SUPABASE_ANON_KEY) {
+            console.error('Supabase credentials not configured. Please update SUPABASE_URL and SUPABASE_ANON_KEY in student-login.html');
+        }
+        
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        const form = document.getElementById('studentLoginForm');
+        const emailInput = document.getElementById('email');
+        const passwordInput = document.getElementById('password');
+        const loginError = document.getElementById('loginError');
+        const loginButton = document.getElementById('loginButton');
+        
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Reset error messages
+            loginError.classList.remove('show');
+            loginError.textContent = '';
+            loginButton.disabled = true;
+            loginButton.textContent = 'Logging in...';
+            
+            const email = emailInput.value.trim();
+            const password = passwordInput.value;
+            
+            if (!supabase) {
+                loginError.textContent = 'Login system not configured. Please contact support.';
+                loginError.classList.add('show');
+                loginButton.disabled = false;
+                loginButton.textContent = 'Login';
+                return;
+            }
+            
+            try {
+                // Sign in with Supabase
+                const { data, error: signInError } = await supabase.auth.signInWithPassword({
+                    email,
+                    password,
+                });
+                
+                if (signInError) {
+                    loginError.textContent = signInError.message || 'Invalid email or password. Please try again.';
+                    loginError.classList.add('show');
+                    loginButton.disabled = false;
+                    loginButton.textContent = 'Login';
+                    passwordInput.value = '';
+                    passwordInput.focus();
+                    return;
+                }
+                
+                if (data.user && data.session) {
+                    // Store token in cookie for middleware (30 days expiry)
+                    const expiryDate = new Date();
+                    expiryDate.setTime(expiryDate.getTime() + 30 * 24 * 60 * 60 * 1000);
+                    const isSecure = window.location.protocol === 'https:';
+                    document.cookie = `sb-access-token=${data.session.access_token}; path=/; expires=${expiryDate.toUTCString()}; SameSite=Lax${isSecure ? '; Secure' : ''}`;
+                    
+                    // Set the session on the supabase client
+                    await supabase.auth.setSession(data.session);
+                    
+                    // Check if user exists in users table, if not create them
+                    const { data: userData, error: dbError } = await supabase
+                        .from('users')
+                        .select('*')
+                        .eq('email', email)
+                        .single();
+                    
+                    if (dbError && dbError.code === 'PGRST116') {
+                        // User doesn't exist, create them WITHOUT a plan
+                        const { error: insertError } = await supabase
+                            .from('users')
+                            .insert({
+                                email,
+                                plan_tier: null, // No access until payment
+                            });
+                        
+                        if (insertError) {
+                            console.error('Error creating user:', insertError);
+                        }
+                    }
+                    
+                    // Get user plan to determine redirect destination
+                    const { data: userPlanData, error: planError } = await supabase
+                        .from('users')
+                        .select('plan_tier')
+                        .eq('email', email)
+                        .single();
+                    
+                    if (planError) {
+                        console.error('Error fetching user plan:', planError);
+                    }
+                    
+                    const plan = userPlanData?.plan_tier || null;
+                    
+                    // Redirect based on plan:
+                    // - Builder package → Resource Center (full access to all modules)
+                    // - Starter package → Dashboard (limited access to Foundation + Planning only)
+                    // - No plan → Pricing section
+                    if (plan === 'builder' || plan === 'pro' || plan === 'elite') {
+                        // Builder/Pro/Elite users get full access - redirect to resource center
+                        window.location.href = '/resource-center';
+                    } else if (plan === 'starter') {
+                        // Starter users get limited access - redirect to dashboard
+                        window.location.href = '/dashboard';
+                    } else {
+                        // No plan or null - redirect to pricing to purchase
+                        window.location.href = '/?redirect=pricing';
+                    }
+                }
+            } catch (err) {
+                console.error('Login error:', err);
+                loginError.textContent = err.message || 'An error occurred. Please try again.';
+                loginError.classList.add('show');
+                loginButton.disabled = false;
+                loginButton.textContent = 'Login';
+            }
+        });
+        
+        // Focus on email field on load
+        window.addEventListener('load', function() {
+            emailInput.focus();
+        });
+    </script>
+</body>
+</html>
+
