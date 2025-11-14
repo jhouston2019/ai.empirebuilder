@@ -62,11 +62,12 @@ export default async function handler(
     }
 
     // Determine plan tier based on price ID
+    // Starter package = $97, Builder package = $297 (previously called 'pro')
     let plan = 'starter'
-    if (priceId === process.env.STRIPE_PRICE_PRO) {
-      plan = 'pro'
+    if (priceId === process.env.STRIPE_PRICE_PRO || priceId === process.env.STRIPE_PRICE_BUILDER) {
+      plan = 'builder' // Builder package gets full access
     } else if (priceId === process.env.STRIPE_PRICE_ELITE) {
-      plan = 'elite'
+      plan = 'elite' // Elite package (if exists)
     }
 
     // Update user plan in Supabase

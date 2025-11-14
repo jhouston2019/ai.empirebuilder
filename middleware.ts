@@ -148,7 +148,8 @@ export async function middleware(req: NextRequest) {
       }
     }
 
-    // Allow access to all routes for pro and elite plans, or allowed starter routes
+    // Allow access to all routes for builder/pro/elite plans, or allowed starter routes
+    // Builder package has full access to all modules and resource center
     return NextResponse.next()
   } catch (error) {
     console.error('Middleware error:', error)

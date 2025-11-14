@@ -33,6 +33,9 @@ export default function Login() {
         const isSecure = window.location.protocol === 'https:'
         document.cookie = `sb-access-token=${data.session.access_token}; path=/; expires=${expiryDate.toUTCString()}; SameSite=Lax${isSecure ? '; Secure' : ''}`
         
+        // Set the session on the supabase client for authenticated requests
+        await supabase.auth.setSession(data.session)
+        
         // Check if user exists in users table, if not create them
         const { data: userData, error: dbError } = await supabase
           .from('users')
@@ -56,23 +59,30 @@ export default function Login() {
         }
 
         // Get user plan to determine redirect destination
-        const { data: userPlanData } = await supabase
+        const { data: userPlanData, error: planError } = await supabase
           .from('users')
           .select('plan_tier')
           .eq('email', email)
           .single()
 
+        if (planError) {
+          console.error('Error fetching user plan:', planError)
+        }
+
         const plan = userPlanData?.plan_tier || null
 
         // Redirect based on plan:
-        // - Pro/Elite → Resource Center (full access)
-        // - Starter → Dashboard (limited access)
+        // - Builder package → Resource Center (full access to all modules)
+        // - Starter package → Dashboard (limited access to Foundation + Planning only)
         // - No plan → Pricing section
-        if (plan === 'pro' || plan === 'elite') {
+        if (plan === 'builder' || plan === 'pro' || plan === 'elite') {
+          // Builder/Pro/Elite users get full access - redirect to resource center
           router.push('/resource-center')
         } else if (plan === 'starter') {
+          // Starter users get limited access - redirect to dashboard
           router.push('/dashboard')
         } else {
+          // No plan or null - redirect to pricing to purchase
           router.push('/?redirect=pricing')
         }
       }
