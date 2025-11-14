@@ -19,14 +19,14 @@
     <script>
         // Check authentication before page loads
         if (sessionStorage.getItem('adminAuthenticated') !== 'true') {
-            window.location.href = '/login.html';
+            window.location.href = '/admin-login.html';
         }
         
         // Logout function
         function logout() {
             sessionStorage.removeItem('adminAuthenticated');
             sessionStorage.removeItem('adminLoginTime');
-            window.location.href = '/login.html';
+            window.location.href = '/admin-login.html';
         }
     </script>
     
