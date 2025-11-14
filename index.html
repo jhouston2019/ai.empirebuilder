@@ -55,7 +55,7 @@
             <nav>
                 <ul class="nav-menu">
                     <li><a href="#modules">Modules</a></li>
-                    <li><a href="/resource-center">Resources</a></li>
+                    <li><a href="/resource-center" onclick="handleResourceClick(event)">Resources</a></li>
                     <li><a href="#value">Value</a></li>
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#pricing">Pricing</a></li>
@@ -384,6 +384,16 @@
     <script src="/assets/script.js"></script>
     <script src="/assets/js/smooth-scroll.js"></script>
     <script>
+        // Handle Resources link click - ensure proper navigation
+        function handleResourceClick(event) {
+            const href = event.currentTarget.getAttribute('href');
+            // Always use window.location to ensure proper navigation
+            // Middleware will handle authentication and redirects
+            window.location.href = href;
+            event.preventDefault();
+            return false;
+        }
+
         // Check for redirect parameter and scroll to pricing section
         document.addEventListener('DOMContentLoaded', function() {
             const urlParams = new URLSearchParams(window.location.search);

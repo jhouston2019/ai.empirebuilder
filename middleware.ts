@@ -163,8 +163,11 @@ export const config = {
     '/modules/monetization',
     '/modules/traffic',
     '/modules/scaling',
+    '/resource-center',
     '/resource-center/:path*',
+    '/dashboard',
     '/dashboard/:path*',
+    '/upgrade',
     '/upgrade/:path*',
   ],
 }
