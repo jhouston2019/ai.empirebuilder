@@ -169,6 +169,7 @@ export const config = {
     '/dashboard/:path*',
     '/upgrade',
     '/upgrade/:path*',
+    '/login',
   ],
 }
 
