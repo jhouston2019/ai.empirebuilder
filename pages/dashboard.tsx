@@ -32,7 +32,9 @@ export default function Dashboard() {
           console.error('Database error:', dbError)
         }
 
-        setPlan(userData?.plan_tier || 'starter')
+        // CRITICAL: Users without a plan have no access
+        const userPlan = userData?.plan_tier || null
+        setPlan(userPlan || 'none')
       } catch (error) {
         console.error('Error fetching user plan:', error)
       } finally {

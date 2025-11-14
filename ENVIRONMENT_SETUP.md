@@ -51,5 +51,5 @@ After deployment:
    - SendGrid welcome email (via webhook)
 4. Verify redirects work:
    - Starter → `/starter.html`
-   - Builder → `/resources.html`
+   - Builder → `/resource-center`
 

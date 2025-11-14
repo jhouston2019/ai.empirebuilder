@@ -28,7 +28,7 @@
             <nav>
                 <ul class="nav-menu">
                     <li><a href="/">Home</a></li>
-                    <li><a href="/resources.html" class="active">Resources</a></li>
+                    <li><a href="/resource-center" class="active">Resources</a></li>
                     <li><a href="/course-overview.html">Course Overview</a></li>
                     <li><a href="/pricing.html">Pricing</a></li>
                 </ul>
@@ -269,7 +269,7 @@
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/resources.html">Resources Center</a></li>
+                        <li><a href="/resource-center">Resources Center</a></li>
                         <li><a href="/course-overview.html">Course Overview</a></li>
                         <li><a href="/pricing.html">Pricing</a></li>
                     </ul>
@@ -293,6 +293,13 @@
 
     <!-- Scripts -->
     <script src="/assets/script.js"></script>
+    <script>
+        // Redirect to protected resource center route
+        // This ensures access control is enforced
+        if (window.location.pathname === '/resources.html') {
+            window.location.replace('/resource-center');
+        }
+    </script>
 </body>
 </html>
 

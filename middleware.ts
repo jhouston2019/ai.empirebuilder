@@ -11,6 +11,61 @@ export async function middleware(req: NextRequest) {
     return NextResponse.next()
   }
 
+  // Protect module API routes - require authentication
+  if (path.startsWith('/api/modules/')) {
+    const accessToken = req.cookies.get('sb-access-token')?.value
+    
+    if (!accessToken) {
+      return NextResponse.redirect(new URL('/login', req.url))
+    }
+
+    // Verify user and check plan
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+      {
+        global: {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+          },
+        },
+      }
+    )
+
+    try {
+      const { data: { user }, error: authError } = await supabase.auth.getUser(accessToken)
+      
+      if (authError || !user || !user.email) {
+        const response = NextResponse.redirect(new URL('/login', req.url))
+        response.cookies.delete('sb-access-token')
+        return response
+      }
+
+      // Get user plan from database
+      const { data: userData } = await supabase
+        .from('users')
+        .select('plan_tier')
+        .eq('email', user.email)
+        .single()
+
+      const plan = userData?.plan_tier || null
+
+      // CRITICAL: Only allow access if user has a paid plan (not null/undefined)
+      // Users without a plan_tier should not have access
+      if (!plan || plan === 'none' || plan === '') {
+        return NextResponse.redirect(new URL('/upgrade', req.url))
+      }
+
+      // Allow access - the API route will do further plan-based filtering
+      return NextResponse.next()
+    } catch (error) {
+      console.error('Middleware error:', error)
+      const response = NextResponse.redirect(new URL('/login', req.url))
+      response.cookies.delete('sb-access-token')
+      return response
+    }
+  }
+
   // Skip static files - they should be served directly from public folder
   // If path has a file extension (like .html), it's a static file
   if (path.includes('.') && path.split('.').pop()?.match(/^(html|css|js|png|jpg|jpeg|gif|svg|ico|pdf)$/i)) {
@@ -66,7 +121,16 @@ export async function middleware(req: NextRequest) {
       .eq('email', user.email)
       .single()
 
-    const plan = userData?.plan_tier || 'starter'
+    const plan = userData?.plan_tier || null
+
+    // CRITICAL: No access without a paid plan
+    if (!plan || plan === '' || plan === 'none') {
+      // Allow access to upgrade page, but block everything else
+      if (path.startsWith('/upgrade')) {
+        return NextResponse.next()
+      }
+      return NextResponse.redirect(new URL('/upgrade', req.url))
+    }
 
     // Check if starter user is trying to access restricted route
     if (plan === 'starter') {

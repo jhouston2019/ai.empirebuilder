@@ -41,12 +41,13 @@ export default function Login() {
           .single()
 
         if (dbError && dbError.code === 'PGRST116') {
-          // User doesn't exist, create them with starter plan
+          // User doesn't exist, create them WITHOUT a plan
+          // They must pay to get access - plan_tier will be set by webhook after payment
           const { error: insertError } = await supabase
             .from('users')
             .insert({
               email,
-              plan_tier: 'starter',
+              plan_tier: null, // No access until payment
             })
 
           if (insertError) {

@@ -9,7 +9,7 @@
 create table if not exists users (
   id uuid primary key default gen_random_uuid(),
   email text unique not null,
-  plan_tier text default 'starter' not null,
+  plan_tier text, -- NULL = no access, must pay first. Set by webhook after payment.
   created_at timestamptz default now(),
   updated_at timestamptz default now()
 );

@@ -23,9 +23,17 @@ export default function ResourceCenter() {
         .eq('email', user.email)
         .single()
 
-      const userPlan = userData?.plan_tier || 'starter'
+      const userPlan = userData?.plan_tier || null
+      
+      // CRITICAL: No access without a paid plan
+      if (!userPlan || userPlan === '' || userPlan === 'none') {
+        router.push('/upgrade')
+        return
+      }
+      
       setPlan(userPlan)
 
+      // Starter users can't access resource center (only pro/elite)
       if (userPlan === 'starter') {
         router.push('/upgrade')
         return
@@ -53,55 +61,55 @@ export default function ResourceCenter() {
     {
       number: 1,
       title: 'Foundation',
-      moduleHref: '/modules/Module 1 - Foundation.html',
-      modulePdfHref: '/modules/Module 1 - Foundation.pdf',
-      workbookHref: '/modules/Module 1 - Workbook - Foundation.html',
-      workbookPdfHref: '/modules/Module 1 - Workbook - Foundation.pdf',
+      moduleHref: '/api/modules/Module 1 - Foundation.html',
+      modulePdfHref: '/api/modules/Module 1 - Foundation.pdf',
+      workbookHref: '/api/modules/Module 1 - Workbook - Foundation.html',
+      workbookPdfHref: '/api/modules/Module 1 - Workbook - Foundation.pdf',
       description: 'The Micro-SaaS Revolution. Master the opportunity, market landscape, and the PROFIT framework.'
     },
     {
       number: 2,
       title: 'Planning Your Empire',
-      moduleHref: '/modules/Module 2 - Planning Your Empire.html',
-      modulePdfHref: '/modules/Module 2 - Planning Your Empire.pdf',
-      workbookHref: '/modules/Module 2 - Workbook - Planning Your Empire.html',
-      workbookPdfHref: '/modules/Module 2 - Workbook - Planning Your Empire.pdf',
+      moduleHref: '/api/modules/Module 2 - Planning Your Empire.html',
+      modulePdfHref: '/api/modules/Module 2 - Planning Your Empire.pdf',
+      workbookHref: '/api/modules/Module 2 - Workbook - Planning Your Empire.html',
+      workbookPdfHref: '/api/modules/Module 2 - Workbook - Planning Your Empire.pdf',
       description: 'Strategic tool selection and validation. Market research, competition analysis, and 48-hour validation sprints.'
     },
     {
       number: 3,
       title: 'Building Your SaaS Tool',
-      moduleHref: '/modules/Module 3 - Building Your SaaS Tool.html',
-      modulePdfHref: '/modules/Module 3 - Building Your SaaS Tool.pdf',
-      workbookHref: '/modules/Module 3 - Workbook - Building Your SaaS Tool.html',
-      workbookPdfHref: '/modules/Module 3 - Workbook - Building Your SaaS Tool.pdf',
+      moduleHref: '/api/modules/Module 3 - Building Your SaaS Tool.html',
+      modulePdfHref: '/api/modules/Module 3 - Building Your SaaS Tool.pdf',
+      workbookHref: '/api/modules/Module 3 - Workbook - Building Your SaaS Tool.html',
+      workbookPdfHref: '/api/modules/Module 3 - Workbook - Building Your SaaS Tool.pdf',
       description: 'From idea to working product in 7 days. Technical foundation, MVP development, testing, and launch.'
     },
     {
       number: 4,
       title: 'Monetization Mastery',
-      moduleHref: '/modules/Module 4 - Monetization Mastery.html',
-      modulePdfHref: '/modules/Module 4 - Monetization Mastery.pdf',
-      workbookHref: '/modules/Module 4 - Workbook - Monetization Mastery.html',
-      workbookPdfHref: '/modules/Module 4 - Workbook - Monetization Mastery.pdf',
+      moduleHref: '/api/modules/Module 4 - Monetization Mastery.html',
+      modulePdfHref: '/api/modules/Module 4 - Monetization Mastery.pdf',
+      workbookHref: '/api/modules/Module 4 - Workbook - Monetization Mastery.html',
+      workbookPdfHref: '/api/modules/Module 4 - Workbook - Monetization Mastery.pdf',
       description: 'Turn your tools into revenue machines. Seven revenue models, pricing psychology, and optimization strategies.'
     },
     {
       number: 5,
       title: 'Traffic & Growth',
-      moduleHref: '/modules/Module 5 - Traffic & Growth.html',
-      modulePdfHref: '/modules/Module 5 - Traffic & Growth.pdf',
-      workbookHref: '/modules/Module 5 - Workbook - Traffic & Growth.html',
-      workbookPdfHref: '/modules/Module 5 - Workbook - Traffic & Growth.pdf',
+      moduleHref: '/api/modules/Module 5 - Traffic & Growth.html',
+      modulePdfHref: '/api/modules/Module 5 - Traffic & Growth.pdf',
+      workbookHref: '/api/modules/Module 5 - Workbook - Traffic & Growth.html',
+      workbookPdfHref: '/api/modules/Module 5 - Workbook - Traffic & Growth.pdf',
       description: 'Drive 10,000+ targeted visitors per month. SEO mastery, social media growth, and paid traffic strategies.'
     },
     {
       number: 6,
       title: 'Scaling to Six Figures',
-      moduleHref: '/modules/Module 6 - Scaling to Six Figures.html',
-      modulePdfHref: '/modules/Module 6 - Scaling to Six Figures.pdf',
-      workbookHref: '/modules/Module 6 - Workbook - Scaling to Six Figures.html',
-      workbookPdfHref: '/modules/Module 6 - Workbook - Scaling to Six Figures.pdf',
+      moduleHref: '/api/modules/Module 6 - Scaling to Six Figures.html',
+      modulePdfHref: '/api/modules/Module 6 - Scaling to Six Figures.pdf',
+      workbookHref: '/api/modules/Module 6 - Workbook - Scaling to Six Figures.html',
+      workbookPdfHref: '/api/modules/Module 6 - Workbook - Scaling to Six Figures.pdf',
       description: 'Scale your business to 6 figures and beyond. Advanced strategies, automation, and growth systems.'
     }
   ]

@@ -48,7 +48,7 @@ exports.handler = async (event) => {
       if (customerEmail) {
         const siteUrl = process.env.SITE_URL || "https://aiempirebuilder.com";
         const dashboardUrl =
-          plan === "starter" ? `${siteUrl}/starter.html` : `${siteUrl}/resources.html`;
+          plan === "starter" ? `${siteUrl}/starter.html` : `${siteUrl}/resource-center`;
 
         const message = {
           to: customerEmail,
