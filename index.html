@@ -60,6 +60,7 @@
                     <li><a href="#testimonials">Testimonials</a></li>
                     <li><a href="#pricing">Pricing</a></li>
                     <li><a href="#faq">FAQ</a></li>
+                    <li><a href="/login" class="btn btn-secondary btn-nav" style="margin-right: 0.5rem;">Login</a></li>
                     <li><a href="/pricing.html" class="btn btn-primary btn-nav">Enroll Now</a></li>
                 </ul>
                 <button class="mobile-menu-toggle" aria-label="Toggle menu">☰</button>
@@ -382,5 +383,26 @@
     <!-- Scripts -->
     <script src="/assets/script.js"></script>
     <script src="/assets/js/smooth-scroll.js"></script>
+    <script>
+        // Check for redirect parameter and scroll to pricing section
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('redirect') === 'pricing') {
+                // Remove the query parameter from URL
+                window.history.replaceState({}, document.title, window.location.pathname);
+                
+                // Scroll to pricing section after a short delay to ensure page is loaded
+                setTimeout(function() {
+                    const pricingSection = document.getElementById('pricing');
+                    if (pricingSection) {
+                        pricingSection.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }, 300);
+            }
+        });
+    </script>
 </body>
 </html>

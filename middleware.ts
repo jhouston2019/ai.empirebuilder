@@ -123,13 +123,13 @@ export async function middleware(req: NextRequest) {
 
     const plan = userData?.plan_tier || null
 
-    // CRITICAL: No access without a paid plan
+    // CRITICAL: No access without a paid plan - redirect to pricing section on landing page
     if (!plan || plan === '' || plan === 'none') {
-      // Allow access to upgrade page, but block everything else
-      if (path.startsWith('/upgrade')) {
+      // Allow access to upgrade page and public routes, but block protected content
+      if (path.startsWith('/upgrade') || path.startsWith('/login') || path === '/') {
         return NextResponse.next()
       }
-      return NextResponse.redirect(new URL('/upgrade', req.url))
+      return NextResponse.redirect(new URL('/?redirect=pricing', req.url))
     }
 
     // Check if starter user is trying to access restricted route
@@ -139,7 +139,7 @@ export async function middleware(req: NextRequest) {
         path.startsWith('/resource-center')
 
       if (isRestrictedRoute) {
-        return NextResponse.redirect(new URL('/upgrade', req.url))
+        return NextResponse.redirect(new URL('/?redirect=pricing', req.url))
       }
     }
 

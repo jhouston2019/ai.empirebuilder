@@ -55,7 +55,26 @@ export default function Login() {
           }
         }
 
-        router.push('/dashboard')
+        // Get user plan to determine redirect destination
+        const { data: userPlanData } = await supabase
+          .from('users')
+          .select('plan_tier')
+          .eq('email', email)
+          .single()
+
+        const plan = userPlanData?.plan_tier || null
+
+        // Redirect based on plan:
+        // - Pro/Elite → Resource Center (full access)
+        // - Starter → Dashboard (limited access)
+        // - No plan → Pricing section
+        if (plan === 'pro' || plan === 'elite') {
+          router.push('/resource-center')
+        } else if (plan === 'starter') {
+          router.push('/dashboard')
+        } else {
+          router.push('/?redirect=pricing')
+        }
       }
     } catch (err: any) {
       setError(err.message || 'An error occurred')
@@ -67,8 +86,8 @@ export default function Login() {
   return (
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8">
       <div className="max-w-md w-full">
-        <h1 className="text-3xl font-bold mb-6 text-yellow-400 text-center">Admin Login</h1>
-        <p className="text-center text-neutral-400 mb-8">Access required to view dashboard</p>
+        <h1 className="text-3xl font-bold mb-6 text-yellow-400 text-center">Member Login</h1>
+        <p className="text-center text-neutral-400 mb-8">Enter your credentials to access your resources</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (

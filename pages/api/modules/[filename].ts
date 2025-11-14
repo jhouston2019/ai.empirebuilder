@@ -74,7 +74,7 @@ export default async function handler(
     )
 
     if (!hasAccess) {
-      return res.status(403).json({ error: 'Access denied. Upgrade your plan to access this content.' })
+      return res.status(403).json({ error: 'Access denied. Please purchase a plan to access this content.' })
     }
 
     // Construct file path

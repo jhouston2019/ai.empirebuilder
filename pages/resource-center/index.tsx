@@ -25,17 +25,17 @@ export default function ResourceCenter() {
 
       const userPlan = userData?.plan_tier || null
       
-      // CRITICAL: No access without a paid plan
+      // CRITICAL: No access without a paid plan - redirect to pricing section on landing page
       if (!userPlan || userPlan === '' || userPlan === 'none') {
-        router.push('/upgrade')
+        router.push('/?redirect=pricing')
         return
       }
       
       setPlan(userPlan)
 
-      // Starter users can't access resource center (only pro/elite)
+      // Starter users can't access resource center (only pro/elite) - redirect to pricing
       if (userPlan === 'starter') {
-        router.push('/upgrade')
+        router.push('/?redirect=pricing')
         return
       }
 
