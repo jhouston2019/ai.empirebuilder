@@ -68,7 +68,13 @@ export async function middleware(req: NextRequest) {
 
   // Skip static files - they should be served directly from public folder
   // If path has a file extension (like .html), it's a static file
+  // IMPORTANT: Allow admin-login.html to be served as static file
   if (path.includes('.') && path.split('.').pop()?.match(/^(html|css|js|png|jpg|jpeg|gif|svg|ico|pdf)$/i)) {
+    return NextResponse.next()
+  }
+  
+  // Explicitly allow /login route - it's a Next.js page route
+  if (path === '/login') {
     return NextResponse.next()
   }
 
