@@ -87,7 +87,7 @@ export default function Login() {
     <main className="min-h-screen bg-black text-white flex flex-col items-center justify-center p-8">
       <div className="max-w-md w-full">
         <h1 className="text-3xl font-bold mb-6 text-yellow-400 text-center">Member Login</h1>
-        <p className="text-center text-neutral-400 mb-8">Enter your credentials to access your resources</p>
+        <p className="text-center text-neutral-400 mb-8">Enter your email and password to access your course resources</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           {error && (
