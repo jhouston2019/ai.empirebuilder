@@ -5,8 +5,18 @@ import { createClient } from '@supabase/supabase-js'
 export async function middleware(req: NextRequest) {
   const path = req.nextUrl.pathname
 
+  // CRITICAL: Allow /login and static files FIRST - before any other checks
+  if (path === '/login') {
+    return NextResponse.next()
+  }
+
+  // Skip static files - they should be served directly from public folder
+  if (path.includes('.') && path.split('.').pop()?.match(/^(html|css|js|png|jpg|jpeg|gif|svg|ico|pdf)$/i)) {
+    return NextResponse.next()
+  }
+
   // Allow public routes
-  const publicRoutes = ['/login', '/api/checkout', '/api/stripe/webhook', '/success', '/cancel', '/']
+  const publicRoutes = ['/api/checkout', '/api/stripe/webhook', '/success', '/cancel', '/']
   if (publicRoutes.some(route => path === route || path.startsWith(route))) {
     return NextResponse.next()
   }
@@ -66,17 +76,6 @@ export async function middleware(req: NextRequest) {
     }
   }
 
-  // Skip static files - they should be served directly from public folder
-  // If path has a file extension (like .html), it's a static file
-  // IMPORTANT: Allow admin-login.html to be served as static file
-  if (path.includes('.') && path.split('.').pop()?.match(/^(html|css|js|png|jpg|jpeg|gif|svg|ico|pdf)$/i)) {
-    return NextResponse.next()
-  }
-  
-  // Explicitly allow /login route - it's a Next.js page route
-  if (path === '/login') {
-    return NextResponse.next()
-  }
 
   // Check if this is a protected route
   const isProtectedRoute = 
@@ -161,21 +160,9 @@ export async function middleware(req: NextRequest) {
 
 export const config = {
   matcher: [
-    // Only match Next.js page routes, NOT static files
-    // Static files in public folder (like .html) are served directly and bypass middleware
-    // /login is NOT in matcher - it's a public route that bypasses middleware
-    '/modules/foundation',
-    '/modules/planning',
-    '/modules/saas-tool',
-    '/modules/monetization',
-    '/modules/traffic',
-    '/modules/scaling',
-    '/resource-center',
-    '/resource-center/:path*',
-    '/dashboard',
-    '/dashboard/:path*',
-    '/upgrade',
-    '/upgrade/:path*',
+    // Match all routes EXCEPT static files and /login
+    // Static files (with extensions) and /login are handled at the top of middleware
+    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:html|css|js|png|jpg|jpeg|gif|svg|ico|pdf)$).*)',
   ],
 }
 
