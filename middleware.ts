@@ -157,6 +157,7 @@ export const config = {
   matcher: [
     // Only match Next.js page routes, NOT static files
     // Static files in public folder (like .html) are served directly and bypass middleware
+    // /login is NOT in matcher - it's a public route that bypasses middleware
     '/modules/foundation',
     '/modules/planning',
     '/modules/saas-tool',
@@ -169,7 +170,6 @@ export const config = {
     '/dashboard/:path*',
     '/upgrade',
     '/upgrade/:path*',
-    '/login',
   ],
 }
 
