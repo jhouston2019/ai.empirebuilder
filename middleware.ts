@@ -165,7 +165,7 @@ export const config = {
     // /login and static files are handled at the top of middleware and bypass this
     '/modules/foundation',
     '/modules/planning',
-    '/modules/saas-tool',
+    '/modules/building',
     '/modules/monetization',
     '/modules/traffic',
     '/modules/scaling',

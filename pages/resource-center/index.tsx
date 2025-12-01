@@ -95,7 +95,7 @@ export default function ResourceCenter() {
       number: 3,
       title: 'Building Your SaaS Tool',
       slug: 'building',
-      moduleHref: '/modules/saas-tool',
+      moduleHref: '/modules/building',
       modulePdfHref: '/api/modules/Module 3 - Building Your SaaS Tool.pdf',
       workbookHref: `/api/modules?file=${encodeURIComponent('Module 3 - Workbook - Building Your SaaS Tool.html')}`,
       workbookPdfHref: '/api/modules/Module 3 - Workbook - Building Your SaaS Tool.pdf',

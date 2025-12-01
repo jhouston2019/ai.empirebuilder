@@ -97,7 +97,7 @@ export default function Dashboard() {
           />
           <ModuleCard
             title="Module 3: Building Your SaaS Tool"
-            path="/modules/saas-tool"
+            path="/modules/building"
             plan={plan}
           />
           <ModuleCard

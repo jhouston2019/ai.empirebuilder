@@ -4,9 +4,11 @@
   "description": "AI Business Empire Builder - Complete Access Control System",
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/env-fix.js",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "clean": "node scripts/clean.js",
     "convert-pdfs": "node convert-to-pdf.js"
   },
   "dependencies": {

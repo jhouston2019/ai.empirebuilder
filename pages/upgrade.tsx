@@ -12,7 +12,7 @@ export default function Upgrade() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
           <div className="p-6 bg-neutral-900 border border-neutral-700 rounded-xl">
-            <h2 className="text-2xl font-semibold mb-2 text-purple-400">Pro Plan</h2>
+            <h2 className="text-2xl font-semibold mb-2 text-purple-400">Builder Plan</h2>
             <p className="text-3xl font-bold mb-4 text-white">$297</p>
             <ul className="text-left mb-6 space-y-2 text-neutral-300">
               <li>✅ All Starter features</li>
@@ -21,10 +21,10 @@ export default function Upgrade() {
               <li>✅ Advanced strategies</li>
             </ul>
             <a
-              href="/api/checkout/pro"
+              href="/api/checkout/builder"
               className="block w-full bg-purple-600 px-6 py-3 rounded-md text-lg hover:bg-purple-700 transition text-center"
             >
-              Upgrade to Pro
+              Upgrade to Builder
             </a>
           </div>
 
@@ -32,7 +32,7 @@ export default function Upgrade() {
             <h2 className="text-2xl font-semibold mb-2 text-yellow-400">Elite Plan</h2>
             <p className="text-3xl font-bold mb-4 text-white">$997</p>
             <ul className="text-left mb-6 space-y-2 text-neutral-300">
-              <li>✅ All Pro features</li>
+              <li>✅ All Builder features</li>
               <li>✅ Priority support</li>
               <li>✅ Exclusive resources</li>
               <li>✅ Advanced scaling systems</li>

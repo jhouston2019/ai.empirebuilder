@@ -271,8 +271,9 @@ class ExitIntentPopup {
         this.showSuccess('Thank you! Check your email for the AI Business Idea Vault.');
         
         // Track conversion (if analytics is available)
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'conversion', {
+        // Note: Google Analytics integration can be added here when ready
+        if (typeof gtag !== 'undefined' && typeof window.gtag === 'function') {
+            window.gtag('event', 'conversion', {
                 'event_category': 'exit_intent',
                 'event_label': 'ai_business_idea_vault'
             });

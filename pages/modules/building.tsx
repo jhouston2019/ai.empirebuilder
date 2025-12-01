@@ -4,7 +4,7 @@ import Link from 'next/link'
 import ModuleViewer from '@/components/ModuleViewer'
 import { supabase } from '@/lib/supabaseClient'
 
-export default function SaaSToolModule() {
+export default function BuildingModule() {
   const router = useRouter()
   const [plan, setPlan] = useState<string>('')
   const [loading, setLoading] = useState(true)
