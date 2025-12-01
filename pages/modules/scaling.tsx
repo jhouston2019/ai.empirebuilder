@@ -73,7 +73,7 @@ export default function ScalingModule() {
           </div>
         </div>
       </div>
-      <ModuleViewer modulePath="/modules/Module 6 - Scaling to Six Figures.html" title="Module 6: Scaling to Six Figures" />
+      <ModuleViewer slug="scaling" title="Module 6: Scaling to Six Figures" />
     </div>
   )
 }

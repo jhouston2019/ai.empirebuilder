@@ -84,25 +84,11 @@
 
         const redirectMessage = document.getElementById("redirectMessage");
 
-        if (plan === "starter") {
-            redirectMessage.innerHTML = `
-                <p style="color: var(--gold-primary); font-weight: 600;">Redirecting to your <strong>Starter Dashboard</strong>...</p>
-                <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;">You'll have access to Foundation and Planning modules.</p>
-                <div class="spinner"></div>
-            `;
-            setTimeout(() => {
-                window.location.href = "/starter.html";
-            }, 3000);
-        } else {
-            redirectMessage.innerHTML = `
-                <p style="color: var(--gold-primary); font-weight: 600;">Redirecting to your <strong>Full Builder Dashboard</strong>...</p>
-                <p style="color: var(--text-gray); font-size: 0.9rem; margin-top: 0.5rem;">You'll have access to all 6 modules and bonus resources.</p>
-                <div class="spinner"></div>
-            `;
-            setTimeout(() => {
-                window.location.href = "/resource-center";
-            }, 3000);
-        }
+        // Redirect to Next.js success page
+        const redirectUrl = plan ? `/success?plan=${encodeURIComponent(plan)}` : '/success';
+        setTimeout(() => {
+            window.location.href = redirectUrl;
+        }, 2000);
     </script>
 </body>
 </html>

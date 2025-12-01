@@ -53,10 +53,25 @@ export default function Dashboard() {
     )
   }
 
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    // Clear access token cookie
+    document.cookie = 'sb-access-token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+    router.push('/login')
+  }
+
   return (
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl mb-6 text-yellow-400 font-bold">AI Empire Builder Dashboard</h1>
+        <div className="flex items-center justify-between mb-6">
+          <h1 className="text-3xl text-yellow-400 font-bold">AI Empire Builder Dashboard</h1>
+          <button
+            onClick={handleLogout}
+            className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-md text-sm transition"
+          >
+            Logout
+          </button>
+        </div>
         <div className="mb-8 p-4 bg-neutral-900 rounded-lg border border-neutral-700">
           <p className="mb-2">
             <span className="text-neutral-400">Current Plan:</span>{' '}

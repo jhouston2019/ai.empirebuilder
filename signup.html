@@ -221,25 +221,8 @@
             });
 
             try {
-                const response = await fetch("/.netlify/functions/create-checkout-session", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ plan, email }),
-                });
-
-                // Check if response is OK
-                if (!response.ok) {
-                    const errorData = await response.json().catch(() => ({ error: `HTTP ${response.status}: ${response.statusText}` }));
-                    throw new Error(errorData.error || `Server error: ${response.status}`);
-                }
-
-                const data = await response.json();
-                
-                if (data.url) {
-                    window.location.href = data.url;
-                } else {
-                    throw new Error(data.error || "Failed to create checkout session");
-                }
+                // Use Next.js API route for checkout
+                window.location.href = `/api/checkout/${plan}`;
             } catch (error) {
                 console.error("Checkout error:", error);
                 alert("Error: " + (error.message || "An error occurred. Please try again. If this persists, check the browser console for details."));

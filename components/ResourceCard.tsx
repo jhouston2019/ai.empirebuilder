@@ -10,7 +10,7 @@ interface ResourceCardProps {
 }
 
 export default function ResourceCard({ title, type, moduleNumber, href, pdfHref, description }: ResourceCardProps) {
-  const icon = type === 'module' ? '📚' : '📝'
+  const icon = type === 'module' ? '📘' : '📒'
   const badgeColor = type === 'module' ? 'bg-purple-600' : 'bg-yellow-600'
   
   // URL encode the href for proper handling of spaces
@@ -20,7 +20,7 @@ export default function ResourceCard({ title, type, moduleNumber, href, pdfHref,
   const pdfFileName = pdfHref ? pdfHref.split('/').pop() : null
   
   return (
-    <div className="p-6 bg-neutral-900 rounded-xl border border-neutral-700 hover:border-purple-500 transition">
+    <div className="p-6 bg-neutral-900 rounded-xl border border-neutral-700 hover:border-purple-500 transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center gap-3">
           <span className="text-3xl">{icon}</span>
@@ -66,7 +66,7 @@ export default function ResourceCard({ title, type, moduleNumber, href, pdfHref,
             type="application/pdf"
             className="inline-block bg-red-600 px-4 py-2 rounded-md text-sm hover:bg-red-700 transition text-center w-full cursor-pointer flex items-center justify-center gap-2"
           >
-            <span>📥</span>
+            <span>📄</span>
             Download PDF
           </a>
         )}

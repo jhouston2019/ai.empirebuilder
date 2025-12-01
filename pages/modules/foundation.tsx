@@ -62,7 +62,7 @@ export default function FoundationModule() {
           </div>
         </div>
       </div>
-      <ModuleViewer modulePath="/modules/Module 1 - Foundation.html" title="Module 1: Foundation" />
+      <ModuleViewer slug="foundation" title="Module 1: Foundation" />
     </div>
   )
 }

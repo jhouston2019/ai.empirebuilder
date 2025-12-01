@@ -1,16 +1,16 @@
 import { useEffect, useState } from 'react'
 
 interface ModuleViewerProps {
-  modulePath: string
+  slug: string
   title: string
 }
 
-export default function ModuleViewer({ modulePath, title }: ModuleViewerProps) {
+export default function ModuleViewer({ slug, title }: ModuleViewerProps) {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
 
-  // URL encode the path to handle spaces and special characters
-  const encodedPath = encodeURI(modulePath)
+  // Use API route with slug
+  const apiPath = `/api/modules/${slug}`
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -41,7 +41,7 @@ export default function ModuleViewer({ modulePath, title }: ModuleViewerProps) {
         <div className="flex flex-col items-center justify-center h-96 bg-black p-8">
           <p className="text-red-400 mb-4">{error}</p>
           <a
-            href={encodedPath}
+            href={apiPath}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-purple-600 px-4 py-2 rounded-md hover:bg-purple-700 transition"
@@ -51,7 +51,7 @@ export default function ModuleViewer({ modulePath, title }: ModuleViewerProps) {
         </div>
       )}
       <iframe
-        src={encodedPath}
+        src={apiPath}
         className="w-full h-screen border-0"
         title={title}
         style={{ minHeight: '800px', display: error ? 'none' : 'block' }}

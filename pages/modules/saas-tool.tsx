@@ -73,7 +73,7 @@ export default function SaaSToolModule() {
           </div>
         </div>
       </div>
-      <ModuleViewer modulePath="/modules/Module 3 - Building Your SaaS Tool.html" title="Module 3: Building Your SaaS Tool" />
+      <ModuleViewer slug="building" title="Module 3: Building Your SaaS Tool" />
     </div>
   )
 }

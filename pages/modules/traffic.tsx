@@ -73,7 +73,7 @@ export default function TrafficModule() {
           </div>
         </div>
       </div>
-      <ModuleViewer modulePath="/modules/Module 5 - Traffic & Growth.html" title="Module 5: Traffic & Growth" />
+      <ModuleViewer slug="traffic" title="Module 5: Traffic & Growth" />
     </div>
   )
 }

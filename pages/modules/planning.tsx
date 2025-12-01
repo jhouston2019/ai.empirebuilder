@@ -62,7 +62,7 @@ export default function PlanningModule() {
           </div>
         </div>
       </div>
-      <ModuleViewer modulePath="/modules/Module 2 - Planning Your Empire.html" title="Module 2: Planning Your Empire" />
+      <ModuleViewer slug="planning" title="Module 2: Planning Your Empire" />
     </div>
   )
 }

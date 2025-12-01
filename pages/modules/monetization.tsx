@@ -73,7 +73,7 @@ export default function MonetizationModule() {
           </div>
         </div>
       </div>
-      <ModuleViewer modulePath="/modules/Module 4 - Monetization Mastery.html" title="Module 4: Monetization Mastery" />
+      <ModuleViewer slug="monetization" title="Module 4: Monetization Mastery" />
     </div>
   )
 }

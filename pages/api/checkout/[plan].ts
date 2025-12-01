@@ -16,17 +16,16 @@ export default async function handler(
   const { plan } = req.query
 
   // Map plan names to Stripe price IDs
-  // 'builder' is an alias for 'pro' (the $297 package)
   const priceMap: Record<string, string | undefined> = {
     starter: process.env.STRIPE_PRICE_STARTER,
-    builder: process.env.STRIPE_PRICE_PRO, // Builder package uses PRO price
-    pro: process.env.STRIPE_PRICE_PRO, // Keep 'pro' for backward compatibility
+    builder: process.env.STRIPE_PRICE_BUILDER,
+    pro: process.env.STRIPE_PRICE_PRO,
     elite: process.env.STRIPE_PRICE_ELITE,
   }
 
   const price = priceMap[plan as string]
   if (!price) {
-    return res.status(400).json({ error: 'Invalid plan. Must be "starter" or "builder"' })
+    return res.status(400).json({ error: `Invalid plan. Must be one of: starter, builder, pro, elite. Received: ${plan}` })
   }
 
   try {

@@ -353,24 +353,8 @@
             });
 
             try {
-                const response = await fetch("/.netlify/functions/create-checkout-session", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ plan, email }),
-                });
-
-                const data = await response.json();
-                
-                if (data.url) {
-                    window.location.href = data.url;
-                } else {
-                    alert("Error: " + (data.error || "Failed to create checkout session"));
-                    // Re-enable buttons
-                    buttons.forEach(btn => {
-                        btn.disabled = false;
-                        btn.textContent = plan === 'starter' ? 'Enroll in Starter – $97' : 'Enroll in Builder – $297';
-                    });
-                }
+                // Use Next.js API route for checkout
+                window.location.href = `/api/checkout/${plan}`;
             } catch (error) {
                 console.error("Checkout error:", error);
                 alert("An error occurred. Please try again.");

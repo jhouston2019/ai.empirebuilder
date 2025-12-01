@@ -9,7 +9,18 @@ interface ModuleCardProps {
 export default function ModuleCard({ title, path, plan }: ModuleCardProps) {
   const isFoundation = path.includes('foundation')
   const isPlanning = path.includes('planning')
-  const allowed = plan === 'pro' || plan === 'elite' || isFoundation || isPlanning
+  
+  // Access control logic:
+  // - Starter plan: Only Modules 1 & 2 (foundation, planning)
+  // - Builder, Pro, Elite plans: All modules unlocked
+  const allowed = (() => {
+    if (plan === 'starter') {
+      // Starter unlocks only Modules 1 & 2
+      return isFoundation || isPlanning
+    }
+    // builder, pro, elite unlock ALL modules
+    return plan === 'builder' || plan === 'pro' || plan === 'elite'
+  })()
 
   return (
     <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-700 text-white">

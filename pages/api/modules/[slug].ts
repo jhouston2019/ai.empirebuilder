@@ -3,6 +3,16 @@ import { createClient } from '@supabase/supabase-js'
 import fs from 'fs'
 import path from 'path'
 
+// Canonical slug → filename mapping
+const SLUG_TO_FILENAME: Record<string, string> = {
+  foundation: 'Module 1 - Foundation.html',
+  planning: 'Module 2 - Planning Your Empire.html',
+  building: 'Module 3 - Building Your SaaS Tool.html',
+  monetization: 'Module 4 - Monetization Mastery.html',
+  traffic: 'Module 5 - Traffic & Growth.html',
+  scaling: 'Module 6 - Scaling to Six Figures.html',
+}
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
@@ -11,7 +21,7 @@ export default async function handler(
     return res.status(405).json({ error: 'Method not allowed' })
   }
 
-  const { filename } = req.query
+  const { slug } = req.query
   const accessToken = req.cookies['sb-access-token']
 
   // Require authentication
@@ -53,36 +63,33 @@ export default async function handler(
       return res.status(403).json({ error: 'Access denied. You must purchase a plan to access this content.' })
     }
 
-    // Validate filename to prevent path traversal
-    if (!filename || typeof filename !== 'string') {
-      return res.status(400).json({ error: 'Invalid filename' })
+    // Validate slug
+    if (!slug || typeof slug !== 'string') {
+      return res.status(400).json({ error: 'Invalid slug' })
     }
 
-    // Only allow safe filenames (alphanumeric, spaces, hyphens, underscores, dots)
-    if (!/^[a-zA-Z0-9\s\-_.]+$/.test(filename)) {
-      return res.status(400).json({ error: 'Invalid filename format' })
+    // Get filename from slug
+    const filename = SLUG_TO_FILENAME[slug]
+    if (!filename) {
+      return res.status(404).send('Module not found')
     }
 
     // Determine which modules the user can access based on their paid plan
-    const allowedModules = plan === 'starter' 
-      ? ['Module 1 - Foundation', 'Module 2 - Planning Your Empire']
-      : ['Module 1 - Foundation', 'Module 2 - Planning Your Empire', 'Module 3 - Building Your SaaS Tool', 'Module 4 - Monetization Mastery', 'Module 5 - Traffic & Growth', 'Module 6 - Scaling to Six Figures']
+    const allowedSlugs = plan === 'starter' 
+      ? ['foundation', 'planning']
+      : ['foundation', 'planning', 'building', 'monetization', 'traffic', 'scaling']
 
     // Check if user has access to this module
-    const hasAccess = allowedModules.some(moduleName => 
-      filename.includes(moduleName)
-    )
-
-    if (!hasAccess) {
+    if (!allowedSlugs.includes(slug)) {
       return res.status(403).json({ error: 'Access denied. Please purchase a plan to access this content.' })
     }
 
-    // Construct file path
-    const filePath = path.join(process.cwd(), 'public', 'modules', filename)
+    // Construct file path - read from /modules (source directory)
+    const filePath = path.join(process.cwd(), 'modules', filename)
 
     // Check if file exists
     if (!fs.existsSync(filePath)) {
-      return res.status(404).json({ error: 'File not found' })
+      return res.status(404).send('Module is temporarily unavailable.')
     }
 
     // Determine content type
@@ -100,7 +107,7 @@ export default async function handler(
     res.setHeader('Content-Disposition', `inline; filename="${filename}"`)
     res.setHeader('Cache-Control', 'private, max-age=3600')
     
-    return res.send(fileContent)
+    return res.status(200).send(fileContent)
   } catch (error) {
     console.error('Error serving module file:', error)
     return res.status(500).json({ error: 'Internal server error' })
