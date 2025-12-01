@@ -77,7 +77,7 @@ export default function ResourceCenter() {
       slug: 'foundation',
       moduleHref: '/modules/foundation',
       modulePdfHref: '/api/modules/Module 1 - Foundation.pdf',
-      workbookHref: '/api/modules/Module 1 - Workbook - Foundation.html',
+      workbookHref: `/api/modules?file=${encodeURIComponent('Module 1 - Workbook - Foundation.html')}`,
       workbookPdfHref: '/api/modules/Module 1 - Workbook - Foundation.pdf',
       description: 'The Micro-SaaS Revolution. Master the opportunity, market landscape, and the PROFIT framework.'
     },
@@ -87,7 +87,7 @@ export default function ResourceCenter() {
       slug: 'planning',
       moduleHref: '/modules/planning',
       modulePdfHref: '/api/modules/Module 2 - Planning Your Empire.pdf',
-      workbookHref: '/api/modules/Module 2 - Workbook - Planning Your Empire.html',
+      workbookHref: `/api/modules?file=${encodeURIComponent('Module 2 - Workbook - Planning Your Empire.html')}`,
       workbookPdfHref: '/api/modules/Module 2 - Workbook - Planning Your Empire.pdf',
       description: 'Strategic tool selection and validation. Market research, competition analysis, and 48-hour validation sprints.'
     },
@@ -97,7 +97,7 @@ export default function ResourceCenter() {
       slug: 'building',
       moduleHref: '/modules/saas-tool',
       modulePdfHref: '/api/modules/Module 3 - Building Your SaaS Tool.pdf',
-      workbookHref: '/api/modules/Module 3 - Workbook - Building Your SaaS Tool.html',
+      workbookHref: `/api/modules?file=${encodeURIComponent('Module 3 - Workbook - Building Your SaaS Tool.html')}`,
       workbookPdfHref: '/api/modules/Module 3 - Workbook - Building Your SaaS Tool.pdf',
       description: 'From idea to working product in 7 days. Technical foundation, MVP development, testing, and launch.'
     },
@@ -107,7 +107,7 @@ export default function ResourceCenter() {
       slug: 'monetization',
       moduleHref: '/modules/monetization',
       modulePdfHref: '/api/modules/Module 4 - Monetization Mastery.pdf',
-      workbookHref: '/api/modules/Module 4 - Workbook - Monetization Mastery.html',
+      workbookHref: `/api/modules?file=${encodeURIComponent('Module 4 - Workbook - Monetization Mastery.html')}`,
       workbookPdfHref: '/api/modules/Module 4 - Workbook - Monetization Mastery.pdf',
       description: 'Turn your tools into revenue machines. Seven revenue models, pricing psychology, and optimization strategies.'
     },
@@ -117,7 +117,7 @@ export default function ResourceCenter() {
       slug: 'traffic',
       moduleHref: '/modules/traffic',
       modulePdfHref: '/api/modules/Module 5 - Traffic & Growth.pdf',
-      workbookHref: '/api/modules/Module 5 - Workbook - Traffic & Growth.html',
+      workbookHref: `/api/modules?file=${encodeURIComponent('Module 5 - Workbook - Traffic & Growth.html')}`,
       workbookPdfHref: '/api/modules/Module 5 - Workbook - Traffic & Growth.pdf',
       description: 'Drive 10,000+ targeted visitors per month. SEO mastery, social media growth, and paid traffic strategies.'
     },
@@ -127,7 +127,7 @@ export default function ResourceCenter() {
       slug: 'scaling',
       moduleHref: '/modules/scaling',
       modulePdfHref: '/api/modules/Module 6 - Scaling to Six Figures.pdf',
-      workbookHref: '/api/modules/Module 6 - Workbook - Scaling to Six Figures.html',
+      workbookHref: `/api/modules?file=${encodeURIComponent('Module 6 - Workbook - Scaling to Six Figures.html')}`,
       workbookPdfHref: '/api/modules/Module 6 - Workbook - Scaling to Six Figures.pdf',
       description: 'Scale your business to 6 figures and beyond. Advanced strategies, automation, and growth systems.'
     }

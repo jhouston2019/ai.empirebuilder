@@ -41,7 +41,7 @@ export default function ResourceCard({ title, type, moduleNumber, href, pdfHref,
       )}
       
       <div className="space-y-2">
-        {href.endsWith('.html') ? (
+        {href.startsWith('/api/modules') || href.endsWith('.html') ? (
           <a
             href={encodedHref}
             target="_blank"

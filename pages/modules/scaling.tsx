@@ -62,7 +62,7 @@ export default function ScalingModule() {
           </div>
           <div className="flex items-center gap-4">
             <a
-              href={encodeURI("/modules/Module 6 - Workbook - Scaling to Six Figures.html")}
+              href={`/api/modules?file=${encodeURIComponent("Module 6 - Workbook - Scaling to Six Figures.html")}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-purple-600 px-4 py-2 rounded-md text-sm hover:bg-purple-700 transition"
