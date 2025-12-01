@@ -1,0 +1,80 @@
+{
+  "version": 3,
+  "middleware": {
+    "/": {
+      "files": [
+        "server/edge-runtime-webpack.js",
+        "server/middleware.js"
+      ],
+      "name": "middleware",
+      "page": "/",
+      "matchers": [
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/modules\\/foundation(.json)?[\\/#\\?]?$",
+          "originalSource": "/modules/foundation"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/modules\\/planning(.json)?[\\/#\\?]?$",
+          "originalSource": "/modules/planning"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/modules\\/saas-tool(.json)?[\\/#\\?]?$",
+          "originalSource": "/modules/saas-tool"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/modules\\/monetization(.json)?[\\/#\\?]?$",
+          "originalSource": "/modules/monetization"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/modules\\/traffic(.json)?[\\/#\\?]?$",
+          "originalSource": "/modules/traffic"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/modules\\/scaling(.json)?[\\/#\\?]?$",
+          "originalSource": "/modules/scaling"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/resource-center(.json)?[\\/#\\?]?$",
+          "originalSource": "/resource-center"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/resource-center(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/resource-center/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/dashboard(.json)?[\\/#\\?]?$",
+          "originalSource": "/dashboard"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/dashboard(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/dashboard/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/upgrade(.json)?[\\/#\\?]?$",
+          "originalSource": "/upgrade"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/upgrade(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/upgrade/:path*"
+        },
+        {
+          "regexp": "^(?:\\/(_next\\/data\\/[^/]{1,}))?\\/api\\/modules(?:\\/((?:[^\\/#\\?]+?)(?:\\/(?:[^\\/#\\?]+?))*))?(.json)?[\\/#\\?]?$",
+          "originalSource": "/api/modules/:path*"
+        }
+      ],
+      "wasm": [],
+      "assets": [],
+      "env": {
+        "__NEXT_BUILD_ID": "JNxyxDdkzVcQH3Ld7tkyM",
+        "NEXT_SERVER_ACTIONS_ENCRYPTION_KEY": "m1mfGSKSIHNW5nbqdc56m6/C/8tu3e9GXHL/Fou4ZZY=",
+        "__NEXT_PREVIEW_MODE_ID": "cf00406b9289b46789b8fb02301478b2",
+        "__NEXT_PREVIEW_MODE_ENCRYPTION_KEY": "ad27bc3edf15a099223574183ddf672a6e9aac48f626a11034ac6d3173259477",
+        "__NEXT_PREVIEW_MODE_SIGNING_KEY": "b25bdc35e9d437b292691565cae1e5ec55b2f22ccb9c1f7ae5fcf98eb03304a7"
+      }
+    }
+  },
+  "functions": {},
+  "sortedMiddleware": [
+    "/"
+  ]
+}
