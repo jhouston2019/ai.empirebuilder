@@ -1,7 +1,7 @@
 {
-  "name": "ai-empire-builder",
+  "name": "ai-business-builder-pro",
   "version": "1.0.0",
-  "description": "AI Business Empire Builder - Complete Access Control System",
+  "description": "AI Business Builder Pro - Complete Access Control System",
   "scripts": {
     "dev": "next dev",
     "prebuild": "node scripts/env-fix.js",

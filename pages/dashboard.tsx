@@ -67,7 +67,7 @@ export default function Dashboard() {
     <main className="min-h-screen bg-black text-white p-8">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-6">
-          <h1 className="text-3xl text-yellow-400 font-bold">AI Empire Builder Dashboard</h1>
+          <h1 className="text-3xl text-yellow-400 font-bold">AI Business Builder Pro Dashboard</h1>
           <button
             onClick={handleLogout}
             className="px-4 py-2 bg-neutral-700 hover:bg-neutral-600 rounded-md text-sm transition"
