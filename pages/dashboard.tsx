@@ -4,6 +4,9 @@ import Link from 'next/link'
 import ModuleCard from '@/components/ModuleCard'
 import { supabase } from '@/lib/supabaseClient'
 
+// Ensure Node.js runtime (not Edge) for Supabase compatibility
+export const runtime = 'nodejs'
+
 export default function Dashboard() {
   const [plan, setPlan] = useState<string>('starter')
   const [loading, setLoading] = useState(true)

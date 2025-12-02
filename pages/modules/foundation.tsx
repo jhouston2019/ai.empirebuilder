@@ -4,6 +4,9 @@ import Link from 'next/link'
 import ModuleViewer from '@/components/ModuleViewer'
 import { supabase } from '@/lib/supabaseClient'
 
+// Ensure Node.js runtime (not Edge) for Supabase compatibility
+export const runtime = 'nodejs'
+
 export default function FoundationModule() {
   const router = useRouter()
   const [plan, setPlan] = useState<string>('')

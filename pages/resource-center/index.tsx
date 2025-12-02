@@ -4,6 +4,9 @@ import Link from 'next/link'
 import ResourceCard from '@/components/ResourceCard'
 import { supabase } from '@/lib/supabaseClient'
 
+// Ensure Node.js runtime (not Edge) for Supabase compatibility
+export const runtime = 'nodejs'
+
 type FilterType = 'all' | 'modules' | 'workbooks' | 'pdfs' | 'bonus'
 
 interface ResourceItem {
