@@ -110,10 +110,8 @@ export default async function handler(
         return res.status(404).send('Module not found')
       }
 
-      // Determine which modules the user can access based on their paid plan
-      const allowedSlugs = plan === 'starter' 
-        ? ['foundation', 'planning']
-        : ['foundation', 'planning', 'building', 'monetization', 'traffic', 'scaling']
+      // All paid plans (builder/pro/elite) have access to all modules
+      const allowedSlugs = ['foundation', 'planning', 'building', 'monetization', 'traffic', 'scaling']
 
       // Check if user has access to this module
       if (!allowedSlugs.includes(slug)) {

@@ -137,18 +137,7 @@ export async function middleware(req: NextRequest) {
       return NextResponse.redirect(new URL('/?redirect=pricing', req.url))
     }
 
-    // Check if starter user is trying to access restricted route
-    if (plan === 'starter') {
-      const isRestrictedRoute = 
-        (path.startsWith('/modules') && !path.startsWith('/modules/foundation') && !path.startsWith('/modules/planning')) ||
-        path.startsWith('/resource-center')
-
-      if (isRestrictedRoute) {
-        return NextResponse.redirect(new URL('/?redirect=pricing', req.url))
-      }
-    }
-
-    // Allow access to all routes for builder/pro/elite plans, or allowed starter routes
+    // Allow access to all routes for builder/pro/elite plans
     // Builder package has full access to all modules and resource center
     return NextResponse.next()
   } catch (error) {

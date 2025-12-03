@@ -72,15 +72,11 @@ export default function Login() {
         const plan = userPlanData?.plan_tier || null
 
         // Redirect based on plan:
-        // - Builder package → Resource Center (full access to all modules)
-        // - Starter package → Dashboard (limited access to Foundation + Planning only)
+        // - Builder/Pro/Elite package → Resource Center (full access to all modules)
         // - No plan → Pricing section
         if (plan === 'builder' || plan === 'pro' || plan === 'elite') {
           // Builder/Pro/Elite users get full access - redirect to resource center
           router.push('/resource-center')
-        } else if (plan === 'starter') {
-          // Starter users get limited access - redirect to dashboard
-          router.push('/dashboard')
         } else {
           // No plan or null - redirect to pricing to purchase
           router.push('/?redirect=pricing')

@@ -26,7 +26,14 @@ export default function PlanningModule() {
         .eq('email', user.email)
         .single()
 
-      setPlan(userData?.plan_tier || 'starter')
+      const userPlan = userData?.plan_tier || null
+      setPlan(userPlan || 'none')
+
+      // CRITICAL: No access without a paid plan
+      if (!userPlan || userPlan === '' || userPlan === 'none') {
+        router.push('/?redirect=pricing')
+        return
+      }
       setLoading(false)
     }
 

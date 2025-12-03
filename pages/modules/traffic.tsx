@@ -26,11 +26,12 @@ export default function TrafficModule() {
         .eq('email', user.email)
         .single()
 
-      const userPlan = userData?.plan_tier || 'starter'
-      setPlan(userPlan)
+      const userPlan = userData?.plan_tier || null
+      setPlan(userPlan || 'none')
 
-      if (userPlan === 'starter') {
-        router.push('/upgrade')
+      // CRITICAL: No access without a paid plan
+      if (!userPlan || userPlan === '' || userPlan === 'none') {
+        router.push('/?redirect=pricing')
         return
       }
 
@@ -48,8 +49,15 @@ export default function TrafficModule() {
     )
   }
 
-  if (plan === 'starter') {
-    return null
+  if (!plan || plan === 'none') {
+    return (
+      <main className="min-h-screen bg-black text-white p-8 flex flex-col items-center justify-center">
+        <p className="text-xl mb-4">Redirecting to pricing...</p>
+        <Link href="/?redirect=pricing" className="text-purple-400 underline hover:text-purple-300">
+          Click here if not redirected
+        </Link>
+      </main>
+    )
   }
 
   return (

@@ -11,16 +11,9 @@ export default function ModuleCard({ title, path, plan }: ModuleCardProps) {
   const isPlanning = path.includes('planning')
   
   // Access control logic:
-  // - Starter plan: Only Modules 1 & 2 (foundation, planning)
   // - Builder, Pro, Elite plans: All modules unlocked
-  const allowed = (() => {
-    if (plan === 'starter') {
-      // Starter unlocks only Modules 1 & 2
-      return isFoundation || isPlanning
-    }
-    // builder, pro, elite unlock ALL modules
-    return plan === 'builder' || plan === 'pro' || plan === 'elite'
-  })()
+  // - No plan: All modules locked
+  const allowed = plan === 'builder' || plan === 'pro' || plan === 'elite'
 
   return (
     <div className="p-4 bg-neutral-900 rounded-xl border border-neutral-700 text-white">

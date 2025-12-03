@@ -8,7 +8,7 @@ import { supabase } from '@/lib/supabaseClient'
 export const runtime = 'nodejs'
 
 export default function Dashboard() {
-  const [plan, setPlan] = useState<string>('starter')
+  const [plan, setPlan] = useState<string>('none')
   const [loading, setLoading] = useState(true)
   const [email, setEmail] = useState<string>('')
   const router = useRouter()
@@ -125,17 +125,17 @@ export default function Dashboard() {
           />
         </div>
 
-        {plan === 'starter' && (
+        {(!plan || plan === 'none') && (
           <div className="mt-8 p-6 bg-purple-900/20 border border-purple-700 rounded-lg">
-            <h2 className="text-xl font-semibold mb-2 text-purple-400">Upgrade Your Access</h2>
+            <h2 className="text-xl font-semibold mb-2 text-purple-400">Get Started</h2>
             <p className="mb-4 text-neutral-300">
-              You currently have access to Foundation and Planning modules. Upgrade to unlock all modules and the Resource Center.
+              Purchase a plan to unlock all modules and the Resource Center.
             </p>
             <Link
-              href="/upgrade"
+              href="/?redirect=pricing"
               className="inline-block bg-purple-600 px-6 py-3 rounded-md text-lg hover:bg-purple-700 transition"
             >
-              View Upgrade Options →
+              View Plans →
             </Link>
           </div>
         )}

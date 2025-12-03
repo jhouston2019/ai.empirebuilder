@@ -48,13 +48,6 @@ export default function ResourceCenter() {
       }
       
       setPlan(userPlan)
-
-      // Starter users can't access resource center (only builder/pro/elite) - redirect to pricing
-      if (userPlan === 'starter') {
-        router.push('/?redirect=pricing')
-        return
-      }
-
       setLoading(false)
     }
 
@@ -69,9 +62,6 @@ export default function ResourceCenter() {
     )
   }
 
-  if (plan === 'starter') {
-    return null
-  }
 
   const modules = [
     {

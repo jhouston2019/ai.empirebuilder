@@ -17,7 +17,6 @@ export default async function handler(
 
   // Map plan names to Stripe price IDs
   const priceMap: Record<string, string | undefined> = {
-    starter: process.env.STRIPE_PRICE_STARTER,
     builder: process.env.STRIPE_PRICE_BUILDER,
     pro: process.env.STRIPE_PRICE_PRO,
     elite: process.env.STRIPE_PRICE_ELITE,
@@ -25,7 +24,7 @@ export default async function handler(
 
   const price = priceMap[plan as string]
   if (!price) {
-    return res.status(400).json({ error: `Invalid plan. Must be one of: starter, builder, pro, elite. Received: ${plan}` })
+    return res.status(400).json({ error: `Invalid plan. Must be one of: builder, pro, elite. Received: ${plan}` })
   }
 
   try {
