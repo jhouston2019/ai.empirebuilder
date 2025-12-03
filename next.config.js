@@ -13,7 +13,13 @@ const nextConfig = {
   distDir: '.next-build',
   // Ensure static files in public folder are served correctly
   async rewrites() {
-    return []
+    return [
+      // Serve public/index.html at root path
+      {
+        source: '/',
+        destination: '/index.html',
+      },
+    ]
   },
   webpack: (config, { isServer, webpack }) => {
     // Disable symlink resolution — prevents readlink() issues on Windows

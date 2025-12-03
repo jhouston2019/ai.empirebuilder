@@ -1,14 +1,6 @@
-import { useEffect } from 'react'
-import { useRouter } from 'next/router'
-
+// This page is handled by Next.js rewrite to serve public/index.html
+// No component needed - rewrite handles it
 export default function Home() {
-  const router = useRouter()
-
-  useEffect(() => {
-    // Redirect to the HTML landing page
-    router.replace('/index.html')
-  }, [router])
-
   return null
 }
 
