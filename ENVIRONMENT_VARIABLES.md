@@ -39,8 +39,8 @@ STRIPE_PRICE_BUILDER=price_1SO1vcIFyPduqy5fZk4vUyT5
 # Site URLs
 # =====================================================
 # For production:
-NEXT_PUBLIC_SITE_URL=https://aiempirebuilder.pro
-SITE_URL=https://aiempirebuilder.pro
+NEXT_PUBLIC_SITE_URL=https://aibusinessbuilderpro.net
+SITE_URL=https://aibusinessbuilderpro.net
 
 # For local development:
 # NEXT_PUBLIC_SITE_URL=http://localhost:3000

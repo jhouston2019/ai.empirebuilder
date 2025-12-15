@@ -11,12 +11,12 @@
 ### How to Test:
 
 #### Test 1: Check if the anchor link works
-1. Go to: `https://aiempirebuilder.pro/pricing.html`
+1. Go to: `https://aibusinessbuilderpro.net/pricing.html`
 2. Click "Get Instant Access" at the top
 3. It should scroll down to the pricing section with the two buttons
 
 #### Test 2: Check if API routes are working
-1. Go to: `https://aiempirebuilder.pro/test-checkout.html`
+1. Go to: `https://aibusinessbuilderpro.net/test-checkout.html`
 2. Click either "Test Starter" or "Test Builder" button
 3. Check the console output on the page
 4. **Expected result**: Should redirect to Stripe checkout
@@ -59,7 +59,7 @@
 
 1. **Test the checkout page**:
    ```
-   Visit: https://aiempirebuilder.pro/test-checkout.html
+   Visit: https://aibusinessbuilderpro.net/test-checkout.html
    ```
    This will show you exactly what's happening when you click the buttons.
 
@@ -119,7 +119,7 @@ When working correctly:
    - Deploys → Trigger deploy → Clear cache and deploy site
 
 2. **Check if Next.js is actually running**:
-   - Try visiting: `https://aiempirebuilder.pro/api/checkout/builder`
+   - Try visiting: `https://aibusinessbuilderpro.net/api/checkout/builder`
    - If you get a proper error message (not 404), the API is working
    - If you get 404, the API routes aren't deployed
 
@@ -138,7 +138,7 @@ When working correctly:
 ### Next Steps:
 
 1. Wait for Netlify to deploy (usually 2-3 minutes)
-2. Visit `https://aiempirebuilder.pro/test-checkout.html`
+2. Visit `https://aibusinessbuilderpro.net/test-checkout.html`
 3. Click the test buttons and see what happens
 4. Report back with the console output
 

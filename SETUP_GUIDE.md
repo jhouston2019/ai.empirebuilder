@@ -57,8 +57,8 @@ STRIPE_PRICE_PRO=price_297proXXXX
 STRIPE_PRICE_ELITE=price_997eliteXXXX
 
 # Site URLs
-NEXT_PUBLIC_SITE_URL=https://aiempirebuilder.pro
-SITE_URL=https://aiempirebuilder.pro
+NEXT_PUBLIC_SITE_URL=https://aibusinessbuilderpro.net
+SITE_URL=https://aibusinessbuilderpro.net
 ```
 
 ### Getting Supabase Credentials:
