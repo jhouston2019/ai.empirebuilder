@@ -17,14 +17,20 @@ export default async function handler(
 
   // Map plan names to Stripe price IDs
   const priceMap: Record<string, string | undefined> = {
-    builder: process.env.STRIPE_PRICE_BUILDER,
+    starter: process.env.STRIPE_PRICE_RESPONSE_STARTER || process.env.STRIPE_PRICE_STARTER,
+    builder: process.env.STRIPE_PRICE_RESPONSE_BUILDER || process.env.STRIPE_PRICE_BUILDER,
     pro: process.env.STRIPE_PRICE_PRO,
     elite: process.env.STRIPE_PRICE_ELITE,
   }
 
   const price = priceMap[plan as string]
   if (!price) {
-    return res.status(400).json({ error: `Invalid plan. Must be one of: builder, pro, elite. Received: ${plan}` })
+    return res.status(400).json({ error: `Invalid plan. Must be one of: starter, builder, pro, elite. Received: ${plan}` })
+  }
+
+  // Validate that the environment variable is set
+  if (!process.env.STRIPE_SECRET_KEY) {
+    return res.status(500).json({ error: 'Stripe is not configured. Please contact support.' })
   }
 
   try {

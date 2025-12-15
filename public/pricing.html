@@ -71,19 +71,16 @@
                     <p style="color: #666; margin-bottom: 2rem; text-align: center;">One-time payment • Lifetime access</p>
                     
                     <ul class="pricing-features">
-                        <li>6 Detailed Workbooks</li>
-                        <li>Revenue Calculator</li>
-                        <li>Exit Strategy Guide</li>
+                        <li>✓ 6 Comprehensive Training Modules</li>
+                        <li>✓ 6 Detailed Workbooks</li>
+                        <li>✓ Step-by-Step Implementation Guides</li>
+                        <li>✓ No-Code & Low-Code Tools Training</li>
+                        <li>✓ Revenue Calculator & Templates</li>
+                        <li>✓ Lifetime Access to All Materials</li>
+                        <li>✓ Future Updates Included</li>
                     </ul>
                     
                     <div class="pricing-buttons" style="margin-top: 2rem;">
-                        <input 
-                            type="email" 
-                            id="userEmail" 
-                            placeholder="Enter your email" 
-                            required 
-                            style="width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid var(--border-gold); background: var(--bg-dark); color: var(--text-white); border-radius: 4px; font-size: 1rem;"
-                        >
                         <button 
                             class="btn btn-primary btn-large" 
                             onclick="checkout('starter')"
@@ -332,19 +329,6 @@
     <script src="/assets/js/countdown.js"></script>
     <script>
         async function checkout(plan) {
-            const email = document.getElementById("userEmail").value.trim();
-            if (!email) {
-                alert("Please enter your email before proceeding.");
-                return;
-            }
-
-            // Basic email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (!emailRegex.test(email)) {
-                alert("Please enter a valid email address.");
-                return;
-            }
-
             // Disable buttons during processing
             const buttons = document.querySelectorAll('.pricing-buttons button');
             buttons.forEach(btn => {
@@ -359,9 +343,9 @@
                 console.error("Checkout error:", error);
                 alert("An error occurred. Please try again.");
                 // Re-enable buttons
-                buttons.forEach(btn => {
+                buttons.forEach((btn, index) => {
                     btn.disabled = false;
-                    btn.textContent = plan === 'starter' ? 'Enroll in Starter – $97' : 'Enroll in Builder – $297';
+                    btn.textContent = index === 0 ? 'Enroll in Starter – $97' : 'Enroll in Builder – $297';
                 });
             }
         }

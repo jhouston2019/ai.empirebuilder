@@ -30,11 +30,13 @@ STRIPE_WEBHOOK_SECRET=whsec_...
 # Get these from: Stripe Dashboard → Products
 # Create products with prices:
 # - Starter: $97 (one-time payment)
-# - Pro: $297 (one-time payment)
-# - Elite: $997 (one-time payment)
+# - Builder: $297 (one-time payment)
+# - Pro: $497 (one-time payment) - optional
+# - Elite: $997 (one-time payment) - optional
 # Copy the Price IDs (start with "price_")
 STRIPE_PRICE_STARTER=price_97starterXXXX
-STRIPE_PRICE_PRO=price_297proXXXX
+STRIPE_PRICE_BUILDER=price_297builderXXXX
+STRIPE_PRICE_PRO=price_497proXXXX
 STRIPE_PRICE_ELITE=price_997eliteXXXX
 
 # =====================================================
@@ -67,8 +69,9 @@ SITE_URL=https://aiempirebuilder.pro
 2. Switch to **Test mode** for development
 3. Create products:
    - **Starter Plan**: $97 one-time payment
-   - **Pro Plan**: $297 one-time payment
-   - **Elite Plan**: $997 one-time payment
+   - **Builder Plan**: $297 one-time payment
+   - **Pro Plan**: $497 one-time payment (optional)
+   - **Elite Plan**: $997 one-time payment (optional)
 4. Copy the **Price IDs** (start with `price_`) for each product
 5. Go to **Developers → API keys**
 6. Copy:
