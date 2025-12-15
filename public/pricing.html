@@ -81,20 +81,24 @@
                     </ul>
                     
                     <div class="pricing-buttons" style="margin-top: 2rem;">
-                        <button 
+                        <a 
+                            href="https://buy.stripe.com/bJefZi3eOd1B0523bbgQE00" 
                             class="btn btn-primary btn-large" 
-                            onclick="checkout('starter')"
-                            style="width: 100%; margin-bottom: 10px;"
+                            style="width: 100%; margin-bottom: 10px; display: block; text-align: center; text-decoration: none;"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             Enroll in Starter – $97
-                        </button>
-                        <button 
+                        </a>
+                        <a 
+                            href="https://buy.stripe.com/eVqbJ23eO4v5bNKh21gQE01" 
                             class="btn btn-primary btn-large btn-gold-glow" 
-                            onclick="checkout('builder')"
-                            style="width: 100%;"
+                            style="width: 100%; display: block; text-align: center; text-decoration: none;"
+                            target="_blank"
+                            rel="noopener noreferrer"
                         >
                             Enroll in Builder – $297
-                        </button>
+                        </a>
                     </div>
                     
                     <p style="font-size: 0.9rem; color: #666; margin-top: 1rem; text-align: center;">
@@ -327,28 +331,5 @@
     <script src="/assets/script.js"></script>
     <script src="/assets/js/smooth-scroll.js"></script>
     <script src="/assets/js/countdown.js"></script>
-    <script>
-        async function checkout(plan) {
-            // Disable buttons during processing
-            const buttons = document.querySelectorAll('.pricing-buttons button');
-            buttons.forEach(btn => {
-                btn.disabled = true;
-                btn.textContent = 'Processing...';
-            });
-
-            try {
-                // Use Next.js API route for checkout
-                window.location.href = `/api/checkout/${plan}`;
-            } catch (error) {
-                console.error("Checkout error:", error);
-                alert("An error occurred. Please try again.");
-                // Re-enable buttons
-                buttons.forEach((btn, index) => {
-                    btn.disabled = false;
-                    btn.textContent = index === 0 ? 'Enroll in Starter – $97' : 'Enroll in Builder – $297';
-                });
-            }
-        }
-    </script>
 </body>
 </html>

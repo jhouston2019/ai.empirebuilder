@@ -25,19 +25,15 @@ NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=pk_test_... or pk_live_...
 STRIPE_WEBHOOK_SECRET=whsec_...
 
 # =====================================================
-# Stripe Price IDs
+# Stripe Price IDs & Payment Links
 # =====================================================
-# Get these from: Stripe Dashboard → Products
-# Create products with prices:
-# - Starter: $97 (one-time payment)
-# - Builder: $297 (one-time payment)
-# - Pro: $497 (one-time payment) - optional
-# - Elite: $997 (one-time payment) - optional
-# Copy the Price IDs (start with "price_")
-STRIPE_PRICE_STARTER=price_97starterXXXX
-STRIPE_PRICE_BUILDER=price_297builderXXXX
-STRIPE_PRICE_PRO=price_497proXXXX
-STRIPE_PRICE_ELITE=price_997eliteXXXX
+# Price IDs (for API integration):
+STRIPE_PRICE_STARTER=price_1SOkInIFyPduqy5fj5LRDmwT
+STRIPE_PRICE_BUILDER=price_1SO1vcIFyPduqy5fZk4vUyT5
+
+# Payment Links (for direct checkout):
+# Starter: https://buy.stripe.com/bJefZi3eOd1B0523bbgQE00
+# Builder: https://buy.stripe.com/eVqbJ23eO4v5bNKh21gQE01
 
 # =====================================================
 # Site URLs
