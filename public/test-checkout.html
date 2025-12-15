@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-section {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        button {
+            background: #d4af37;
+            color: black;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px;
+            width: 200px;
+        }
+        button:hover {
+            background: #c19b2a;
+        }
+        #console {
+            background: #1e1e1e;
+            color: #00ff00;
+            padding: 15px;
+            border-radius: 4px;
+            font-family: monospace;
+            min-height: 100px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .log-entry {
+            margin: 5px 0;
+        }
+        .error {
+            color: #ff4444;
+        }
+        .success {
+            color: #44ff44;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-section">
+        <h1>Checkout Button Test</h1>
+        <p>Click the buttons below to test the checkout functionality:</p>
+        
+        <div style="text-align: center;">
+            <button onclick="testCheckout('starter')">Test Starter ($97)</button>
+            <button onclick="testCheckout('builder')">Test Builder ($297)</button>
+        </div>
+    </div>
+
+    <div class="test-section">
+        <h2>Console Output:</h2>
+        <div id="console"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Environment Check:</h2>
+        <div id="env-check"></div>
+    </div>
+
+    <script>
+        const consoleDiv = document.getElementById('console');
+        
+        function log(message, type = 'info') {
+            const entry = document.createElement('div');
+            entry.className = `log-entry ${type}`;
+            entry.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            consoleDiv.appendChild(entry);
+            consoleDiv.scrollTop = consoleDiv.scrollHeight;
+            console.log(message);
+        }
+
+        // Check environment on load
+        window.addEventListener('load', () => {
+            const envCheck = document.getElementById('env-check');
+            const checks = [
+                { name: 'Current URL', value: window.location.href },
+                { name: 'Protocol', value: window.location.protocol },
+                { name: 'Host', value: window.location.host },
+                { name: 'Pathname', value: window.location.pathname }
+            ];
+            
+            envCheck.innerHTML = checks.map(check => 
+                `<p><strong>${check.name}:</strong> ${check.value}</p>`
+            ).join('');
+            
+            log('Page loaded successfully', 'success');
+        });
+
+        async function testCheckout(plan) {
+            log(`Testing checkout for plan: ${plan}`, 'info');
+            
+            try {
+                // Test 1: Check if API endpoint exists
+                log('Checking API endpoint...', 'info');
+                const apiUrl = `/api/checkout/${plan}`;
+                log(`API URL: ${window.location.origin}${apiUrl}`, 'info');
+                
+                // Test 2: Try to fetch the endpoint
+                log('Attempting to call API...', 'info');
+                
+                const response = await fetch(apiUrl, {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                
+                log(`Response status: ${response.status}`, response.ok ? 'success' : 'error');
+                
+                if (response.ok) {
+                    log('API responded successfully!', 'success');
+                    // If it's a redirect, follow it
+                    if (response.redirected) {
+                        log(`Redirecting to: ${response.url}`, 'success');
+                        window.location.href = response.url;
+                    }
+                } else {
+                    const text = await response.text();
+                    log(`Error response: ${text}`, 'error');
+                }
+                
+            } catch (error) {
+                log(`Error: ${error.message}`, 'error');
+                log('This might mean:', 'error');
+                log('1. The Next.js server is not running', 'error');
+                log('2. The API route does not exist', 'error');
+                log('3. There is a CORS or network issue', 'error');
+            }
+        }
+    </script>
+</body>
+</html>
+
